@@ -7,6 +7,7 @@ import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
 import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 import { HeroEmblem } from "@/components/HeroEmblem";
+import heroBg from "@/assets/hero-bg.png";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Reveal } from "@/components/Reveal";
 import { ConsultationForm } from "@/components/forms";
@@ -79,8 +80,24 @@ function Index() {
   return (
     <div ref={heroRef}>
       {/* 1 — HERO */}
-      <section className="zodiac-pattern relative overflow-hidden bg-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
+      <section className="relative overflow-hidden bg-cream">
+        {/* Background Image with warm atmospheric overlays */}
+        <div className="pointer-events-none absolute inset-0 select-none overflow-hidden" aria-hidden="true">
+          <img
+            src={heroBg}
+            alt="Sacred Vedic temple on tranquil waters at golden sunrise"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="h-full w-full object-cover object-center md:object-[center_35%]"
+          />
+          {/* Subtle warm wash: preserves the glorious golden temple & sunrise while ensuring contrast for typography */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/85 to-cream/65 md:from-cream/92 md:via-cream/70 md:to-cream/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-cream/30" />
+          <div className="zodiac-pattern absolute inset-0 opacity-25" />
+        </div>
+
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
           <div className="text-center md:text-left">
             <p data-hero-stagger className="font-telugu text-3xl font-bold text-saffron" aria-hidden="true">
               {d.home.om}
@@ -102,11 +119,11 @@ function Index() {
                 href={waLink(WA_DEFAULT_MESSAGE)}
                 target="_blank"
                 rel="noopener"
-                className="btn btn-gold-outline"
+                className="btn btn-gold-outline bg-cream/80 backdrop-blur-sm"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" /> 💬 {d.common.whatsappUs}
               </a>
-              <Link to="/contact" className="btn btn-maroon-outline">
+              <Link to="/contact" className="btn btn-maroon-outline bg-cream/80 backdrop-blur-sm">
                 <MapPin className="h-4 w-4" aria-hidden="true" /> 📍 {d.common.addressLabel}
               </Link>
             </div>
