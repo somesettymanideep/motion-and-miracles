@@ -9,7 +9,9 @@ import * as THREE from "three";
  * mounted gate) so SSR never imports the canvas.
  */
 
-const ZODIAC = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+const ZODIAC = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"].map(
+  (g) => g + "\uFE0E" // force gold text presentation, never colored emoji
+);
 
 const GOLD = "#d4a017";
 const GOLD_LIGHT = "#f5c542";
