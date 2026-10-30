@@ -4,7 +4,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { dict, ORG_NAME, ORG_NAME_TE } from "@/data/site";
 import { PHONES } from "@/lib/whatsapp";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 const NAV = [
   { to: "/", key: "home" },
@@ -24,7 +24,7 @@ export function Header() {
         {/* Brand */}
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt={`${ORG_NAME} emblem`}
             width={44}
             height={44}

@@ -4,7 +4,7 @@ import { useLanguage } from "@/lib/i18n";
 import { ADDRESS, dict, HOURS, ORG_NAME, ORG_NAME_TE } from "@/data/site";
 import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 import { SERVICES } from "@/data/services";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 export function Footer() {
   const { lang } = useLanguage();
@@ -17,7 +17,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt={`${lang === "te" ? ORG_NAME_TE : ORG_NAME} emblem`}
               width={52}
               height={52}

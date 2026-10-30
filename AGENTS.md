@@ -24,3 +24,7 @@
 - Brand palette comes only from the uploaded emblem (saffron, gold, maroon,
   cream, peach) — no black/dark-grey backgrounds; body text is maroon-brown.
 - WhatsApp deep links are built only via src/lib/whatsapp.ts (wa.me/919848256831).
+- All site imagery is bundled locally in src/assets and imported through Vite
+  (e.g. src/assets/logo.png). Never reference /__l5e/ CDN asset URLs in
+  components — they 404 when the project runs outside Lovable (local VS Code
+  run).
