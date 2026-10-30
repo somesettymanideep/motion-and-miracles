@@ -18,8 +18,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Sri Vasishta Jyotishya Parishodhanalayam | Vijayawada Astrologers | Nagesh Sarma",
+        title: "Sri Vasishta Jyotishya Parishodhanalayam | Vijayawada Astrologers | Nagesh Sarma",
       },
       {
         name: "description",
@@ -82,7 +81,10 @@ function Index() {
       {/* 1 — HERO */}
       <section className="relative overflow-hidden bg-cream">
         {/* Background Image with warm atmospheric overlays */}
-        <div className="pointer-events-none absolute inset-0 select-none overflow-hidden" aria-hidden="true">
+        <div
+          className="pointer-events-none absolute inset-0 select-none overflow-hidden"
+          aria-hidden="true"
+        >
           <img
             src={heroBg}
             alt="Sacred Vedic temple on tranquil waters at golden sunrise"
@@ -99,19 +101,34 @@ function Index() {
 
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
           <div className="text-center md:text-left">
-            <p data-hero-stagger className="font-telugu text-3xl font-bold text-saffron" aria-hidden="true">
+            <p
+              data-hero-stagger
+              className="font-telugu text-3xl font-bold text-saffron"
+              aria-hidden="true"
+            >
               {d.home.om}
             </p>
-            <h1 data-hero-stagger className="mt-3 font-display text-3xl font-bold leading-tight text-maroon md:text-[2.6rem]">
-              {lang === "te" ? "శ్రీ వశిష్ఠ జ్యోతిష్య పరిశోధనాలయం" : "Sri Vasishta Jyotishya Parishodhanalayam"}
+            <h1
+              data-hero-stagger
+              className="mt-3 font-display text-3xl font-bold leading-tight text-maroon md:text-[2.6rem]"
+            >
+              {lang === "te"
+                ? "శ్రీ వశిష్ఠ జ్యోతిష్య పరిశోధనాలయం"
+                : "Sri Vasishta Jyotishya Parishodhanalayam"}
             </h1>
-            <p data-hero-stagger className="mt-3 text-sm font-semibold tracking-wide text-saffron-dark">
+            <p
+              data-hero-stagger
+              className="mt-3 text-sm font-semibold tracking-wide text-saffron-dark"
+            >
               Sanatana Jyotishyam · Vedic Samskaras · Shastric Remedies
             </p>
             <p data-hero-stagger className="mt-4 text-sm leading-relaxed text-body md:text-base">
               {d.home.welcome}
             </p>
-            <div data-hero-stagger className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+            <div
+              data-hero-stagger
+              className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start"
+            >
               <a href={PHONES[0].href} className="btn btn-saffron">
                 <Phone className="h-4 w-4" aria-hidden="true" /> 📞 {d.nav.callNow}
               </a>
@@ -170,8 +187,12 @@ function Index() {
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold bg-gradient-to-b from-gold-light to-gold font-display text-xl font-bold text-maroon shadow-warm">
                   {i + 1}
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-maroon">{tr(step.title)}</h3>
-                <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-body">{tr(step.text)}</p>
+                <h3 className="mt-4 font-display text-lg font-bold text-maroon">
+                  {tr(step.title)}
+                </h3>
+                <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-body">
+                  {tr(step.text)}
+                </p>
               </Reveal>
             ))}
           </div>
@@ -192,7 +213,9 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="font-display text-xl font-bold text-maroon md:text-2xl">{d.home.faqTitle}</h2>
+            <h2 className="font-display text-xl font-bold text-maroon md:text-2xl">
+              {d.home.faqTitle}
+            </h2>
             <div className="gold-divider my-5" aria-hidden="true" />
             <FaqAccordion items={FAQS} tr={tr} />
           </Reveal>
