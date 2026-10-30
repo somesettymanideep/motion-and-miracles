@@ -16,7 +16,7 @@ function Field({
   className = "",
 }: {
   label: string;
-  error?: string;
+  error?: string | undefined;
   children: ReactNode;
   className?: string;
 }) {

@@ -54,7 +54,7 @@ function ZodiacGlyphs() {
             position={[Math.cos(angle) * r, Math.sin(angle) * r, 0]}
             scale={[0.52, 0.52, 0.52]}
           >
-            <spriteMaterial map={textures[i]} transparent depthWrite={false} />
+            <spriteMaterial map={textures[i] ?? null} transparent depthWrite={false} />
           </sprite>
         );
       })}

@@ -52,7 +52,7 @@ function Index() {
   const { lang } = useLanguage();
   const tr = useTr();
   const d = dict[lang];
-  const heroRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   // GSAP hero entrance timeline
   useEffect(() => {
