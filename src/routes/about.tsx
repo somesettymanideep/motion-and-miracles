@@ -5,7 +5,7 @@ import { dict, GURU_NAME, VALUES } from "@/data/site";
 import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 import { PageBanner } from "@/components/PageBanner";
 import { Reveal } from "@/components/Reveal";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

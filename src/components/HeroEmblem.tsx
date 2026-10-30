@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect, useState } from "react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 const ZodiacScene = lazy(() => import("@/scene/ZodiacScene"));
 

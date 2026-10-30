@@ -4,7 +4,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { dict, ORG_NAME, ORG_NAME_TE } from "@/data/site";
 import { PHONES } from "@/lib/whatsapp";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 const NAV = [
   { to: "/", key: "home" },
