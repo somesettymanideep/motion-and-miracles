@@ -24,7 +24,7 @@ export function Header() {
         {/* Brand */}
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt={`${ORG_NAME} emblem`}
             width={44}
             height={44}

@@ -41,7 +41,7 @@ export function HeroEmblem() {
       </div>
       <div className="shadow-warm absolute inset-[17%] overflow-hidden rounded-full border-4 border-gold bg-cream">
         <img
-          src={logoAsset.url}
+          src={logoUrl}
           alt="Sri Vasishta Jyotishya Parishodhanalayam emblem — Telugu devotional saint"
           width={500}
           height={500}

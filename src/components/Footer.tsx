@@ -17,7 +17,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt={`${lang === "te" ? ORG_NAME_TE : ORG_NAME} emblem`}
               width={52}
               height={52}

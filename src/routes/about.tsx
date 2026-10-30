@@ -57,7 +57,7 @@ function AboutPage() {
           <Reveal delay={0.1}>
             <div className="shadow-warm mx-auto max-w-sm rounded-3xl border-2 border-gold bg-card p-6 text-center">
               <img
-                src={logoAsset.url}
+                src={logoUrl}
                 alt="Sri Vasishta Jyotishya Parishodhanalayam emblem"
                 width={280}
                 height={280}
@@ -79,7 +79,7 @@ function AboutPage() {
             <div className="card-warm flex flex-col items-center gap-6 p-8 text-center sm:flex-row sm:text-left">
               <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full border-4 border-gold bg-cream">
                 <img
-                  src={logoAsset.url}
+                  src={logoUrl}
                   alt={tr(GURU_NAME)}
                   width={128}
                   height={128}
