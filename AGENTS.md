@@ -8,3 +8,19 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+# Project decisions
+
+- The three.js zodiac scene (src/scene/ZodiacScene.tsx) is client-only: it is
+  React.lazy-imported behind a mounted gate in HeroEmblem; SSR renders a CSS
+  fallback ring. Never statically import it from a server-rendered route.
+- GSAP is the animation library: page entrances use gsap timelines on
+  data-hero-* attributes; scroll reveals use the Reveal component
+  (ScrollTrigger, once). Keep animations token/brand based, no dark frames.
+- All site copy is bilingual: UI strings live in src/data/site.ts (en is the
+  source of truth, te must mirror it — enforced by
+  src/test/content-parity.test.ts); service copy lives in
+  src/data/services.ts as {en, te} pairs. Pick with useTr()/lang.
+- Brand palette comes only from the uploaded emblem (saffron, gold, maroon,
+  cream, peach) — no black/dark-grey backgrounds; body text is maroon-brown.
+- WhatsApp deep links are built only via src/lib/whatsapp.ts (wa.me/919848256831).
