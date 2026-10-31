@@ -11,8 +11,8 @@ export function Footer() {
   const d = dict[lang];
 
   return (
-    <footer className="border-t-2 border-gold bg-maroon-deep text-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t-2 border-gold bg-[#5A0C18] text-cream">
+      <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 py-12 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3">
@@ -50,7 +50,9 @@ export function Footer() {
 
         {/* Quick links */}
         <nav aria-label="Quick links">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-light">{d.footer.quickLinks}</h2>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-light">
+            {d.footer.quickLinks}
+          </h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {(
               [
@@ -71,7 +73,9 @@ export function Footer() {
 
         {/* Services */}
         <nav aria-label="Services">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-light">{d.footer.ourServices}</h2>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-light">
+            {d.footer.ourServices}
+          </h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {SERVICES.slice(0, 5).map((s) => (
               <li key={s.slug}>
@@ -94,7 +98,9 @@ export function Footer() {
 
         {/* Contact */}
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-light">{d.footer.contactTitle}</h2>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-light">
+            {d.footer.contactTitle}
+          </h2>
           <ul className="mt-4 space-y-3 text-sm text-cream/85">
             <li className="flex gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-light" aria-hidden="true" />
@@ -132,7 +138,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gold/40 px-4 py-4 text-center text-xs text-cream/75">
+      <div className="border-t border-gold/40 px-4 sm:px-6 lg:px-12 xl:px-8 py-4 text-center text-xs text-cream/75">
         {d.footer.rights}
       </div>
     </footer>

@@ -10,8 +10,7 @@ export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Our Services | Vedic Samskaras, Navagraha Shanti, Homas | Vijayawada",
+        title: "Our Services | Vedic Samskaras, Navagraha Shanti, Homas | Vijayawada",
       },
       {
         name: "description",
@@ -42,7 +41,7 @@ function ServicesPage() {
     <div>
       <PageBanner title={d.servicesPage.bannerTitle} crumb={d.nav.services} />
       <section className="bg-cream py-14">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <Reveal className="mx-auto mb-10 max-w-2xl text-center">
             <p className="text-sm text-muted-foreground">{d.servicesPage.subtitle}</p>
             <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />

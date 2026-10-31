@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { ChevronUp } from "lucide-react";
 import { waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -8,23 +10,64 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-/** Floating WhatsApp button with a soft pulse, present on every page. */
+/**
+ * Floating action controls:
+ * - Scroll to Top button (appears when scrolled down, positioned right above WhatsApp)
+ * - WhatsApp FAB with soft pulse animation
+ */
 export function WhatsAppFab() {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 240);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <a
-      href={waLink(WA_DEFAULT_MESSAGE)}
-      target="_blank"
-      rel="noopener"
-      aria-label="Chat on WhatsApp"
-      className="group fixed bottom-5 right-5 z-50"
-    >
-      <span
-        className="absolute inset-0 animate-ping rounded-full bg-wa-green/40"
-        aria-hidden="true"
-      />
-      <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-wa-green text-white shadow-lg shadow-wa-green/40 transition-transform group-hover:scale-105">
-        <WhatsAppIcon className="h-7 w-7" />
-      </span>
-    </a>
+    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-center gap-3">
+      {/* Scroll to Top button placed directly on top of the WhatsApp button */}
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        className={`flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-[#5A0C18] text-gold-light shadow-lg shadow-[#5A0C18]/40 transition-all duration-300 hover:scale-110 hover:bg-[#731221] hover:text-cream ${
+          showScroll
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-3 opacity-0"
+        }`}
+      >
+        <ChevronUp className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
+      </button>
+
+      {/* Floating WhatsApp button */}
+      <a
+        href={waLink(WA_DEFAULT_MESSAGE)}
+        target="_blank"
+        rel="noopener"
+        aria-label="Chat on WhatsApp"
+        className="group relative"
+      >
+        <span
+          className="absolute inset-0 animate-ping rounded-full bg-wa-green/40"
+          aria-hidden="true"
+        />
+        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-wa-green text-white shadow-lg shadow-wa-green/40 transition-transform group-hover:scale-105">
+          <WhatsAppIcon className="h-7 w-7" />
+        </span>
+      </a>
+    </div>
   );
 }

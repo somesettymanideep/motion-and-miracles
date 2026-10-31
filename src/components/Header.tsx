@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-gold/70 bg-cream/95 shadow-sm backdrop-blur">
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-3 px-4">
+      <div className="mx-auto flex h-[72px] max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] items-center gap-3 px-4 sm:px-6 lg:px-12 xl:px-8">
         {/* Brand */}
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img
@@ -48,7 +48,10 @@ export function Header() {
               key={item.to}
               to={item.to}
               className="text-sm font-semibold text-maroon transition-colors hover:text-saffron-dark"
-              activeProps={{ className: "text-saffron-dark underline decoration-gold decoration-2 underline-offset-8" }}
+              activeProps={{
+                className:
+                  "text-saffron-dark underline decoration-gold decoration-2 underline-offset-8",
+              }}
             >
               {d.nav[item.key]}
             </Link>

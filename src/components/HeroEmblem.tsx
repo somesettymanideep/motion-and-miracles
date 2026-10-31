@@ -1,54 +1,47 @@
-import { Suspense, lazy, useEffect, useState } from "react";
-import logoUrl from "@/assets/logo.png";
-
-const ZodiacScene = lazy(() => import("@/scene/ZodiacScene"));
-
-/** CSS fallback ring shown before (and while) the three.js scene loads. */
-function StaticRing() {
-  return (
-    <div
-      className="absolute inset-[8%] animate-[spin_36s_linear_infinite] rounded-full border-2 border-dashed border-gold/60"
-      aria-hidden="true"
-    />
-  );
-}
+import { useEffect, useRef } from "react";
+import zodiacVideoWebm from "@/assets/zodiac-wheel.webm";
+import zodiacVideoMp4 from "@/assets/zodiac-wheel.mp4";
+import zodiacPoster from "@/assets/zodiac-wheel-poster.png";
 
 /**
- * The emblem inside a circular gold frame, circled by the three.js
- * slow-rotating zodiac ring. The canvas is client-only and lazy-loaded;
- * the CSS ring renders during SSR and as the fallback.
+ * Hero Zodiac Wheel Video:
+ * Continuous 360° clockwise rotation of the complete sacred zodiac wheel
+ * (12 rashis, golden rings, lotus petals, and central Om symbol rotating together).
+ * Transparent background, fixed camera, smooth constant speed, seamless infinite loop.
  */
 export function HeroEmblem() {
-  const [mounted, setMounted] = useState(false);
-  const [sceneReady, setSceneReady] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // Ensure autoplay starts smoothly even if strict policy applies
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay may be deferred until user interaction; muted attribute handles most browsers
+      });
+    }
+  }, []);
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[500px]">
+    <div className="relative mx-auto aspect-square w-full max-w-[480px] lg:max-w-[520px] flex items-center justify-center">
+      {/* Subtle warm celestial glow behind the rotating wheel */}
       <div
-        data-scene-ready={sceneReady ? "true" : undefined}
-        className="absolute inset-0"
+        className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(245,197,66,0.2)_0%,rgba(212,160,23,0.08)_50%,transparent_70%)] blur-2xl"
         aria-hidden="true"
+      />
+
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster={zodiacPoster}
+        className="relative z-10 h-full w-full object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] select-none pointer-events-none"
+        aria-label="Sacred Vedic Zodiac Wheel rotating clockwise"
       >
-        {mounted ? (
-          <Suspense fallback={<StaticRing />}>
-            <ZodiacScene onReady={() => setSceneReady(true)} />
-          </Suspense>
-        ) : (
-          <StaticRing />
-        )}
-      </div>
-      <div className="shadow-warm absolute inset-[17%] overflow-hidden rounded-full border-4 border-gold bg-cream">
-        <img
-          src={logoUrl}
-          alt="Sri Vasishta Jyotishya Parishodhanalayam emblem — Telugu devotional saint"
-          width={500}
-          height={500}
-          className="h-full w-full object-cover"
-          style={{ objectPosition: "50% 18%" }}
-        />
-      </div>
+        <source src={zodiacVideoWebm} type="video/webm" />
+        <source src={zodiacVideoMp4} type="video/mp4" />
+      </video>
     </div>
   );
 }

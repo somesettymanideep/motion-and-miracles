@@ -99,7 +99,7 @@ function Index() {
           <div className="zodiac-pattern absolute inset-0 opacity-25" />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
+        <div className="relative z-10 mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] items-center gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 py-14 md:grid-cols-2 md:py-20">
           <div className="text-center md:text-left">
             <p
               data-hero-stagger
@@ -130,7 +130,7 @@ function Index() {
               className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start"
             >
               <a href={PHONES[0].href} className="btn btn-saffron">
-                <Phone className="h-4 w-4" aria-hidden="true" /> 📞 {d.nav.callNow}
+                <Phone className="h-4 w-4" aria-hidden="true" /> {d.nav.callNow}
               </a>
               <a
                 href={waLink(WA_DEFAULT_MESSAGE)}
@@ -138,10 +138,10 @@ function Index() {
                 rel="noopener"
                 className="btn btn-gold-outline bg-cream/80 backdrop-blur-sm"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" /> 💬 {d.common.whatsappUs}
+                <MessageCircle className="h-4 w-4" aria-hidden="true" /> {d.common.whatsappUs}
               </a>
               <Link to="/contact" className="btn btn-maroon-outline bg-cream/80 backdrop-blur-sm">
-                <MapPin className="h-4 w-4" aria-hidden="true" /> 📍 {d.common.addressLabel}
+                <MapPin className="h-4 w-4" aria-hidden="true" /> {d.common.addressLabel}
               </Link>
             </div>
           </div>
@@ -153,7 +153,7 @@ function Index() {
 
       {/* 2 — OUR SERVICES */}
       <section className="bg-cream py-16">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.servicesTitle} subtitle={d.home.servicesSubtitle} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service, i) => (
@@ -175,7 +175,7 @@ function Index() {
       {/* 3 — HOW IT WORKS */}
       <section className="relative overflow-hidden border-y-2 border-gold/40 bg-peach py-16">
         <div className="mandala-bg absolute inset-0 opacity-60" aria-hidden="true" />
-        <div className="relative mx-auto max-w-5xl px-4">
+        <div className="relative mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.howTitle} />
           <div className="relative grid gap-10 md:grid-cols-3">
             <div
@@ -201,7 +201,7 @@ function Index() {
 
       {/* 4 — CONSULTATION FORM + FAQ */}
       <section className="bg-cream py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 lg:grid-cols-2">
           <Reveal>
             <div className="card-warm p-6 md:p-8">
               <h2 className="font-display text-xl font-bold text-maroon md:text-2xl">
@@ -224,7 +224,7 @@ function Index() {
 
       {/* 5 — TESTIMONIALS */}
       <section className="border-t-2 border-gold/40 bg-peach py-16">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.testimonialsTitle} />
           <p className="-mt-6 mb-8 text-center text-xs italic text-muted-foreground">
             {d.home.testimonialsNote}

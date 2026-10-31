@@ -38,20 +38,28 @@ function ContactPage() {
 
   return (
     <div>
-      <PageBanner title={d.contact.bannerTitle} crumb={d.nav.contact} />
+      <PageBanner
+        title={d.nav.contact}
+        crumb={d.nav.contact}
+        align="center"
+        noOverlay
+        noRibbon
+      />
 
       {/* Info + form */}
       <section className="bg-cream py-14">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 lg:grid-cols-2">
           {/* Left: info cards */}
           <div className="space-y-5">
             <Reveal>
               <div className="card-warm flex gap-4 p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-gold-light/30 text-maroon">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-[#5a0c18] text-gold-light shadow-sm">
                   <MapPin className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
-                  <h2 className="font-display text-base font-bold text-maroon">{d.common.addressLabel}</h2>
+                  <h2 className="font-display text-base font-bold text-maroon">
+                    {d.common.addressLabel}
+                  </h2>
                   <p className="mt-1 text-sm leading-relaxed text-body">
                     {ADDRESS.lines[lang].map((l) => (
                       <span key={l} className="block">
@@ -64,11 +72,13 @@ function ContactPage() {
             </Reveal>
             <Reveal delay={0.08}>
               <div className="card-warm flex gap-4 p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-gold-light/30 text-maroon">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-[#5a0c18] text-gold-light shadow-sm">
                   <Phone className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
-                  <h2 className="font-display text-base font-bold text-maroon">{d.common.phoneLabel}</h2>
+                  <h2 className="font-display text-base font-bold text-maroon">
+                    {d.common.phoneLabel}
+                  </h2>
                   {PHONES.map((p) => (
                     <a
                       key={p.href}
@@ -83,11 +93,13 @@ function ContactPage() {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="card-warm flex gap-4 p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-gold-light/30 text-maroon">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-[#5a0c18] text-gold-light shadow-sm">
                   <Clock className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
-                  <h2 className="font-display text-base font-bold text-maroon">{d.common.openingHours}</h2>
+                  <h2 className="font-display text-base font-bold text-maroon">
+                    {d.common.openingHours}
+                  </h2>
                   <p className="mt-1 text-sm text-body">{HOURS[lang]}</p>
                 </div>
               </div>
@@ -117,7 +129,7 @@ function ContactPage() {
 
       {/* Map */}
       <section className="border-t-2 border-gold/40 bg-peach py-14">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <Reveal className="mb-8 text-center">
             <h2 className="font-display text-2xl font-bold text-maroon">{d.contact.mapTitle}</h2>
             <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />

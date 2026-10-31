@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { CheckCircle2, Clock, Flame, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { CheckCircle2, ChevronRight, Clock, Flame, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { useLanguage, useTr, type Bi } from "@/lib/i18n";
-import { ADDRESS, HOURS } from "@/data/site";
+import { ADDRESS, HOURS, dict } from "@/data/site";
 import { SERVICES } from "@/data/services";
 import { PHONES, waLink } from "@/lib/whatsapp";
 import { Reveal } from "@/components/Reveal";
@@ -31,7 +31,15 @@ export const Route = createFileRoute("/services/$slug")({
   component: ServiceDetailPage,
 });
 
-function ListBlock({ title, items, icon }: { title: string; items: Bi[]; icon: "check" | "flame" }) {
+function ListBlock({
+  title,
+  items,
+  icon,
+}: {
+  title: string;
+  items: Bi[];
+  icon: "check" | "flame";
+}) {
   const tr = useTr();
   if (!items || items.length === 0) return null;
   const Icon = icon === "check" ? CheckCircle2 : Flame;
@@ -54,6 +62,7 @@ function ListBlock({ title, items, icon }: { title: string; items: Bi[]; icon: "
 function ServiceDetailPage() {
   const { lang } = useLanguage();
   const tr = useTr();
+  const d = dict[lang];
   const service = Route.useLoaderData();
   const detail = service.detail;
 
@@ -69,32 +78,58 @@ function ServiceDetailPage() {
           className="absolute inset-0 -z-10 h-full w-full object-cover"
           aria-hidden="true"
         />
-        <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-cream/70 via-cream/40 to-cream/85"
-          aria-hidden="true"
-        />
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-16 text-center md:py-20">
+        <div className="mx-auto flex max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] flex-col items-center gap-4 px-4 sm:px-6 lg:px-12 xl:px-8 py-16 text-center md:py-20">
           <p className="text-xs font-semibold uppercase tracking-widest text-saffron-dark">
             {lang === "te" ? "మా సేవ" : "Our Service"}
           </p>
-          <h1 className="ribbon-shape px-10 py-3 font-display text-2xl font-bold md:px-14 md:text-3xl">
+          <h1 className="font-display text-2xl font-bold text-[#5a0c18] md:text-3xl">
             {tr(detail.heroTitle)}
           </h1>
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-1.5 rounded-full border border-gold/40 bg-cream/90 px-4 py-1 text-sm font-semibold text-[#5a0c18] shadow-xs backdrop-blur-sm"
+          >
+            <Link
+              to="/"
+              className="font-semibold text-[#5a0c18] transition-colors hover:text-saffron-dark"
+            >
+              {d.common.home}
+            </Link>
+            <ChevronRight className="h-4 w-4 text-gold" aria-hidden="true" />
+            <Link
+              to="/services"
+              className="font-semibold text-[#5a0c18] transition-colors hover:text-saffron-dark"
+            >
+              {d.nav.services}
+            </Link>
+            <ChevronRight className="h-4 w-4 text-gold" aria-hidden="true" />
+            <span aria-current="page" className="font-semibold text-[#5a0c18]">
+              {service.name[lang]}
+            </span>
+          </nav>
         </div>
       </section>
 
       {/* Intro + lists */}
       <section className="bg-cream py-14">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-5">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 lg:grid-cols-5">
           <div className="space-y-10 lg:col-span-3">
             <Reveal>
               <p className="text-base leading-relaxed text-body">{tr(detail.intro)}</p>
             </Reveal>
-            <ListBlock title={tr({ en: "What We Examine", te: "మేము ఏమి పరిశీలిస్తాము" })} items={detail.examines ?? []} icon="check" />
+            <ListBlock
+              title={tr({ en: "What We Examine", te: "మేము ఏమి పరిశీలిస్తాము" })}
+              items={detail.examines ?? []}
+              icon="check"
+            />
             {detail.extra && (
               <ListBlock title={tr(detail.extra.title)} items={detail.extra.items} icon="check" />
             )}
-            <ListBlock title={tr({ en: "Suggested Remedies", te: "సూచించే పరిహారాలు" })} items={detail.remedies ?? []} icon="flame" />
+            <ListBlock
+              title={tr({ en: "Suggested Remedies", te: "సూచించే పరిహారాలు" })}
+              items={detail.remedies ?? []}
+              icon="flame"
+            />
             {detail.samskaras && (
               <Reveal>
                 <h2 className="font-display text-xl font-bold text-maroon">
@@ -117,7 +152,10 @@ function ServiceDetailPage() {
               <Reveal>
                 <div className="rounded-xl border-2 border-gold bg-peach p-5">
                   <p className="flex items-start gap-2.5 text-sm leading-relaxed text-maroon">
-                    <Sparkles className="mt-0.5 h-4.5 w-4.5 shrink-0 text-saffron-dark" aria-hidden="true" />
+                    <Sparkles
+                      className="mt-0.5 h-4.5 w-4.5 shrink-0 text-saffron-dark"
+                      aria-hidden="true"
+                    />
                     <span>{tr(detail.note)}</span>
                   </p>
                 </div>
@@ -133,7 +171,10 @@ function ServiceDetailPage() {
                   {tr({ en: "Book a Consultation", te: "సంప్రదింపు బుక్ చేయండి" })}
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {tr({ en: "Call or send your details on WhatsApp.", te: "కాల్ చేయండి లేదా వాట్సాప్‌లో వివరాలు పంపండి." })}
+                  {tr({
+                    en: "Call or send your details on WhatsApp.",
+                    te: "కాల్ చేయండి లేదా వాట్సాప్‌లో వివరాలు పంపండి.",
+                  })}
                 </p>
                 <div className="gold-divider my-4" aria-hidden="true" />
                 <div className="space-y-3">
@@ -173,7 +214,7 @@ function ServiceDetailPage() {
 
       {/* Other services */}
       <section className="border-t-2 border-gold/40 bg-peach py-14">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <Reveal className="mb-8 text-center">
             <h2 className="font-display text-2xl font-bold text-maroon">
               {tr({ en: "Other Services", te: "ఇతర సేవలు" })}
@@ -215,7 +256,7 @@ function ServiceDetailPage() {
 
       {/* Common contact block */}
       <section className="bg-cream py-14">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 lg:grid-cols-2">
           <Reveal>
             <h2 className="font-display text-xl font-bold text-maroon">
               {tr({ en: "Contact", te: "సంప్రదింపు" })}

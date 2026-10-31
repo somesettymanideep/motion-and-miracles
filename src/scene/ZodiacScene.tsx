@@ -10,7 +10,7 @@ import * as THREE from "three";
  */
 
 const ZODIAC = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"].map(
-  (g) => g + "\uFE0E" // force gold text presentation, never colored emoji
+  (g) => g + "\uFE0E", // force gold text presentation, never colored emoji
 );
 
 const GOLD = "#d4a017";
@@ -42,7 +42,7 @@ function ZodiacGlyphs() {
 
   useFrame((_, rawDelta) => {
     const delta = Math.min(rawDelta, 0.05);
-    group.current.rotation.z += delta * 0.1;
+    group.current.rotation.z -= delta * 0.08;
   });
 
   return (
@@ -110,12 +110,12 @@ function ZodiacRing() {
         const angle = (i / 12) * Math.PI * 2 + Math.PI / 2;
         return [Math.cos(angle) * 2.06, Math.sin(angle) * 2.06, 0] as [number, number, number];
       }),
-    []
+    [],
   );
 
   useFrame((state, rawDelta) => {
     const delta = Math.min(rawDelta, 0.05);
-    tilt.current.rotation.z += delta * 0.06;
+    tilt.current.rotation.z -= delta * 0.05;
     // gentle pointer parallax
     tilt.current.rotation.x += (state.pointer.y * 0.07 - tilt.current.rotation.x) * 0.06;
     tilt.current.rotation.y += (state.pointer.x * 0.07 - tilt.current.rotation.y) * 0.06;
@@ -133,7 +133,13 @@ function ZodiacRing() {
       </mesh>
       <mesh>
         <torusGeometry args={[2.92, 0.008, 8, 96]} />
-        <meshStandardMaterial color={GOLD} metalness={0.9} roughness={0.35} transparent opacity={0.7} />
+        <meshStandardMaterial
+          color={GOLD}
+          metalness={0.9}
+          roughness={0.35}
+          transparent
+          opacity={0.7}
+        />
       </mesh>
       {gems.map((pos, i) => (
         <mesh key={i} position={pos}>
@@ -154,7 +160,13 @@ function Scene() {
       <directionalLight position={[-5, -2, 3]} intensity={0.5} color={GOLD_LIGHT} />
       <Environment>
         <Lightformer intensity={1.6} position={[0, 5, 0]} scale={[10, 10, 1]} />
-        <Lightformer intensity={1} color={GOLD_LIGHT} position={[-5, 1, -1]} rotation-y={Math.PI / 2} scale={[20, 1, 1]} />
+        <Lightformer
+          intensity={1}
+          color={GOLD_LIGHT}
+          position={[-5, 1, -1]}
+          rotation-y={Math.PI / 2}
+          scale={[20, 1, 1]}
+        />
       </Environment>
       <ZodiacRing />
       <StarDust />

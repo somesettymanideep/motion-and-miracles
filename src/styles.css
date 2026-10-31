@@ -83,7 +83,7 @@
   --gold: oklch(0.735 0.146 84.3);
   --gold-light: oklch(0.844 0.151 87.9);
   --maroon: oklch(0.385 0.136 11.9); /* #7B1530 */
-  --maroon-deep: oklch(0.34 0.128 11.9);
+  --maroon-deep: #5a0c18;
   --cream: oklch(0.981 0.018 81.3);
   --peach: oklch(0.943 0.05 78.7);
   --body-text: oklch(0.292 0.073 22.8);
@@ -129,7 +129,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     color: var(--color-maroon);
     font-weight: 700;
@@ -189,11 +192,7 @@
 @utility ribbon-shape {
   background: linear-gradient(180deg, var(--saffron) 0%, var(--saffron-dark) 100%);
   color: var(--primary-foreground);
-  clip-path: polygon(
-    0 0, 100% 0,
-    calc(100% - 16px) 50%, 100% 100%,
-    0 100%, 16px 50%
-  );
+  clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 50%, 100% 100%, 0 100%, 16px 50%);
 }
 
 /* Warm soft shadow used on cards */
@@ -220,13 +219,16 @@
     white-space: nowrap;
   }
   .btn-saffron {
-    background: linear-gradient(180deg, var(--saffron), var(--saffron-dark));
-    color: var(--primary-foreground);
-    box-shadow: 0 6px 18px -6px color-mix(in oklab, var(--saffron-dark) 55%, transparent);
+    background: #5a0c18;
+    color: var(--cream);
+    border: 1px solid color-mix(in oklab, var(--gold) 65%, transparent);
+    box-shadow: 0 6px 18px -6px color-mix(in oklab, #5a0c18 60%, transparent);
   }
   .btn-saffron:hover {
-    background: linear-gradient(180deg, var(--saffron-dark), var(--saffron-dark));
+    background: #731221;
+    color: var(--cream);
     transform: translateY(-1px);
+    box-shadow: 0 8px 22px -6px color-mix(in oklab, #5a0c18 75%, transparent);
   }
   .btn-gold-outline {
     border: 2px solid var(--gold);
@@ -258,7 +260,8 @@
   .card-warm {
     background: var(--card);
     border-radius: var(--radius-2xl);
-    box-shadow: 0 1px 2px color-mix(in oklab, var(--maroon) 6%, transparent),
+    box-shadow:
+      0 1px 2px color-mix(in oklab, var(--maroon) 6%, transparent),
       0 14px 34px -14px color-mix(in oklab, var(--maroon) 20%, transparent);
     border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
     overflow: hidden;
@@ -272,7 +275,9 @@
     padding: 0.625rem 0.875rem;
     font-size: 0.875rem;
     color: var(--color-foreground);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
   .field::placeholder {
     color: color-mix(in oklab, var(--muted-foreground) 80%, transparent);
