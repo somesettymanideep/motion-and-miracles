@@ -77,6 +77,88 @@ function CornerFlourish({ position }: { position: "tl" | "tr" | "bl" | "br" }) {
   );
 }
 
+/** Ornate golden mandala halo behind each Guruji portrait */
+function MandalaHalo({ className = "" }: { className?: string }) {
+  const rays = Array.from({ length: 36 }, (_, i) => {
+    const a = (i * 10 * Math.PI) / 180;
+    const r1 = 45;
+    const r2 = i % 3 === 0 ? 49.5 : 47.5;
+    return {
+      x1: 50 + r1 * Math.cos(a),
+      y1: 50 + r1 * Math.sin(a),
+      x2: 50 + r2 * Math.cos(a),
+      y2: 50 + r2 * Math.sin(a),
+    };
+  });
+  return (
+    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#D4A017" strokeWidth="0.7" opacity="0.9" />
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#D4A017" strokeWidth="0.5" strokeDasharray="1.5 2.5" opacity="0.75" />
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#D4A017" strokeWidth="0.4" opacity="0.55" />
+      <circle cx="50" cy="50" r="34" fill="#F5C542" opacity="0.16" />
+      {rays.map((r, i) => (
+        <line key={i} x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2} stroke="#D4A017" strokeWidth="0.55" opacity="0.8" />
+      ))}
+      {Array.from({ length: 12 }, (_, i) => {
+        const a = ((i * 30 + 15) * Math.PI) / 180;
+        return (
+          <circle
+            key={`d${i}`}
+            cx={50 + 42.5 * Math.cos(a)}
+            cy={50 + 42.5 * Math.sin(a)}
+            r="0.9"
+            fill="#D4A017"
+            opacity="0.85"
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
+/** One Guruji profile: bottom-anchored cut-out portrait with mandala halo, text beside it */
+function GurujiProfile({
+  img,
+  alt,
+  name,
+  description,
+  waHref,
+}: {
+  img: string;
+  alt: string;
+  name: { en: string; te: string };
+  description: { en: string; te: string };
+  waHref: string;
+}) {
+  const tr = useTr();
+  return (
+    <div className="grid grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] items-center gap-3 px-4 sm:gap-5 sm:px-8">
+      {/* Portrait with mandala halo, anchored to the card's bottom edge */}
+      <div className="relative flex items-end justify-center self-stretch">
+        <MandalaHalo className="absolute bottom-[8%] left-1/2 aspect-square h-[72%] w-auto -translate-x-1/2" />
+        <img
+          src={img}
+          alt={alt}
+          loading="lazy"
+          className="relative z-10 h-44 w-auto object-contain object-bottom drop-shadow-[0_10px_24px_rgba(123,21,48,0.18)] sm:h-56 md:h-64 lg:h-72"
+        />
+      </div>
+      <div className="pb-7 sm:pb-10">
+        <h2 className="font-display text-lg font-bold text-maroon sm:text-xl md:text-2xl">{tr(name)}</h2>
+        <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">{tr(description)}</p>
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
+        >
+          <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function AboutPage() {
   const { lang } = useLanguage();
   const tr = useTr();
