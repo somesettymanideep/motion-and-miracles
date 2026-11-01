@@ -1,10 +1,16 @@
-import zodiacWheel from "@/assets/zodiac-wheel-om.png";
+import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
+import zodiacOmCenter from "@/assets/zodiac-om-center.png";
 
 /**
- * Hero Zodiac Wheel — the sacred golden zodiac horoscope wheel with the Om
- * symbol at its centre, rotating smoothly and continuously clockwise around
- * its exact central axis. Transparent background, constant speed, seamless
- * infinite loop (a full 360° linear spin), no added elements or camera moves.
+ * Hero Zodiac Wheel — the sacred golden zodiac horoscope wheel, split into
+ * two layers cut from the same artwork so colors match exactly:
+ *  1. The rotating ring (12 zodiac signs, lotus petals, ornamental gold
+ *     rings) spins smoothly clockwise around the exact central axis with a
+ *     constant-speed, seamless infinite loop. Its centre is cut out.
+ *  2. The central maroon Om medallion sits fixed on top — perfectly still,
+ *     centred, never rotating. Its feathered edge fully covers the ring's
+ *     cut-out seam.
+ * Transparent background, no added elements or camera moves.
  */
 export function HeroEmblem() {
   return (
@@ -15,15 +21,28 @@ export function HeroEmblem() {
         aria-hidden="true"
       />
 
+      {/* Layer 1 — rotating zodiac ring (centre cut out) */}
       <img
-        src={zodiacWheel}
-        alt="Sacred golden zodiac horoscope wheel with the Om symbol at its centre, rotating clockwise"
+        src={zodiacWheelRot}
+        alt="Sacred golden zodiac horoscope wheel with twelve zodiac signs and lotus petals, rotating clockwise around a fixed Om centre"
         width={1024}
         height={1024}
         fetchPriority="high"
         decoding="async"
         draggable={false}
         className="relative z-10 h-full w-full max-w-none animate-[spin_48s_linear_infinite] select-none object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] motion-reduce:animate-none"
+      />
+
+      {/* Layer 2 — fixed central Om medallion (never rotates) */}
+      <img
+        src={zodiacOmCenter}
+        alt=""
+        aria-hidden="true"
+        width={228}
+        height={228}
+        decoding="async"
+        draggable={false}
+        className="absolute left-1/2 top-1/2 z-20 w-[22.3%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
       />
     </div>
   );
