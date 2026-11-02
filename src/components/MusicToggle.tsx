@@ -170,10 +170,10 @@ export function MusicToggle() {
         type="button"
         onClick={toggle}
         aria-label={audible ? "Turn music off" : "Turn music on"}
-        aria-pressed={audible}
+        aria-pressed={on}
         className="fixed bottom-5 left-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-maroon text-cream shadow-lg transition-transform hover:scale-105"
       >
-        {audible ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+        {on ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
       </Button>
     </>
   );
