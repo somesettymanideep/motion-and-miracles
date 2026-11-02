@@ -24,7 +24,7 @@ describe("background music", () => {
   });
 
   it("never silences the music with page clicks; only the sound button turns it off and on", async () => {
-    const { container } = render(<MusicToggle />);
+    const { getByRole } = render(<MusicToggle />);
     await waitFor(() => expect(play).toHaveBeenCalled());
     await act(async () => {
       fireEvent.click(document.body);
@@ -34,7 +34,7 @@ describe("background music", () => {
       fireEvent.click(document.body);
     });
     expect(pause).not.toHaveBeenCalled();
-    fireEvent.click(container.getByRole("button", { name: "Turn music off" }));
+    fireEvent.click(getByRole("button", { name: "Turn music off" }));
     expect(pause).toHaveBeenCalled();
     expect(localStorage.getItem("music-on")).toBe("0");
     await act(async () => {
