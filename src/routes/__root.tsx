@@ -17,7 +17,6 @@ import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
-import { MusicToggle } from "@/components/MusicToggle";
 import { supabase } from "@/integrations/supabase/client";
 
 function NotFoundComponent() {
@@ -150,7 +149,7 @@ function RootComponent() {
         </main>
         <Footer />
         <WhatsAppFab />
-        <MusicToggle />
+
         <Toaster
           position="top-center"
           toastOptions={{
