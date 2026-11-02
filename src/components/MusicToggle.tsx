@@ -10,20 +10,10 @@ const MUSIC_URL = musicUrl;
 const STORAGE_KEY = "music-on";
 
 /**
- * Clicks on these can start the music but never stop it: navigating links,
- * pressing buttons and typing in forms must not silence the music. The sound
- * button is excluded entirely — it has its own toggle.
- */
-const INTERACTIVE =
-  "a, button, input, textarea, select, label, summary, [role='button']";
-
-/**
- * Site background music — on by default. Clicking anywhere on the page
- * toggles it: one click starts it, another click stops it (the sound button
- * works the same way). Clicks on links, buttons and form fields can start it
- * but never stop it, so browsing never silences the music. The visitor's
- * manual choice is remembered. If audible autoplay is blocked, a click
- * unlocks and starts it; wheel, scroll and keyboard gestures also start it.
+ * The first click anywhere on the site starts the sound (when the browser
+ * blocked autoplay). After that, only the sound button controls the music:
+ * clicks elsewhere never silence it and never restart it once the visitor
+ * turned it off with the button. The visitor's choice is remembered.
  */
 export function MusicToggle() {
   const { lang } = useLanguage();
@@ -36,6 +26,8 @@ export function MusicToggle() {
   // Latest state for listeners, so they never need re-binding.
   const stateRef = useRef({ on: true, playing: false });
   stateRef.current = { on, playing };
+  // Audible = on AND actually playing; the button reflects and controls this.
+  const audible = on && playing;
 
   useEffect(() => {
     try {
@@ -72,7 +64,7 @@ export function MusicToggle() {
 
     // Start-only unlocks for gestures that never precede a click, so a single
     // tap cannot both start and stop the music. Clicks are handled separately
-    // by the page-wide toggle below.
+    // by the page-wide "first click starts" handler below.
     const startEvents = ["keydown", "wheel", "scroll"];
     const removeStart = () => {
       startEvents.forEach((e) => window.removeEventListener(e, start));
@@ -91,73 +83,74 @@ export function MusicToggle() {
     };
   }, [on, ready]);
 
-  // Clicking anywhere on the site toggles the music: when it is playing a
-  // click stops it, and when it is silent a click starts it.
+  // The first click anywhere on the site starts the sound when it is still
+  // silent (autoplay blocked). After the music has started — or once the
+  // visitor turned it off with the sound button — page clicks do nothing;
+  // only the sound button controls the music from then on.
   useEffect(() => {
     if (!ready) return;
     const handleClick = (event: MouseEvent) => {
       const target = event.target instanceof Element ? event.target : null;
       if (!target || target.closest("[data-music-toggle]")) return;
-      const audio = audioRef.current;
       const { on: isOn, playing: isPlaying } = stateRef.current;
-      const unlock = () => {
-        if (!audio) return;
-        audio.muted = false;
-        void audio
-          .play()
-          .then(() => setPlaying(true))
-          .catch(() => {
-            // Keep waiting for the next interaction.
-          });
-      };
-      if (isOn && isPlaying) {
-        // Clicks on links, buttons and form fields never silence the music.
-        if (target.closest(INTERACTIVE)) return;
-        setOn(false);
-        try {
-          window.localStorage.setItem(STORAGE_KEY, "0");
-        } catch {
-          // Storage unavailable — the choice just won't persist.
-        }
-        audio?.pause();
-        setPlaying(false);
-        return;
-      }
-      if (isOn) {
-        // Autoplay was blocked: this very click is the unlock, not an off switch.
-        unlock();
-        return;
-      }
-      setOn(true);
-      try {
-        window.localStorage.setItem(STORAGE_KEY, "1");
-      } catch {
-        // Storage unavailable — the choice just won't persist.
-      }
-      unlock();
+      if (!isOn || isPlaying) return;
+      const audio = audioRef.current;
+      if (!audio) return;
+      audio.muted = false;
+      void audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {
+          // Keep waiting for the next interaction.
+        });
     };
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
   }, [ready]);
 
+  // The sound button is the music's off/on control once the music plays.
+  // While the music is "on" but still silent (autoplay blocked), pressing the
+  // button starts it instead of silencing it.
   const toggle = () => {
-    const next = !on;
-    setOn(next);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, next ? "1" : "0");
-    } catch {
-      // Storage unavailable — the choice just won't persist.
-    }
     const audio = audioRef.current;
-    if (!audio) return;
-    if (next) {
-      // Call play inside the click handler to retain browser user activation.
+    const { on: isOn, playing: isPlaying } = stateRef.current;
+    const persist = (value: "0" | "1") => {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, value);
+      } catch {
+        // Storage unavailable — the choice just won't persist.
+      }
+    };
+    if (isOn && !isPlaying) {
+      // Not audible yet: start it rather than turning it off.
+      if (!audio) return;
       audio.muted = false;
-      void audio.play().then(() => setPlaying(true)).catch(() => {});
-    } else {
-      audio.pause();
-      setPlaying(false);
+      void audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {
+          // Keep waiting for the next interaction.
+        });
+      return;
     }
+    if (isOn) {
+      persist("0");
+      setOn(false);
+      audio?.pause();
+      setPlaying(false);
+      return;
+    }
+    persist("1");
+    setOn(true);
+    if (!audio) return;
+    // Call play inside the click handler to retain browser user activation.
+    audio.muted = false;
+    void audio
+      .play()
+      .then(() => setPlaying(true))
+      .catch(() => {
+        // Keep waiting for the next interaction.
+      });
   };
 
   return (
@@ -178,7 +171,7 @@ export function MusicToggle() {
         data-music-toggle
         type="button"
         onClick={toggle}
-        aria-label={on ? "Turn music off" : "Turn music on"}
+        aria-label={audible ? "Turn music off" : "Turn music on"}
         aria-pressed={on}
         className="fixed bottom-5 left-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-maroon text-cream shadow-lg transition-transform hover:scale-105"
       >
