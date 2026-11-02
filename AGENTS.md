@@ -11,6 +11,8 @@
 
 # Project decisions
 
+- Background music restores the visitor's preference after hydration and retries audible playback on trusted interactions; never use muted playback as a substitute for sound or consume retry listeners before playback succeeds.
+
 - The three.js zodiac scene (src/scene/ZodiacScene.tsx) is client-only: it is
   React.lazy-imported behind a mounted gate in HeroEmblem; SSR renders a CSS
   fallback ring. Never statically import it from a server-rendered route.
