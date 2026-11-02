@@ -11,21 +11,14 @@ const MUSIC_URL = "/background-music.mp3";
 export function MusicToggle() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [on, setOn] = useState(true);
-  const [waitingForGesture, setWaitingForGesture] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem("music-on") === "0") setOn(false);
-  }, []);
 
   useEffect(() => {
     const a = audioRef.current;
     if (!a) return;
     a.volume = 0.4;
-    localStorage.setItem("music-on", on ? "1" : "0");
     if (!on) {
       a.pause();
       a.muted = false;
-      setWaitingForGesture(false);
       return;
     }
 
@@ -33,17 +26,14 @@ export function MusicToggle() {
     const unlock = () => {
       events.forEach((e) => window.removeEventListener(e, unlock));
       a.muted = false;
-      setWaitingForGesture(false);
       a.play().catch(() => {});
     };
 
     a.muted = false;
     a
       .play()
-      .then(() => setWaitingForGesture(false))
       .catch(() => {
         // Autoplay blocked: start muted right away, unmute on first gesture.
-        setWaitingForGesture(true);
         a.muted = true;
         a
           .play()
@@ -69,7 +59,7 @@ export function MusicToggle() {
         aria-pressed={on}
         className="fixed bottom-5 left-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-maroon text-cream shadow-lg transition-transform hover:scale-105"
       >
-        {on && !waitingForGesture ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+        {on ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
       </button>
     </>
   );
