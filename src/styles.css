@@ -171,7 +171,7 @@
 .hero-service-labels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
 .hero-service-label { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 76px; padding: 10px 12px; border: 1px solid var(--hero-ornament); border-radius: 26px; background: color-mix(in oklab, var(--cream) 60%, transparent); text-align: left; font-family: Arial, "Noto Sans Telugu", sans-serif; font-size: 17px; font-weight: 600; line-height: 1.25; }
 .hero-service-label svg { width: 46px; height: 46px; flex-shrink: 0; color: var(--saffron-dark); stroke-width: 1.5; }
-.hero-service-om { display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; flex-shrink: 0; border-radius: 50%; font-size: 40px; color: var(--saffron-dark); background: var(--peach); }
+.hero-service-label .hero-service-icon { width: 46px; height: 46px; flex-shrink: 0; object-fit: contain; }
 .hero-reference-actions { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 14px; margin-top: 26px; }
 .hero-reference-action { min-height: 54px; height: auto; border-radius: 999px; padding: 12px 22px; font-family: Arial, "Noto Sans Telugu", sans-serif; font-size: 18px; font-weight: 700; gap: 10px; white-space: normal; }
 .hero-reference-action svg { width: 25px; height: 25px; }
