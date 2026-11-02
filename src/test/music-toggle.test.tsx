@@ -23,7 +23,60 @@ describe("background music", () => {
     expect(container.querySelector("audio")?.muted).toBe(false);
   });
 
-  it("stays off after the visitor turns it off, including on reopening", async () => {
+  it("turns the music off with a click anywhere, and back on with another click", async () => {
+    const { container } = render(<MusicToggle />);
+    await waitFor(() => expect(play).toHaveBeenCalled());
+    await act(async () => {
+      fireEvent.click(document.body);
+    });
+    expect(pause).toHaveBeenCalled();
+    expect(localStorage.getItem("music-on")).toBe("0");
+    const callsAfterOff = play.mock.calls.length;
+    await act(async () => {
+      fireEvent.click(document.body);
+    });
+    expect(play.mock.calls.length).toBeGreaterThan(callsAfterOff);
+    expect(localStorage.getItem("music-on")).toBe("1");
+    expect(container.querySelector("audio")?.muted).toBe(false);
+  });
+
+  it("starts blocked autoplay with a click anywhere on the page", async () => {
+    play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
+    const { container } = render(<MusicToggle />);
+    await act(async () => {});
+    const initialCalls = play.mock.calls.length;
+    await act(async () => {
+      fireEvent.click(document.body);
+    });
+    expect(play.mock.calls.length).toBeGreaterThan(initialCalls);
+    expect(container.querySelector("audio")?.muted).toBe(false);
+  });
+
+  it("keeps the music playing when the visitor clicks a link or button", async () => {
+    render(<MusicToggle />);
+    await waitFor(() => expect(play).toHaveBeenCalled());
+    const link = document.createElement("a");
+    document.body.appendChild(link);
+    await act(async () => {
+      fireEvent.click(link);
+    });
+    expect(pause).not.toHaveBeenCalled();
+  });
+
+  it("starts pending playback on scroll without stopping it", async () => {
+    play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
+    const { container } = render(<MusicToggle />);
+    await act(async () => {});
+    const blockedCalls = play.mock.calls.length;
+    play.mockResolvedValue(undefined);
+    await act(async () => {
+      fireEvent.scroll(window);
+    });
+    expect(play.mock.calls.length).toBeGreaterThan(blockedCalls);
+    expect(container.querySelector("audio")?.muted).toBe(false);
+  });
+
+  it("stays off after the visitor turns it off with the sound button, including on reopening", async () => {
     const first = render(<MusicToggle />);
     await waitFor(() => expect(play).toHaveBeenCalled());
     fireEvent.click(first.getByRole("button", { name: "Turn music off" }));
@@ -38,30 +91,15 @@ describe("background music", () => {
     expect(localStorage.getItem("music-on")).toBe("1");
   });
 
-  it("keeps retrying interactions when the browser blocks initial sound", async () => {
-    play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
-    const { container } = render(<MusicToggle />);
-    await act(async () => {});
-    const initialCalls = play.mock.calls.length;
-    await act(async () => { fireEvent.pointerDown(window); });
-    expect(play.mock.calls.length).toBeGreaterThan(initialCalls);
-    const blockedCalls = play.mock.calls.length;
-    play.mockResolvedValue(undefined);
-    await act(async () => { fireEvent.click(window); });
-    expect(play.mock.calls.length).toBeGreaterThan(blockedCalls);
-    expect(container.querySelector("audio")?.muted).toBe(false);
-    const successfulCalls = play.mock.calls.length;
-    await act(async () => { fireEvent.click(window); });
-    expect(play.mock.calls.length).toBe(successfulCalls);
-  });
-
   it("shows the sound hint until audible playback starts, then hides it", async () => {
     play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
     const { container } = render(<MusicToggle />);
     await act(async () => {});
     expect(container.textContent).toContain("Tap or click anywhere");
     play.mockResolvedValue(undefined);
-    await act(async () => { fireEvent.click(window); });
+    await act(async () => {
+      fireEvent.click(document.body);
+    });
     await waitFor(() =>
       expect(container.textContent).not.toContain("Tap or click anywhere"),
     );
