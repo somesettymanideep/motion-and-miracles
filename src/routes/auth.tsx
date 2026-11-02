@@ -5,9 +5,10 @@ import { useLanguage } from "@/lib/i18n";
 import { dict } from "@/data/site";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (search: Record<string, unknown>): { redirect?: string } => ({
-    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { redirect?: string } => {
+    const redirect = search["redirect"];
+    return typeof redirect === "string" ? { redirect } : {};
+  },
   head: () => ({
     meta: [
       { title: "Admin Sign In | Sri Vasishta Jyotishya Parishodhanalayam" },

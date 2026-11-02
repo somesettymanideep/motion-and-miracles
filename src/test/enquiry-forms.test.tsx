@@ -15,6 +15,8 @@ import { SERVICES } from "@/data/services";
 import { LanguageProvider } from "@/lib/i18n";
 
 const d = dict.en;
+const firstService = SERVICES[0]!;
+const secondService = SERVICES[1]!;
 
 function renderForm(ui: React.ReactElement) {
   return render(<LanguageProvider>{ui}</LanguageProvider>);
