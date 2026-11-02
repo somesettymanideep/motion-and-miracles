@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
-import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ChevronsDown, ChevronsRight, Flame, MapPin, MessageCircle, Phone, Sun } from "lucide-react";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -15,6 +15,7 @@ import { Reveal } from "@/components/Reveal";
 import { ConsultationForm } from "@/components/forms";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Testimonials } from "@/components/Testimonials";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -155,50 +156,37 @@ function Index() {
           <div className="zodiac-pattern absolute inset-0 opacity-25" />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] items-center gap-10 px-4 sm:px-6 lg:px-12 xl:px-8 py-14 md:grid-cols-2 md:py-20">
-          <div className="text-center md:text-left">
-            <p
-              data-hero-stagger
-              className="font-telugu text-3xl font-bold text-saffron"
-              aria-hidden="true"
-            >
-              {d.home.om}
-            </p>
-            <h1
-              data-hero-stagger
-              className="mt-3 font-display text-3xl font-bold leading-tight text-maroon md:text-[2.6rem]"
-            >
-              {lang === "te"
-                ? "శ్రీ వశిష్ఠ జ్యోతిష్య పరిశోధనాలయం"
-                : "Sri Vasishta Jyotishya Parishodhanalayam"}
+        <div className="hero-reference-layout relative z-10 mx-auto grid max-w-[1400px] items-center gap-8 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+          <div className="hero-reference-copy min-w-0 text-center">
+            <div data-hero-stagger className="hero-om-ornament" aria-hidden="true">
+              <span className="hero-ornament-rule" /><span className="hero-om">ॐ</span><span className="hero-ornament-rule" />
+            </div>
+            <h1 data-hero-stagger className="hero-reference-title">
+              <span>{d.home.nameFirst}</span>
+              <span>{d.home.nameSecond}</span>
             </h1>
-            <p
-              data-hero-stagger
-              className="mt-3 text-sm font-semibold tracking-wide text-saffron-dark"
-            >
-              Sanatana Jyotishyam · Vedic Samskaras · Shastric Remedies
-            </p>
-            <p data-hero-stagger className="mt-4 text-sm leading-relaxed text-body md:text-base">
-              {d.home.welcome}
-            </p>
-            <div
-              data-hero-stagger
-              className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start"
-            >
-              <a href={PHONES[0].href} className="btn btn-saffron">
-                <Phone className="h-4 w-4" aria-hidden="true" /> {d.nav.callNow}
-              </a>
-              <a
+            <div data-hero-stagger className="hero-title-divider" aria-hidden="true"><span />◇ ◆ ◇<span /></div>
+            <p data-hero-stagger className="hero-reference-tagline">{d.home.tagline}</p>
+            <p data-hero-stagger className="hero-reference-welcome">{d.home.welcome}</p>
+            <div data-hero-stagger className="hero-service-labels">
+              <div className="hero-service-label"><Sun aria-hidden="true" /><span>{d.home.horoscopeLabel}</span></div>
+              <div className="hero-service-label"><Flame aria-hidden="true" /><span>{d.home.samskarasLabel}</span></div>
+              <div className="hero-service-label"><span className="hero-service-om" aria-hidden="true">ॐ</span><span>{d.home.remediesLabel}</span></div>
+            </div>
+            <div data-hero-stagger className="hero-reference-actions">
+              <Button asChild className="hero-reference-action hero-action-call">
+                <a href={PHONES[0].href}><Phone aria-hidden="true" />{d.nav.callNow}</a>
+              </Button>
+              <Button asChild variant="outline" className="hero-reference-action hero-action-whatsapp"><a
                 href={waLink(WA_DEFAULT_MESSAGE)}
                 target="_blank"
                 rel="noopener"
-                className="btn btn-gold-outline bg-cream/80 backdrop-blur-sm"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" /> {d.common.whatsappUs}
-              </a>
-              <Link to="/contact" className="btn btn-maroon-outline bg-cream/80 backdrop-blur-sm">
-                <MapPin className="h-4 w-4" aria-hidden="true" /> {d.common.addressLabel}
-              </Link>
+                <MessageCircle aria-hidden="true" /> {d.common.whatsappUs}
+              </a></Button>
+              <Button asChild variant="outline" className="hero-reference-action hero-action-address"><Link to="/contact">
+                <MapPin aria-hidden="true" /> {d.common.addressLabel}
+              </Link></Button>
             </div>
           </div>
           <div data-hero-emblem>

@@ -88,6 +88,9 @@
   --peach: oklch(0.943 0.05 78.7);
   --body-text: oklch(0.292 0.073 22.8);
   --wa-green: oklch(0.72 0.17 156);
+  --hero-heading: oklch(0.37 0.145 25);
+  --hero-heading-secondary: oklch(0.24 0.075 15);
+  --hero-ornament: oklch(0.75 0.17 70);
 }
 
 /* The site never uses a dark theme; mirror the light values so nothing breaks. */
@@ -150,6 +153,50 @@
 }
 
 /* ---- Brand utilities ------------------------------------------------- */
+
+.hero-reference-copy { max-width: 800px; margin-inline: auto; width: 100%; }
+.hero-om-ornament { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0 auto 10px; width: 74%; color: var(--hero-heading); }
+.hero-om { font-family: Georgia, "Noto Sans Telugu", serif; font-size: 58px; line-height: 1.1; }
+.hero-ornament-rule { position: relative; height: 2px; flex: 1; background: linear-gradient(90deg, transparent, var(--hero-ornament)); }
+.hero-ornament-rule:last-child { transform: rotate(180deg); }
+.hero-ornament-rule::after { content: "◇"; position: absolute; right: -4px; top: 50%; transform: translateY(-50%); font-size: 24px; line-height: 1; color: var(--hero-ornament); }
+.hero-reference-title { font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-size: 36px; line-height: 1.02; font-weight: 700; color: var(--hero-heading); letter-spacing: 0; }
+.hero-reference-title span { display: block; }
+.hero-reference-title span:last-child { color: var(--hero-heading-secondary); }
+.hero-title-divider { display: flex; justify-content: center; align-items: center; gap: 5px; margin: 10px auto 6px; color: var(--hero-ornament); font-size: 16px; }
+.hero-title-divider span { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--hero-ornament)); }
+.hero-title-divider span:last-child { transform: rotate(180deg); }
+.hero-reference-tagline { font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-weight: 700; font-size: 20px; line-height: 1.3; color: var(--hero-heading); }
+.hero-reference-welcome { margin-top: 20px; font-family: Arial, "Noto Sans Telugu", sans-serif; font-size: 17px; line-height: 1.5; color: var(--body-text); }
+.hero-service-labels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+.hero-service-label { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 76px; padding: 10px 12px; border: 1px solid var(--hero-ornament); border-radius: 26px; background: color-mix(in oklab, var(--cream) 60%, transparent); text-align: left; font-family: Arial, "Noto Sans Telugu", sans-serif; font-size: 17px; font-weight: 600; line-height: 1.25; }
+.hero-service-label svg { width: 46px; height: 46px; flex-shrink: 0; color: var(--saffron-dark); stroke-width: 1.5; }
+.hero-service-om { display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; flex-shrink: 0; border-radius: 50%; font-size: 40px; color: var(--saffron-dark); background: var(--peach); }
+.hero-reference-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 26px; }
+.hero-reference-action { min-height: 54px; height: auto; border-radius: 999px; padding: 12px 22px; font-family: Arial, "Noto Sans Telugu", sans-serif; font-size: 18px; font-weight: 700; gap: 10px; white-space: normal; }
+.hero-reference-action svg { width: 25px; height: 25px; }
+.hero-action-call { background: var(--hero-heading); color: var(--cream); border: 1px solid var(--hero-ornament); box-shadow: 0 5px 14px color-mix(in oklab, var(--gold) 25%, transparent); }
+.hero-action-call:hover { background: var(--maroon-deep); }
+.hero-action-whatsapp { border: 2px solid var(--hero-ornament); background: transparent; color: var(--hero-heading); }
+.hero-action-whatsapp svg { color: var(--wa-green); }
+.hero-action-address { border: 2px solid var(--hero-heading); background: transparent; color: var(--hero-heading); }
+@media (min-width: 640px) {
+  .hero-reference-title { font-size: 52px; }
+  .hero-reference-tagline { font-size: 23px; }
+  .hero-reference-welcome { font-size: 19px; }
+}
+@media (min-width: 1024px) {
+  .hero-reference-layout { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+  .hero-reference-title { font-size: 44px; }
+  .hero-reference-tagline { font-size: 21px; }
+}
+@media (min-width: 1280px) { .hero-reference-title { font-size: 54px; } }
+@media (max-width: 639px) {
+  .hero-reference-title { font-size: 32px; }
+  .hero-service-labels { gap: 7px; }
+  .hero-service-label { flex-direction: column; text-align: center; gap: 5px; padding: 10px 5px; font-size: 13px; border-radius: 18px; }
+  .hero-reference-action { font-size: 15px; padding: 10px 16px; min-height: 48px; }
+}
 
 /* Faint zodiac-dust dot grid, used on the hero */
 @utility zodiac-pattern {
