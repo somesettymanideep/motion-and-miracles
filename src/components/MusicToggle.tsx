@@ -36,7 +36,18 @@ export function MusicToggle() {
     }
 
     let disposed = false;
-    const events = ["pointerdown", "pointerup", "keydown", "touchend", "click"];
+    // Any trusted interaction unlocks sound — not just clicks: taps, keys,
+    // scrolling and wheel movement all count for the visitor.
+    const events = [
+      "pointerdown",
+      "pointerup",
+      "keydown",
+      "touchstart",
+      "touchend",
+      "click",
+      "wheel",
+      "scroll",
+    ];
     const removeListeners = () => {
       events.forEach((e) => window.removeEventListener(e, unlock));
     };
