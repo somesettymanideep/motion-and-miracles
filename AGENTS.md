@@ -11,7 +11,7 @@
 
 # Project decisions
 
-- Background music restores the visitor's preference after hydration and retries audible playback on trusted interactions; never use muted playback as a substitute for sound or consume retry listeners before playback succeeds.
+- Background music toggles with any click on the page: a click starts it when silent and a click stops it when playing. Links, buttons, form fields and the sound button never trigger that page-click toggle (the sound button has its own toggle). The visitor's manual off choice is remembered; never use muted playback as a substitute for sound, and never let a gesture that starts sound also stop it.
 
 - The three.js zodiac scene (src/scene/ZodiacScene.tsx) is client-only: it is
   React.lazy-imported behind a mounted gate in HeroEmblem; SSR renders a CSS
