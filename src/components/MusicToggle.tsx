@@ -159,7 +159,7 @@ export function MusicToggle() {
       {on && ready && !playing && (
         <div
           role="status"
-          className="pointer-events-none fixed top-[76px] right-20 z-50 flex max-w-[min(20rem,60vw)] items-center gap-2.5 rounded-full border-2 border-gold bg-maroon px-4 py-2.5 text-sm font-medium text-cream shadow-lg"
+          className="pointer-events-none fixed bottom-7 right-[84px] z-50 flex max-w-[min(20rem,60vw)] items-center gap-2.5 rounded-full border-2 border-gold bg-maroon px-4 py-2.5 text-sm font-medium text-cream shadow-lg"
         >
           <Volume2 className="h-4 w-4 shrink-0 animate-pulse" />
           <span>{d.common.soundHint}</span>
@@ -173,7 +173,7 @@ export function MusicToggle() {
         onClick={toggle}
         aria-label={audible ? "Turn music off" : "Turn music on"}
         aria-pressed={on}
-        className="fixed top-[76px] right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-maroon text-cream shadow-lg transition-transform hover:scale-105"
+        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-maroon text-cream shadow-lg transition-transform hover:scale-105"
       >
         {on ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
       </Button>

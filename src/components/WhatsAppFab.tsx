@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
 import { waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
+import { MusicToggle } from "@/components/MusicToggle";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -38,6 +39,8 @@ export function WhatsAppFab() {
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-center gap-3">
+      {/* Sound button displayed above the scroll-to-top button */}
+      <MusicToggle />
       {/* Scroll to Top button placed directly on top of the WhatsApp button */}
       <button
         type="button"
