@@ -41,7 +41,7 @@ describe("background music", () => {
       fireEvent.click(getByRole("button", { name: "Turn music on" }));
     });
     expect(localStorage.getItem("music-on")).toBe("1");
-    expect(container.querySelector("audio")?.muted).toBe(false);
+    expect(document.querySelector("audio")?.muted).toBe(false);
   });
 
   it("starts blocked autoplay with a click anywhere on the page", async () => {
