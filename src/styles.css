@@ -338,3 +338,4 @@
     border-color: var(--destructive);
   }
 }
+.hero-om-image { display: block; width: 74%; max-width: 440px; height: auto; margin: 0 0 6px; }
