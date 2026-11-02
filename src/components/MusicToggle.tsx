@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
-import musicSrc from "@/assets/background-music.mp3";
+
+const MUSIC_URL = "/background-music.mp3";
 
 /**
  * Site background music — on by default. We try to start it the moment the
@@ -60,7 +61,7 @@ export function MusicToggle() {
 
   return (
     <>
-      <audio ref={audioRef} src={musicSrc} loop preload="auto" />
+      <audio ref={audioRef} src={MUSIC_URL} loop preload="auto" />
       <button
         type="button"
         onClick={() => setOn((v) => !v)}
