@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
-import { ChevronsDown, ChevronsRight, Flame, MapPin, MessageCircle, Phone, Sun } from "lucide-react";
+import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -9,6 +9,9 @@ import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 import { HeroEmblem } from "@/components/HeroEmblem";
 import heroBg from "@/assets/hero-bg.png";
 import omDivider from "@/assets/om-divider.webp";
+import horoscopeIcon from "@/assets/horoscope.svg";
+import vedicIcon from "@/assets/vedic.svg";
+import omIcon from "@/assets/om.svg";
 import howItWorksBg from "@/assets/how-it-works-bg.png";
 import { SacredLotusIcon } from "@/components/SacredLotusIcon";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -168,9 +171,9 @@ function Index() {
             <p data-hero-stagger className="hero-reference-tagline">{d.home.tagline}</p>
             <p data-hero-stagger className="hero-reference-welcome">{d.home.welcome}</p>
             <div data-hero-stagger className="hero-service-labels">
-              <div className="hero-service-label"><Sun aria-hidden="true" /><span>{d.home.horoscopeLabel}</span></div>
-              <div className="hero-service-label"><Flame aria-hidden="true" /><span>{d.home.samskarasLabel}</span></div>
-              <div className="hero-service-label"><span className="hero-service-om" aria-hidden="true">ॐ</span><span>{d.home.remediesLabel}</span></div>
+              <div className="hero-service-label"><img src={horoscopeIcon} alt="" aria-hidden="true" className="hero-service-icon" /><span>{d.home.horoscopeLabel}</span></div>
+              <div className="hero-service-label"><img src={vedicIcon} alt="" aria-hidden="true" className="hero-service-icon" /><span>{d.home.samskarasLabel}</span></div>
+              <div className="hero-service-label"><img src={omIcon} alt="" aria-hidden="true" className="hero-service-icon" /><span>{d.home.remediesLabel}</span></div>
             </div>
             <div data-hero-stagger className="hero-reference-actions">
               <Button asChild className="hero-reference-action hero-action-call">
