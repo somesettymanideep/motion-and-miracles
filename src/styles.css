@@ -335,4 +335,4 @@
     border-color: var(--destructive);
   }
 }
-.hero-om-image { display: block; width: 52%; max-width: 320px; height: auto; margin: 0 0 0; }
+.hero-om-image { display: block; width: 52%; max-width: 320px; height: auto; margin: 8px 0 0; }
