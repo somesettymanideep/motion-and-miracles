@@ -38,7 +38,7 @@ describe("background music", () => {
     expect(pause).toHaveBeenCalled();
     expect(localStorage.getItem("music-on")).toBe("0");
     await act(async () => {
-      fireEvent.click(container.getByRole("button", { name: "Turn music on" }));
+      fireEvent.click(getByRole("button", { name: "Turn music on" }));
     });
     expect(localStorage.getItem("music-on")).toBe("1");
     expect(container.querySelector("audio")?.muted).toBe(false);
