@@ -157,7 +157,7 @@ function Index() {
         </div>
 
         <div className="hero-reference-layout relative z-10 mx-auto grid max-w-[1400px] items-center gap-8 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-          <div className="hero-reference-copy min-w-0 text-center">
+          <div className="hero-reference-copy min-w-0 text-left">
             <div data-hero-stagger className="hero-om-ornament" aria-hidden="true">
               <span className="hero-ornament-rule" /><span className="hero-om">ॐ</span><span className="hero-ornament-rule" />
             </div>
