@@ -1,13 +1,15 @@
 import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
 import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 import { HeroEmblem } from "@/components/HeroEmblem";
 import heroBg from "@/assets/hero-bg.png";
+import howItWorksBg from "@/assets/how-it-works-bg.png";
+import { SacredLotusIcon } from "@/components/SacredLotusIcon";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Reveal } from "@/components/Reveal";
 import { ConsultationForm } from "@/components/forms";
@@ -47,6 +49,60 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
     </Reveal>
   );
 }
+
+/** Step 1: Chat / Consultation Bubble Icon */
+function ConsultationBubbleIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <rect
+        x="3"
+        y="4"
+        width="18"
+        height="12"
+        rx="3"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M6 16L4 19.5L8.5 16"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="8" cy="10" r="1.2" fill="currentColor" />
+      <circle cx="12" cy="10" r="1.2" fill="currentColor" />
+      <circle cx="16" cy="10" r="1.2" fill="currentColor" />
+    </svg>
+  );
+}
+
+/** Step 2: Kundali / Vedic Horoscope Chart Icon */
+function KundaliHoroscopeIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="1"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
+      <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="21" y1="3" x2="3" y2="21" stroke="currentColor" strokeWidth="1.5" />
+      <polygon
+        points="12,3 21,12 12,21 3,12"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        fill="none"
+      />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+const STEP_ICONS = [ConsultationBubbleIcon, KundaliHoroscopeIcon, SacredLotusIcon];
 
 function Index() {
   const { lang } = useLanguage();
@@ -173,28 +229,106 @@ function Index() {
       </section>
 
       {/* 3 — HOW IT WORKS */}
-      <section className="relative overflow-hidden border-y-2 border-gold/40 bg-peach py-16">
-        <div className="mandala-bg absolute inset-0 opacity-60" aria-hidden="true" />
+      <section className="relative overflow-hidden bg-[#4C0713] py-14 sm:py-16 md:py-20 text-white">
+        {/* Maroon & Mandala Background Image */}
+        <div
+          className="pointer-events-none absolute inset-0 select-none overflow-hidden"
+          aria-hidden="true"
+        >
+          <img
+            src={howItWorksBg}
+            alt=""
+            className="h-full w-full object-cover object-center opacity-90"
+          />
+          {/* Subtle vignette for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        </div>
+
         <div className="relative mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-8">
-          <SectionTitle title={d.home.howTitle} />
-          <div className="relative grid gap-10 md:grid-cols-3">
+          {/* Header with ornamental rules */}
+          <Reveal className="mb-10 sm:mb-12 md:mb-14 text-center">
+            <div className="flex items-center justify-center gap-3 sm:gap-4">
+              {/* Left ornament */}
+              <div className="flex items-center gap-1.5 text-[#F3AF2E]" aria-hidden="true">
+                <span className="h-[1.5px] w-8 sm:w-16 bg-gradient-to-r from-transparent to-[#F3AF2E]" />
+                <span className="h-1.5 w-1.5 rotate-45 bg-[#F3AF2E]" />
+                <span className="h-[1.5px] w-3 sm:w-4 bg-[#F3AF2E]" />
+              </div>
+
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide text-white">
+                {d.home.howTitle}
+              </h2>
+
+              {/* Right ornament */}
+              <div className="flex items-center gap-1.5 text-[#F3AF2E]" aria-hidden="true">
+                <span className="h-[1.5px] w-3 sm:w-4 bg-[#F3AF2E]" />
+                <span className="h-1.5 w-1.5 rotate-45 bg-[#F3AF2E]" />
+                <span className="h-[1.5px] w-8 sm:w-16 bg-gradient-to-l from-transparent to-[#F3AF2E]" />
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Steps Container */}
+          <div className="relative">
+            {/* Desktop Chevrons between columns (positioned at title level) */}
             <div
-              className="absolute left-[17%] right-[17%] top-7 hidden border-t-2 border-dashed border-gold/70 md:block"
+              className="hidden md:flex absolute left-[33.33%] top-[102px] sm:top-[118px] -translate-x-1/2 -translate-y-1/2 text-[#F3AF2E] pointer-events-none z-10"
               aria-hidden="true"
-            />
-            {STEPS.map((step, i) => (
-              <Reveal key={i} delay={i * 0.12} className="relative text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold bg-gradient-to-b from-gold-light to-gold font-display text-xl font-bold text-maroon shadow-warm">
-                  {i + 1}
-                </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-maroon">
-                  {tr(step.title)}
-                </h3>
-                <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-body">
-                  {tr(step.text)}
-                </p>
-              </Reveal>
-            ))}
+            >
+              <ChevronsRight className="w-6 h-6 stroke-[2.5]" />
+            </div>
+            <div
+              className="hidden md:flex absolute left-[66.66%] top-[102px] sm:top-[118px] -translate-x-1/2 -translate-y-1/2 text-[#F3AF2E] pointer-events-none z-10"
+              aria-hidden="true"
+            >
+              <ChevronsRight className="w-6 h-6 stroke-[2.5]" />
+            </div>
+
+            {/* 3 Step Cards */}
+            <div className="grid gap-8 md:gap-4 lg:gap-8 md:grid-cols-3">
+              {STEPS.map((step, i) => {
+                const IconComponent = STEP_ICONS[i];
+                return (
+                  <Reveal
+                    key={i}
+                    delay={i * 0.12}
+                    className="relative flex flex-col items-center text-center px-2"
+                  >
+                    {/* Golden Circular Icon Badge */}
+                    <div className="mx-auto flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-[#F3AF2E] text-[#4C0713] shadow-md transition-transform hover:scale-105">
+                      {IconComponent && (
+                        <IconComponent className="h-8 w-8 sm:h-9 sm:w-9 text-[#4C0713]" />
+                      )}
+                    </div>
+
+                    {/* Step Title with Circled Number */}
+                    <div className="mt-4 sm:mt-5 flex items-center justify-center gap-2">
+                      <span className="inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full border-[1.5px] border-[#F3AF2E] text-xs sm:text-sm font-semibold text-[#F3AF2E] shrink-0">
+                        {i + 1}
+                      </span>
+                      <h3 className="font-display text-base sm:text-lg lg:text-xl font-bold tracking-wide text-white">
+                        {tr(step.title)}
+                      </h3>
+                    </div>
+
+                    {/* Step Description */}
+                    <p className="mx-auto mt-2 max-w-xs text-xs sm:text-sm leading-relaxed text-[#FFFDF7]/90 font-light">
+                      {tr(step.text)}
+                    </p>
+
+                    {/* Mobile downward indicator between steps */}
+                    {i < 2 && (
+                      <div
+                        className="mt-4 flex justify-center text-[#F3AF2E]/60 md:hidden"
+                        aria-hidden="true"
+                      >
+                        <ChevronsDown className="h-5 w-5" />
+                      </div>
+                    )}
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

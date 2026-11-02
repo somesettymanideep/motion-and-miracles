@@ -211,20 +211,23 @@ export const dict: Record<"en" | "te", Dict> = { en, te };
 export const STEPS: { title: Bi; text: Bi }[] = [
   {
     title: { en: "Consultation", te: "సంప్రదింపు" },
-    text: { en: "Tell us your need by phone or WhatsApp.", te: "ఫోన్ లేదా వాట్సాప్ ద్వారా మీ అవసరాన్ని తెలియజేయండి." },
+    text: {
+      en: "Tell us your needs by phone or WhatsApp.",
+      te: "ఫోన్ లేదా వాట్సాప్ ద్వారా మీ అవసరాలను తెలియజేయండి.",
+    },
   },
   {
     title: { en: "Horoscope Analysis", te: "జాతక పరిశీలన" },
     text: {
-      en: "We study planetary positions from your birth details and suggest the proper shanti or remedy.",
-      te: "మీ జనన వివరాల నుండి గ్రహస్థితులను పరిశీలించి, సరైన శాంతి లేదా పరిహారాన్ని సూచిస్తాము.",
+      en: "We study your birth details and provide precise readings.",
+      te: "మేము మీ జనన వివరాలను పరిశీలించి ఖచ్చితమైన ఫలితాలను అందిస్తాము.",
     },
   },
   {
     title: { en: "Shastric Performance", te: "శాస్త్రోక్త నిర్వహణ" },
     text: {
-      en: "The ritual is performed at an auspicious muhurta in the traditional manner.",
-      te: "శుభముహూర్తమున సాంప్రదాయక పద్ధతిలో కార్యక్రమం నిర్వహించబడును.",
+      en: "The ritual is performed at an auspicious time for the best results.",
+      te: "ఉత్తమ ఫలితాల కోసం శుభ ముహూర్తంలో శాస్త్రోక్తంగా పూజ నిర్వహించబడుతుంది.",
     },
   },
 ];
