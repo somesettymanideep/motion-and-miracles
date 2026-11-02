@@ -23,19 +23,23 @@ describe("background music", () => {
     expect(container.querySelector("audio")?.muted).toBe(false);
   });
 
-  it("turns the music off with a click anywhere, and back on with another click", async () => {
+  it("never silences the music with page clicks; only the sound button turns it off and on", async () => {
     const { container } = render(<MusicToggle />);
     await waitFor(() => expect(play).toHaveBeenCalled());
     await act(async () => {
       fireEvent.click(document.body);
     });
-    expect(pause).toHaveBeenCalled();
-    expect(localStorage.getItem("music-on")).toBe("0");
-    const callsAfterOff = play.mock.calls.length;
+    expect(pause).not.toHaveBeenCalled();
     await act(async () => {
       fireEvent.click(document.body);
     });
-    expect(play.mock.calls.length).toBeGreaterThan(callsAfterOff);
+    expect(pause).not.toHaveBeenCalled();
+    fireEvent.click(container.getByRole("button", { name: "Turn music off" }));
+    expect(pause).toHaveBeenCalled();
+    expect(localStorage.getItem("music-on")).toBe("0");
+    await act(async () => {
+      fireEvent.click(container.getByRole("button", { name: "Turn music on" }));
+    });
     expect(localStorage.getItem("music-on")).toBe("1");
     expect(container.querySelector("audio")?.muted).toBe(false);
   });
@@ -63,20 +67,21 @@ describe("background music", () => {
     expect(pause).not.toHaveBeenCalled();
   });
 
-  it("starts the music with a link click even when the visitor had turned it off", async () => {
+  it("does not restart the music from a page click after the visitor turned it off; the sound button does", async () => {
     localStorage.setItem("music-on", "0");
-    render(<MusicToggle />);
+    const { getByRole } = render(<MusicToggle />);
     await act(async () => {});
     const callsBefore = play.mock.calls.length;
-    const link = document.createElement("a");
-    document.body.appendChild(link);
     await act(async () => {
-      fireEvent.click(link);
+      fireEvent.click(document.body);
+    });
+    expect(play.mock.calls.length).toBe(callsBefore);
+    await act(async () => {
+      fireEvent.click(getByRole("button", { name: "Turn music on" }));
     });
     expect(play.mock.calls.length).toBeGreaterThan(callsBefore);
     expect(localStorage.getItem("music-on")).toBe("1");
   });
-
 
   it("starts pending playback on scroll without stopping it", async () => {
     play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
