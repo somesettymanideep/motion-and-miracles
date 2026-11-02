@@ -63,6 +63,21 @@ describe("background music", () => {
     expect(pause).not.toHaveBeenCalled();
   });
 
+  it("starts the music with a link click even when the visitor had turned it off", async () => {
+    localStorage.setItem("music-on", "0");
+    render(<MusicToggle />);
+    await act(async () => {});
+    const callsBefore = play.mock.calls.length;
+    const link = document.createElement("a");
+    document.body.appendChild(link);
+    await act(async () => {
+      fireEvent.click(link);
+    });
+    expect(play.mock.calls.length).toBeGreaterThan(callsBefore);
+    expect(localStorage.getItem("music-on")).toBe("1");
+  });
+
+
   it("starts pending playback on scroll without stopping it", async () => {
     play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
     const { container } = render(<MusicToggle />);

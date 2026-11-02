@@ -20,9 +20,10 @@ const INTERACTIVE =
 /**
  * Site background music — on by default. Clicking anywhere on the page
  * toggles it: one click starts it, another click stops it (the sound button
- * works the same way). The visitor's manual choice is remembered. If audible
- * autoplay is blocked, the click unlocks and starts it; wheel, scroll and
- * keyboard gestures also start it but never stop it.
+ * works the same way). Clicks on links, buttons and form fields can start it
+ * but never stop it, so browsing never silences the music. The visitor's
+ * manual choice is remembered. If audible autoplay is blocked, a click
+ * unlocks and starts it; wheel, scroll and keyboard gestures also start it.
  */
 export function MusicToggle() {
   const { lang } = useLanguage();
