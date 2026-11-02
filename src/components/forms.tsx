@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/i18n";
 import { dict } from "@/data/site";
 import { SERVICES } from "@/data/services";
 import { buildConsultationMessage, openWhatsApp } from "@/lib/whatsapp";
+import { supabase } from "@/integrations/supabase/client";
 
 /* ------------------------------------------------------------------ */
 /* Shared field helpers                                                */
@@ -110,7 +111,7 @@ export function ConsultationForm() {
     (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
       setValues((v) => ({ ...v, [key]: e.target.value }));
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const errs: Partial<Record<keyof ConsultValues, string>> = {};
     if (!values.name.trim()) errs.name = validators.required;
@@ -120,6 +121,24 @@ export function ConsultationForm() {
     if (!values.service) errs.service = validators.required;
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
+
+    const clean = (v: string, max: number) => v.trim().slice(0, max);
+    try {
+      const { error } = await supabase.from("consultation_submissions").insert({
+        name: clean(values.name, 100),
+        phone: clean(values.phone, 20),
+        service: clean(values.service, 150),
+        dob: values.dob || null,
+        tob: values.tob || null,
+        pob: values.pob ? clean(values.pob, 200) : null,
+        message: values.message ? clean(values.message, 1000) : null,
+        language: lang,
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error("Failed to store consultation enquiry", err);
+      toast.error(d.common.saveFailed);
+    }
 
     toast.success(d.common.redirectingToast);
     openWhatsApp(buildConsultationMessage(values));
@@ -203,7 +222,7 @@ export function ContactForm() {
     (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
       setValues((v) => ({ ...v, [key]: e.target.value }));
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const errs: Partial<Record<keyof ContactValues, string>> = {};
     if (!values.name.trim()) errs.name = validators.required;
@@ -215,6 +234,22 @@ export function ContactForm() {
     if (!values.service) errs.service = validators.required;
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
+
+    const clean = (v: string, max: number) => v.trim().slice(0, max);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: clean(values.name, 100),
+        phone: clean(values.phone, 20),
+        email: values.email ? clean(values.email, 255) : null,
+        service: clean(values.service, 150),
+        message: values.message ? clean(values.message, 1000) : null,
+        language: lang,
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error("Failed to store contact message", err);
+      toast.error(d.common.saveFailed);
+    }
 
     const lines = [
       `Name: ${values.name}`,

@@ -1,11 +1,11 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { createFileRoute, Link, navigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/lib/i18n";
 import { dict } from "@/data/site";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { redirect?: string } => ({
     redirect: typeof search.redirect === "string" ? search.redirect : undefined,
   }),
   head: () => ({
@@ -30,6 +30,7 @@ function safeTarget(raw?: string): string {
 function AuthPage() {
   const { lang } = useLanguage();
   const d = dict[lang];
+  const navigate = useNavigate();
   const { redirect } = Route.useSearch();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
@@ -45,6 +46,8 @@ function AuthPage() {
     });
   }, []);
 
+  const go = (path: string) => navigate({ to: path as never });
+
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(undefined);
@@ -56,7 +59,7 @@ function AuthPage() {
           password: password.slice(0, 128),
         });
         if (error) throw error;
-        navigate({ to: safeTarget(redirect) });
+        go(safeTarget(redirect));
       } else {
         const { data, error } = await supabase.auth.signUp({
           email: email.trim().slice(0, 255),
@@ -65,7 +68,7 @@ function AuthPage() {
         });
         if (error) throw error;
         if (data.session) {
-          navigate({ to: safeTarget(redirect) });
+          go(safeTarget(redirect));
         } else {
           setCheckEmail(true);
         }
@@ -84,7 +87,7 @@ function AuthPage() {
           <div className="text-center">
             <h1 className="font-display text-2xl font-bold text-maroon">{d.auth.title}</h1>
             <p className="mt-2 text-sm text-maroon/80">{d.auth.welcomeBack}</p>
-            <Link to={safeTarget(redirect)} className="btn btn-saffron mt-6 w-full">
+            <Link to={safeTarget(redirect) as never} className="btn btn-saffron mt-6 w-full">
               {d.auth.goToDashboard}
             </Link>
           </div>

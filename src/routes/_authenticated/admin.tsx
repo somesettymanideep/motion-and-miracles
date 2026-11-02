@@ -223,7 +223,7 @@ function AdminPage() {
                         <a href={`tel:${row.phone}`} className="hover:text-saffron-dark">{row.phone}</a>
                       </td>
                       {tab === "contacts" && (
-                        <td className="px-4 py-3">{row.email ?? d.admin.notProvided}</td>
+                        <td className="px-4 py-3">{c.email ?? d.admin.notProvided}</td>
                       )}
                       <td className="px-4 py-3">{row.service}</td>
                       {tab === "consultations" && (
