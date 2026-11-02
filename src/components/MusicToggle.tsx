@@ -11,11 +11,6 @@ const MUSIC_URL = "/background-music.mp3";
 export function MusicToggle() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [on, setOn] = useState(true);
-  const [waitingForGesture, setWaitingForGesture] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem("music-on") === "0") setOn(false);
-  }, []);
 
   useEffect(() => {
     const a = audioRef.current;
