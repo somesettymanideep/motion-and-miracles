@@ -26,9 +26,9 @@ export function Header() {
           <img
             src={logoUrl}
             alt={`${ORG_NAME} emblem`}
-            width={44}
-            height={44}
-            className="h-11 w-11 shrink-0 rounded-full border-2 border-gold bg-cream object-cover"
+            width={64}
+            height={64}
+            className="h-16 w-16 shrink-0 object-cover"
             style={{ objectPosition: "50% 20%" }}
           />
           <span className="min-w-0">
