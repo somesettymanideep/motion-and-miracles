@@ -10,11 +10,12 @@ const MUSIC_URL = musicUrl;
 const STORAGE_KEY = "music-on";
 
 /**
- * Clicks on these never toggle the music: navigating links, pressing buttons,
- * typing in forms, and the sound button itself (it has its own toggle).
+ * Clicks on these can start the music but never stop it: navigating links,
+ * pressing buttons and typing in forms must not silence the music. The sound
+ * button is excluded entirely — it has its own toggle.
  */
 const INTERACTIVE =
-  "a, button, input, textarea, select, label, summary, [role='button'], [data-music-toggle]";
+  "a, button, input, textarea, select, label, summary, [role='button']";
 
 /**
  * Site background music — on by default. Clicking anywhere on the page
@@ -95,7 +96,7 @@ export function MusicToggle() {
     if (!ready) return;
     const handleClick = (event: MouseEvent) => {
       const target = event.target instanceof Element ? event.target : null;
-      if (!target || target.closest(INTERACTIVE)) return;
+      if (!target || target.closest("[data-music-toggle]")) return;
       const audio = audioRef.current;
       const { on: isOn, playing: isPlaying } = stateRef.current;
       const unlock = () => {
@@ -109,6 +110,8 @@ export function MusicToggle() {
           });
       };
       if (isOn && isPlaying) {
+        // Clicks on links, buttons and form fields never silence the music.
+        if (target.closest(INTERACTIVE)) return;
         setOn(false);
         try {
           window.localStorage.setItem(STORAGE_KEY, "0");
