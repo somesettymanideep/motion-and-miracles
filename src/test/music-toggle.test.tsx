@@ -54,4 +54,16 @@ describe("background music", () => {
     await act(async () => { fireEvent.click(window); });
     expect(play.mock.calls.length).toBe(successfulCalls);
   });
+
+  it("shows the sound hint until audible playback starts, then hides it", async () => {
+    play.mockRejectedValue(new DOMException("Blocked", "NotAllowedError"));
+    const { container } = render(<MusicToggle />);
+    await act(async () => {});
+    expect(container.textContent).toContain("Tap or click anywhere");
+    play.mockResolvedValue(undefined);
+    await act(async () => { fireEvent.click(window); });
+    await waitFor(() =>
+      expect(container.textContent).not.toContain("Tap or click anywhere"),
+    );
+  });
 });

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { dict } from "@/data/site";
+import { useLanguage } from "@/lib/i18n";
 
 const MUSIC_URL = "/background-music.mp3";
 const STORAGE_KEY = "music-on";
@@ -12,9 +14,13 @@ const STORAGE_KEY = "music-on";
  * during a trusted interaction rather than silently playing muted audio.
  */
 export function MusicToggle() {
+  const { lang } = useLanguage();
+  const d = dict[lang];
   const audioRef = useRef<HTMLAudioElement>(null);
   const [on, setOn] = useState(true);
   const [ready, setReady] = useState(false);
+  // True only once audio is actually audible — the sound hint hides after this.
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     try {
@@ -32,6 +38,7 @@ export function MusicToggle() {
     if (!on) {
       a.pause();
       a.muted = false;
+      setPlaying(false);
       return;
     }
 
@@ -57,6 +64,7 @@ export function MusicToggle() {
       a.muted = false;
       void a.play().then(() => {
         if (disposed) return;
+        setPlaying(true);
         removeListeners();
       }).catch(() => {
         // Keep listeners until an interaction actually allows sound.
@@ -85,15 +93,25 @@ export function MusicToggle() {
     if (next) {
       // Call play inside the click handler to retain browser user activation.
       audio.muted = false;
-      void audio.play().catch(() => {});
+      void audio.play().then(() => setPlaying(true)).catch(() => {});
     } else {
       audio.pause();
+      setPlaying(false);
     }
   };
 
   return (
     <>
       <audio ref={audioRef} src={MUSIC_URL} loop preload="auto" />
+      {on && ready && !playing && (
+        <div
+          role="status"
+          className="pointer-events-none fixed bottom-5 left-20 z-50 flex max-w-[min(20rem,60vw)] items-center gap-2.5 rounded-full border-2 border-gold bg-maroon px-4 py-2.5 text-sm font-medium text-cream shadow-lg"
+        >
+          <Volume2 className="h-4 w-4 shrink-0 animate-pulse" />
+          <span>{d.common.soundHint}</span>
+        </div>
+      )}
       <Button
         variant="ghost"
         size="icon"
