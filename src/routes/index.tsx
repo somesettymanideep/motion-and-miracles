@@ -167,7 +167,6 @@ function Index() {
               <span>{d.home.nameFirst}</span>
               <span>{d.home.nameSecond}</span>
             </h1>
-            <div data-hero-stagger className="hero-title-divider" aria-hidden="true"><span />◇ ◆ ◇<span /></div>
             <p data-hero-stagger className="hero-reference-tagline">{d.home.tagline}</p>
             <p data-hero-stagger className="hero-reference-welcome">{d.home.welcome}</p>
             <div data-hero-stagger className="hero-service-labels">
