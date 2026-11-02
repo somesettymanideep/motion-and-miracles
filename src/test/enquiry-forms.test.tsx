@@ -15,6 +15,8 @@ import { SERVICES } from "@/data/services";
 import { LanguageProvider } from "@/lib/i18n";
 
 const d = dict.en;
+const firstService = SERVICES[0]!;
+const secondService = SERVICES[1]!;
 
 function renderForm(ui: React.ReactElement) {
   return render(<LanguageProvider>{ui}</LanguageProvider>);
@@ -42,20 +44,20 @@ describe("Consultation form", () => {
     await fillAndSubmit({
       fullName: "Rama Rao",
       phone: "9876543210",
-      service: SERVICES[0].name.en,
+      service: firstService.name.en,
     });
 
     await waitFor(() => expect(insertMock).toHaveBeenCalledTimes(1));
-    const [payload] = insertMock.mock.calls[0];
+    const [payload] = insertMock.mock.calls[0]!;
     expect(payload).toMatchObject({
       name: "Rama Rao",
       phone: "9876543210",
-      service: SERVICES[0].name.en,
+      service: firstService.name.en,
       language: "en",
     });
     expect(openSpy).toHaveBeenCalledTimes(1);
-    expect(String(openSpy.mock.calls[0][0])).toContain("https://wa.me/919848256831");
-    expect(String(openSpy.mock.calls[0][0])).toContain(encodeURIComponent("Name: Rama Rao"));
+    expect(String(openSpy.mock.calls[0]![0])).toContain("https://wa.me/919848256831");
+    expect(String(openSpy.mock.calls[0]![0])).toContain(encodeURIComponent("Name: Rama Rao"));
   });
 
   it("still opens WhatsApp when saving fails, so no enquiry is lost", async () => {
@@ -64,7 +66,7 @@ describe("Consultation form", () => {
     await fillAndSubmit({
       fullName: "Rama Rao",
       phone: "9876543210",
-      service: SERVICES[0].name.en,
+      service: firstService.name.en,
     });
 
     await waitFor(() => expect(openSpy).toHaveBeenCalledTimes(1));
@@ -78,14 +80,14 @@ describe("Contact form", () => {
     await fillAndSubmit({
       fullName: "Lakshmi",
       phone: "9123456780",
-      service: SERVICES[1].name.en,
+      service: secondService.name.en,
     });
 
     await waitFor(() => expect(insertMock).toHaveBeenCalledTimes(1));
-    expect(insertMock.mock.calls[0][0]).toMatchObject({
+    expect(insertMock.mock.calls[0]![0]).toMatchObject({
       name: "Lakshmi",
       phone: "9123456780",
-      service: SERVICES[1].name.en,
+      service: secondService.name.en,
       language: "en",
     });
     expect(openSpy).toHaveBeenCalledTimes(1);
