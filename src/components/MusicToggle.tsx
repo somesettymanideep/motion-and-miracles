@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { dict } from "@/data/site";
 import { useLanguage } from "@/lib/i18n";
 
-const MUSIC_URL = "/background-music.mp3";
+import musicUrl from "@/assets/background-music.mp3?url";
+
+const MUSIC_URL = musicUrl;
 const STORAGE_KEY = "music-on";
 
 /**
