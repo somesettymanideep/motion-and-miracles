@@ -194,8 +194,8 @@
   .hero-reference-tagline { font-size: 19px; }
   /* Desktop: replace the three service chips with the two Guruji mini-profiles */
   .hero-service-labels { display: none; }
-  .hero-guruji-title { display: block; font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-size: 22px; font-weight: 700; text-align: center; color: var(--hero-heading); margin-top: 24px; }
-  .hero-guruji-strip { display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; gap: 14px; margin-top: 12px; }
+  .hero-guruji-title { display: block; font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-size: 22px; font-weight: 700; text-align: left; color: var(--hero-heading); margin-top: 24px; }
+  .hero-guruji-strip { display: grid; grid-template-columns: repeat(2, max-content); justify-content: start; gap: 14px; margin-top: 12px; }
   .hero-guruji-item { align-items: center; text-align: center; }
   .hero-guruji-photo { width: 96px; height: 96px; }
   .hero-guruji-name { font-size: 14px; }
