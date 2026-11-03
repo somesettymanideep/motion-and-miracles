@@ -193,7 +193,8 @@
   .hero-reference-tagline { font-size: 19px; }
   /* Desktop: replace the three service chips with the two Guruji mini-profiles */
   .hero-service-labels { display: none; }
-  .hero-guruji-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+  .hero-guruji-strip { display: grid; grid-template-columns: repeat(2, max-content); justify-content: start; gap: 14px; margin-top: 24px; }
+  .hero-guruji-item { align-items: flex-start; text-align: left; }
   .hero-guruji-photo { width: 96px; height: 96px; }
   .hero-guruji-name { font-size: 14px; }
 }
