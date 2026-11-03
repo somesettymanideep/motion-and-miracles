@@ -209,8 +209,8 @@
 @media (max-width: 1023px) {
   .hero-reference-layout { row-gap: 0; }
   .hero-reference-copy { display: contents; }
-  .hero-om-image { order: 1; }
-  .hero-reference-title { order: 2; }
+  .hero-reference-copy .hero-om-image { order: 1; margin: 8px auto 0; }
+  .hero-reference-title { order: 2; text-align: center; }
   .hero-reference-tagline { display: none; }
   .hero-reference-welcome { display: none; }
   [data-hero-emblem] { order: 4; margin-top: 16px; }
