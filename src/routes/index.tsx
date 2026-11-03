@@ -199,18 +199,16 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR GURUJIS (supplied banner image, zoomed out within a centered container) */}
-      <section className="bg-[#FDF3D8] py-10 sm:py-14">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <img
-              src={gurujisBanner}
-              alt="Our Gurujis — Vissavajhula Nagesh Sharma and V S N D Kowndinya Sarma, experienced Vedic scholars"
-              className="w-full rounded-xl shadow-warm"
-              loading="lazy"
-            />
-          </Reveal>
-        </div>
+      {/* 2 — OUR GURUJIS (supplied full-width banner image) */}
+      <section className="bg-[#FFF7E0] py-0">
+        <Reveal>
+          <img
+            src={gurujisBanner}
+            alt="Our Gurujis — Vissavajhula Nagesh Sharma and V S N D Kowndinya Sarma, experienced Vedic scholars"
+            className="w-full"
+            loading="lazy"
+          />
+        </Reveal>
       </section>
 
       {/* 3 — OUR SERVICES */}
