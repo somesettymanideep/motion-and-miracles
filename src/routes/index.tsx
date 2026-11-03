@@ -223,7 +223,7 @@ function Index() {
             </h2>
             <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
           </Reveal>
-          <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-end md:gap-40">
+          <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:items-end md:gap-56">
             <Reveal delay={0.05} className="w-52 sm:w-72 md:w-80">
               <img
                 src={gurujiNageshPortrait}
