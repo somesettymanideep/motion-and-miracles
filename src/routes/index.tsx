@@ -5,8 +5,6 @@ import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucid
 import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
 import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
 import gurujisBanner from "@/assets/about/gurujis-banner.png";
-import templeGopuram from "@/assets/about/temple-gopuram.jpg";
-import zodiacWheelOm from "@/assets/zodiac-wheel-om.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
