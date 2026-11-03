@@ -75,6 +75,8 @@ const en = {
     faqTitle: "Frequently Asked Questions",
     testimonialsTitle: "What Devotees Say",
     testimonialsNote: "Sample entries for layout only — replace with real feedback.",
+    gurujisTitle: "Our Gurujis",
+    gurujisSubtitle: "Guidance from the Masters",
   },
   form: {
     fullName: "Full Name",
@@ -199,6 +201,8 @@ const te: typeof en = {
     faqTitle: "తరచుగా అడిగే ప్రశ్నలు",
     testimonialsTitle: "భక్తుల అభిప్రాయాలు",
     testimonialsNote: "ఇవి నమూనా వివరాలు మాత్రమే — నిజమైన అభిప్రాయాలతో భర్తీ చేయండి.",
+    gurujisTitle: "మా గురువులు",
+    gurujisSubtitle: "గురువుల మార్గదర్శనం",
   },
   form: {
     fullName: "పూర్తి పేరు",

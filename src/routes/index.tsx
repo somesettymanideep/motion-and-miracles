@@ -3,6 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
 import gurujisBanner from "@/assets/about/gurujis-vedic-guidance.png";
+import gurujisMandalaBg from "@/assets/about/gurujis-mandala-bg.png";
+import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
+import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -237,6 +240,48 @@ function Index() {
               />
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* 2b — OUR GURUJIS: titled section with mandala background + portraits */}
+      <section className="relative overflow-hidden py-14 sm:py-16">
+        <img
+          src={gurujisMandalaBg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center"
+          loading="lazy"
+        />
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mx-auto mb-8 max-w-2xl text-center">
+            <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-gold/60 bg-maroon px-5 py-1.5 shadow-md">
+              <span className="text-xs font-semibold tracking-wide text-[#F3AF2E] sm:text-sm">
+                {d.home.gurujisTitle}
+              </span>
+            </div>
+            <h2 className="mt-4 font-display text-2xl font-bold text-maroon md:text-3xl">
+              {d.home.gurujisSubtitle}
+            </h2>
+            <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
+          </Reveal>
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:items-end md:gap-10">
+            <Reveal delay={0.05} className="w-52 sm:w-72 md:w-80">
+              <img
+                src={gurujiNageshPortrait}
+                alt="Vissavajhula Nagesh Sharma — Vedic scholar and astrologer"
+                className="w-full drop-shadow-xl"
+                loading="lazy"
+              />
+            </Reveal>
+            <Reveal delay={0.15} className="w-52 sm:w-72 md:w-80">
+              <img
+                src={gurujiKowndinyaPortrait}
+                alt="V S N D Kowndinya Sarma — Vedic scholar"
+                className="w-full drop-shadow-xl"
+                loading="lazy"
+              />
+            </Reveal>
+          </div>
         </div>
       </section>
 
