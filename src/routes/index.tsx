@@ -211,20 +211,6 @@ function Index() {
           style={{ backgroundImage: `url(${gurujisBanner})` }}
           aria-hidden="true"
         />
-        {/* Faded temple silhouette — left */}
-        <img
-          src={templeGopuram}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-10 top-0 h-full w-auto max-w-none object-cover opacity-[0.14] [mask-image:linear-gradient(to_right,black_55%,transparent)]"
-        />
-        {/* Faded zodiac mandala — right */}
-        <img
-          src={zodiacWheelOm}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-[0.13] md:block [mask-image:linear-gradient(to_left,black_55%,transparent)]"
-        />
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6 md:pt-16 lg:px-12">
           <Reveal>
