@@ -2,9 +2,6 @@ import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
-import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
-import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
-import gurujisBanner from "@/assets/about/gurujis-banner.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -201,128 +198,8 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR GURUJIS (reference layout: temple left, zodiac mandala right, portraits flanking a central Om wheel) */}
-      <section className="relative overflow-hidden py-0">
-        {/* Golden lotus mandala banner backdrop */}
-        <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-top"
-          style={{ backgroundImage: `url(${gurujisBanner})` }}
-          aria-hidden="true"
-        />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6 md:pt-16 lg:px-12">
-          <Reveal>
-            {/* Heading ornament: line — diamond — lotus — diamond — line */}
-            <div className="flex items-center justify-center gap-3" aria-hidden="true">
-              <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold sm:w-28" />
-              <span className="h-2 w-2 rotate-45 bg-gold" />
-              <SacredLotusIcon className="h-8 w-8 text-gold" />
-              <span className="h-2 w-2 rotate-45 bg-gold" />
-              <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold sm:w-28" />
-            </div>
-
-            <h2 className="mt-3 text-center font-display text-4xl font-bold tracking-tight text-maroon sm:text-5xl">
-              {tr({ en: "Our Gurujis", te: "మా గురూజీలు" })}
-            </h2>
-            <p className="mt-2 text-center font-display text-base italic text-maroon/85 sm:text-lg">
-              {tr({
-                en: "Guidance from Experienced and Vedic Scholars",
-                te: "అనుభవజ్ఞులైన వేద పండితుల మార్గదర్శకత్వం",
-              })}
-            </p>
-            <div className="mt-3 flex items-center justify-center gap-2" aria-hidden="true">
-              <span className="h-px w-12 bg-gold/80" />
-              <SacredLotusIcon className="h-4 w-4 text-gold" />
-              <span className="h-px w-12 bg-gold/80" />
-            </div>
-          </Reveal>
-
-          {/* Portraits flanking the central Om wheel */}
-          <div className="mt-10 grid items-end gap-12 md:grid-cols-2 md:gap-8">
-            {/* Guruji 1 — left */}
-            <Reveal delay={0.08} className="flex flex-col items-center">
-              <div className="relative flex flex-col items-center">
-                <img
-                  src={guruji1Cutout}
-                  alt="Vissavajhula Nagesh Sharma"
-                  className="w-56 drop-shadow-[0_18px_28px_rgba(90,12,24,0.28)] sm:w-64 md:w-72"
-                  loading="lazy"
-                />
-                {/* Maroon name plate overlapping the portrait base */}
-                <div className="relative z-10 -mt-10 w-full max-w-xs rounded-xl border-2 border-gold bg-[#5a0c18] px-4 py-3 text-center shadow-warm">
-                  <h3 className="font-display text-lg font-bold leading-snug text-[#FFFBF0] sm:text-xl">
-                    {tr({ en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" })}
-                  </h3>
-                  <p className="mt-0.5 font-display text-sm italic text-gold-light">
-                    {tr({ en: "Founder Acharya", te: "వ్యవస్థాపక ఆచార్యులు" })}
-                  </p>
-                </div>
-                <div className="mt-3 flex items-center gap-2" aria-hidden="true">
-                  <span className="h-px w-10 bg-gold/80" />
-                  <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                  <span className="h-px w-10 bg-gold/80" />
-                </div>
-                <a
-                  href={waLink("Namaste Nagesh Sharma garu, I would like to seek spiritual guidance.")}
-                  target="_blank"
-                  rel="noopener"
-                  className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
-                >
-                  <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-                </a>
-              </div>
-            </Reveal>
-
-
-            {/* Guruji 2 — right */}
-            <Reveal delay={0.16} className="flex flex-col items-center">
-              <div className="relative flex flex-col items-center">
-                <img
-                  src={guruji2Cutout}
-                  alt="V S N D Kowndinya Sarma"
-                  className="w-56 drop-shadow-[0_18px_28px_rgba(90,12,24,0.28)] sm:w-64 md:w-72"
-                  loading="lazy"
-                />
-                <div className="relative z-10 -mt-10 w-full max-w-xs rounded-xl border-2 border-gold bg-[#5a0c18] px-4 py-3 text-center shadow-warm">
-                  <h3 className="font-display text-lg font-bold leading-snug text-[#FFFBF0] sm:text-xl">
-                    {tr({ en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" })}
-                  </h3>
-                  <p className="mt-0.5 font-display text-sm italic text-gold-light">
-                    {tr({ en: "Jyotishya Vidwan", te: "జ్యోతిష్య విద్వాన్" })}
-                  </p>
-                </div>
-                <div className="mt-3 flex items-center gap-2" aria-hidden="true">
-                  <span className="h-px w-10 bg-gold/80" />
-                  <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                  <span className="h-px w-10 bg-gold/80" />
-                </div>
-                <a
-                  href={waLink("Namaste Kowndinya Sarma garu, I would like to seek astrological guidance.")}
-                  target="_blank"
-                  rel="noopener"
-                  className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
-                >
-                  <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-                </a>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-
-        {/* Golden wave footer strip */}
-        <svg
-          viewBox="0 0 1440 90"
-          preserveAspectRatio="none"
-          className="pointer-events-none absolute bottom-0 left-0 h-14 w-full"
-          aria-hidden="true"
-        >
-          <path d="M0,55 C240,15 480,85 720,55 C960,25 1200,85 1440,45 L1440,90 L0,90 Z" fill="#D4A017" opacity="0.55" />
-          <path d="M0,68 C260,30 520,92 760,62 C1000,34 1220,90 1440,58 L1440,90 L0,90 Z" fill="#B8860B" opacity="0.75" />
-          <path d="M0,80 C300,48 560,96 800,72 C1040,50 1240,94 1440,70 L1440,90 L0,90 Z" fill="#5a0c18" />
-        </svg>
-      </section>
-
-      {/* 3 — OUR SERVICES */}
+      {/* 2 — OUR SERVICES */}
       <section className="bg-cream py-16">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.servicesTitle} subtitle={d.home.servicesSubtitle} />
