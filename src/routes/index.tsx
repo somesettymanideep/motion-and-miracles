@@ -171,6 +171,20 @@ function Index() {
             </h1>
             <p data-hero-stagger className="hero-reference-tagline">{d.home.tagline}</p>
             <p data-hero-stagger className="hero-reference-welcome">{d.home.welcome}</p>
+            <div className="hero-guruji-strip">
+              <figure className="hero-guruji-item">
+                <img src={guruji1Cutout} alt="Vissavajhula Nagesh Sharma garu" loading="lazy" className="hero-guruji-photo" />
+                <figcaption className="hero-guruji-name">
+                  {tr({ en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" })}
+                </figcaption>
+              </figure>
+              <figure className="hero-guruji-item">
+                <img src={guruji2Cutout} alt="V S N D Kowndinya Sarma garu" loading="lazy" className="hero-guruji-photo" />
+                <figcaption className="hero-guruji-name">
+                  {tr({ en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" })}
+                </figcaption>
+              </figure>
+            </div>
             <div data-hero-stagger className="hero-service-labels">
               <div className="hero-service-label"><img src={horoscopeIcon} alt="" aria-hidden="true" className="hero-service-icon" /><span>{d.home.horoscopeLabel}</span></div>
               <div className="hero-service-label"><img src={vedicIcon} alt="" aria-hidden="true" className="hero-service-icon" /><span>{d.home.samskarasLabel}</span></div>
@@ -194,20 +208,6 @@ function Index() {
           </div>
           <div data-hero-emblem>
             <HeroEmblem />
-          </div>
-          <div className="hero-guruji-strip">
-            <figure className="hero-guruji-item">
-              <img src={guruji1Cutout} alt="Vissavajhula Nagesh Sharma garu" loading="lazy" className="hero-guruji-photo" />
-              <figcaption className="hero-guruji-name">
-                {tr({ en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" })}
-              </figcaption>
-            </figure>
-            <figure className="hero-guruji-item">
-              <img src={guruji2Cutout} alt="V S N D Kowndinya Sarma garu" loading="lazy" className="hero-guruji-photo" />
-              <figcaption className="hero-guruji-name">
-                {tr({ en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" })}
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>

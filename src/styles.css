@@ -181,7 +181,7 @@
 /* Guruji mini-profiles (shown under the hero text on desktop and under the wheel on mobile) */
 .hero-guruji-item { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
 .hero-guruji-photo { width: 84px; height: 84px; object-fit: cover; object-position: top; border-radius: 9999px; border: 2px solid var(--hero-ornament); background: color-mix(in oklab, var(--cream) 60%, transparent); box-shadow: 0 4px 12px color-mix(in oklab, var(--maroon) 18%, transparent); }
-.hero-guruji-name { font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-size: 13px; font-weight: 700; line-height: 1.25; color: var(--hero-heading); }
+.hero-guruji-name { font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-size: 13px; font-weight: 700; line-height: 1.25; color: var(--hero-heading); background: color-mix(in oklab, var(--gold) 22%, transparent); border: 1px solid var(--hero-ornament); border-radius: 999px; padding: 4px 12px; }
 @media (min-width: 640px) {
   .hero-reference-title { font-size: 52px; }
   .hero-reference-tagline { font-size: 19px; }
@@ -193,10 +193,9 @@
   .hero-reference-tagline { font-size: 19px; }
   /* Desktop: replace the three service chips with the two Guruji mini-profiles */
   .hero-service-labels { display: none; }
-  .hero-guruji-strip { display: grid; grid-column: 1; grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+  .hero-guruji-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
   .hero-guruji-photo { width: 96px; height: 96px; }
-  .hero-guruji-name { font-size: 15px; }
-  [data-hero-emblem] { grid-row: 1 / span 2; align-self: center; }
+  .hero-guruji-name { font-size: 14px; }
 }
 @media (min-width: 1280px) { .hero-reference-title { font-size: 54px; } }
 @media (max-width: 639px) {
@@ -215,7 +214,7 @@
   .hero-reference-tagline { display: none; }
   .hero-reference-welcome { display: none; }
   [data-hero-emblem] { order: 4; margin-top: 16px; }
-  .hero-guruji-strip { display: grid; order: 5; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+  .hero-guruji-strip { display: grid; order: 5; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
   .hero-service-labels { order: 6; }
   .hero-reference-actions { order: 7; }
 }
