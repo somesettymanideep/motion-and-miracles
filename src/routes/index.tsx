@@ -171,6 +171,7 @@ function Index() {
             </h1>
             <p data-hero-stagger className="hero-reference-tagline">{d.home.tagline}</p>
             <p data-hero-stagger className="hero-reference-welcome">{d.home.welcome}</p>
+            <h2 className="hero-guruji-title">{d.home.gurujisTitle}</h2>
             <div className="hero-guruji-strip">
               <figure className="hero-guruji-item">
                 <img src={guruji1Cutout} alt="Vissavajhula Nagesh Sharma garu" loading="lazy" className="hero-guruji-photo" />
