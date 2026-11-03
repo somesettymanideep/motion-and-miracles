@@ -13,6 +13,9 @@ import horoscopeIcon from "@/assets/horoscope.svg";
 import vedicIcon from "@/assets/vedic.svg";
 import omIcon from "@/assets/om.svg";
 import howItWorksBg from "@/assets/how-it-works-bg.png";
+import gurujisBanner from "@/assets/about/gurujis-banner.png";
+import guruji1Portrait from "@/assets/about/guruji1-portrait.png";
+import guruji2Portrait from "@/assets/about/guruji2-portrait.png";
 import { SacredLotusIcon } from "@/components/SacredLotusIcon";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Reveal } from "@/components/Reveal";
@@ -198,8 +201,67 @@ function Index() {
         </div>
       </section>
 
+      {/* 2 — OUR GURUJIS */}
+      <section className="relative overflow-hidden py-14 md:py-16">
+        {/* Golden lotus mandala banner background */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${gurujisBanner})` }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          {/* Centered heading with lotus ornament */}
+          <Reveal className="text-center">
+            <SacredLotusIcon className="mx-auto h-7 w-7 text-gold" />
+            <h2 className="mt-2 font-display text-3xl font-bold text-maroon md:text-4xl">
+              {tr({ en: "Our Gurujis", te: "మా గురువులు" })}
+            </h2>
+            <p className="mt-2 font-display text-sm italic text-gold md:text-base">
+              {tr({
+                en: "Guidance from Experienced and Vedic Scholars",
+                te: "అనుభవజ్ఞులైన వేద పండితుల మార్గదర్శకత్వం",
+              })}
+            </p>
+          </Reveal>
 
-      {/* 2 — OUR SERVICES */}
+          {/* Two gold-framed portrait cards */}
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 sm:gap-6 lg:gap-10">
+            {[
+              {
+                img: guruji1Portrait,
+                alt: "Vissavajhula Nagesh Sharma",
+                name: { en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" },
+                title: { en: "Founder Acharya", te: "వ్యవస్థాపక ఆచార్యులు" },
+              },
+              {
+                img: guruji2Portrait,
+                alt: "V S N D Kowndinya Sarma",
+                name: { en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" },
+                title: { en: "Jyotishya Vidwan", te: "జ్యోతిష్య విద్వాన్" },
+              },
+            ].map((g, i) => (
+              <Reveal key={g.alt} delay={i * 0.12}>
+                <div className="rounded-2xl border-2 border-gold bg-[#FFFDF6] p-1.5 shadow-warm">
+                  <div className="rounded-xl border border-gold/70 px-6 pb-6 pt-6 text-center">
+                    <img
+                      src={g.img}
+                      alt={g.alt}
+                      loading="lazy"
+                      className="mx-auto h-56 w-auto object-contain md:h-64"
+                    />
+                    <h3 className="mt-4 font-display text-lg font-bold text-maroon md:text-xl">
+                      {tr(g.name)}
+                    </h3>
+                    <p className="mt-1 font-display text-sm italic text-gold">{tr(g.title)}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3 — OUR SERVICES */}
       <section className="bg-cream py-16">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.servicesTitle} subtitle={d.home.servicesSubtitle} />
