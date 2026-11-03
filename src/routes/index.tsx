@@ -5,8 +5,6 @@ import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucid
 import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
 import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
 import gurujisBanner from "@/assets/about/gurujis-banner.png";
-import templeGopuram from "@/assets/about/temple-gopuram.jpg";
-import zodiacWheelOm from "@/assets/zodiac-wheel-om.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -210,20 +208,6 @@ function Index() {
           className="pointer-events-none absolute inset-0 bg-cover bg-top"
           style={{ backgroundImage: `url(${gurujisBanner})` }}
           aria-hidden="true"
-        />
-        {/* Faded temple silhouette — left */}
-        <img
-          src={templeGopuram}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-10 top-0 h-full w-auto max-w-none object-cover opacity-[0.14] [mask-image:linear-gradient(to_right,black_55%,transparent)]"
-        />
-        {/* Faded zodiac mandala — right */}
-        <img
-          src={zodiacWheelOm}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-[0.13] md:block [mask-image:linear-gradient(to_left,black_55%,transparent)]"
         />
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6 md:pt-16 lg:px-12">
