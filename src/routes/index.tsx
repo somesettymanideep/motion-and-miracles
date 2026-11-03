@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
+import guruji1Img from "@/assets/about/guruji1.jpg";
+import guruji2Img from "@/assets/about/guruji2.jpg";
+import gurujiBg from "@/assets/about/guruji-bg.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -198,7 +201,112 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR SERVICES */}
+      {/* 2 — OUR GURUJI */}
+      <section className="bg-cream py-14 md:py-16">
+        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
+          <Reveal>
+            <div className="relative pt-4">
+              {/* Centered Maroon Pill Badge */}
+              <div className="absolute -top-1 left-1/2 z-20 inline-flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold bg-[#5a0c18] px-6 py-1.5 text-xs font-bold tracking-wide text-gold-light shadow-md sm:text-sm">
+                <span>{tr({ en: "Our Guruji", te: "మా గురూజీ" })}</span>
+              </div>
+
+              {/* Card Container with golden mandala background */}
+              <div className="relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-[#FFFBF0] p-6 pt-10 shadow-warm sm:p-10 sm:pt-12">
+                <div
+                  className="pointer-events-none absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${gurujiBg})` }}
+                  aria-hidden="true"
+                />
+
+                <p className="relative z-10 text-center font-display text-lg font-semibold italic text-maroon sm:text-xl">
+                  {tr({
+                    en: "Guidance from the Masters",
+                    te: "గురువుల నుండి దివ్య మార్గదర్శకత్వం",
+                  })}
+                </p>
+
+                {/* Profiles Grid */}
+                <div className="relative z-10 mt-8 grid gap-10 md:grid-cols-2">
+                  {/* Profile 1: Vissavajhula Nagesh Sharma */}
+                  <Reveal delay={0.08}>
+                    <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-start sm:text-left">
+                      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md sm:h-36 sm:w-36">
+                        <img
+                          src={guruji1Img}
+                          alt="Vissavajhula Nagesh Sharma"
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="font-display text-lg font-bold text-maroon sm:text-xl">
+                          {tr({
+                            en: "Vissavajhula Nagesh Sharma",
+                            te: "విస్సావఝుల నాగేశ్ శర్మ",
+                          })}
+                        </h2>
+                        <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+                          {tr({
+                            en: "A revered Vedic scholar and astrologer, guiding countless individuals with his profound knowledge and divine wisdom.",
+                            te: "తన అపారమైన జ్ఞానం మరియు దైవిక వివేకంతో వేలాది మందికి మార్గనిర్దేశం చేస్తున్న పూజ్య వేద పండితులు మరియు జ్యోతిష్య నిపుణులు.",
+                          })}
+                        </p>
+                        <a
+                          href={waLink("Namaste Nagesh Sharma garu, I would like to seek spiritual guidance.")}
+                          target="_blank"
+                          rel="noopener"
+                          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
+                        >
+                          <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
+                        </a>
+                      </div>
+                    </div>
+                  </Reveal>
+
+                  {/* Profile 2: V S N D Kowndinya Sarma */}
+                  <Reveal delay={0.16}>
+                    <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-start sm:text-left">
+                      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md sm:h-36 sm:w-36">
+                        <img
+                          src={guruji2Img}
+                          alt="V S N D Kowndinya Sarma"
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="font-display text-lg font-bold text-maroon sm:text-xl">
+                          {tr({
+                            en: "V S N D Kowndinya Sarma",
+                            te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ",
+                          })}
+                        </h2>
+                        <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+                          {tr({
+                            en: "An expert in Vedic astrology and spiritual remedies, dedicated to bringing harmony and positive energy into your life.",
+                            te: "మీ జీవితంలో శాంతి, సామరస్యం మరియు సానుకూల శక్తిని నింపడానికి అంకితభావంతో పనిచేస్తున్న వేద జ్యోతిష మరియు పరిహార నిపుణులు.",
+                          })}
+                        </p>
+                        <a
+                          href={waLink("Namaste Kowndinya Sarma garu, I would like to seek astrological guidance.")}
+                          target="_blank"
+                          rel="noopener"
+                          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
+                        >
+                          <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
+                        </a>
+                      </div>
+                    </div>
+                  </Reveal>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3 — OUR SERVICES */}
       <section className="bg-cream py-16">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.servicesTitle} subtitle={d.home.servicesSubtitle} />
