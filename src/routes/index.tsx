@@ -161,7 +161,8 @@ function Index() {
         </div>
 
         <div className="hero-reference-layout relative z-10 mx-auto grid max-w-[1400px] items-center gap-8 px-4 pb-10 pt-0 sm:px-6 lg:px-8 lg:pb-14 lg:pt-0">
-          <div className="hero-reference-copy min-w-0 text-left">
+          <div className="hero-reference-copy order-2 min-w-0 text-left lg:order-1">
+
             <img data-hero-stagger src={omDivider} alt="" aria-hidden="true" width={1902} height={368} className="hero-om-image" />
             <h1 data-hero-stagger className="hero-reference-title">
               <span>{d.home.nameFirst}</span>
@@ -190,9 +191,10 @@ function Index() {
               </Link></Button>
             </div>
           </div>
-          <div data-hero-emblem>
+          <div data-hero-emblem className="order-1 lg:order-2">
             <HeroEmblem />
           </div>
+
         </div>
       </section>
 
