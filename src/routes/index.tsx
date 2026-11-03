@@ -139,6 +139,29 @@ function Index() {
     return () => ctx.revert();
   }, []);
 
+  // Gurujis banner: gentle scroll-driven zoom-out
+  useEffect(() => {
+    const el = bannerRef.current;
+    if (!el) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { scale: 1.18 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+    }, el);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div ref={heroRef}>
       {/* 1 — HERO */}
