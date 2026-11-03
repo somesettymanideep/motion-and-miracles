@@ -115,6 +115,7 @@ function Index() {
   const tr = useTr();
   const d = dict[lang];
   const heroRef = useRef<HTMLDivElement>(null);
+  const bannerRef = useRef<HTMLImageElement>(null);
 
   // GSAP hero entrance timeline
   useEffect(() => {
@@ -135,6 +136,29 @@ function Index() {
         delay: 0.25,
       });
     }, heroRef);
+    return () => ctx.revert();
+  }, []);
+
+  // Gurujis banner: gentle scroll-driven zoom-out
+  useEffect(() => {
+    const el = bannerRef.current;
+    if (!el) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { scale: 1.18 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+    }, el);
     return () => ctx.revert();
   }, []);
 
@@ -200,12 +224,13 @@ function Index() {
       </section>
 
       {/* 2 — OUR GURUJIS (supplied full-width banner image) */}
-      <section className="bg-[#FFF7E0] py-0">
+      <section className="overflow-hidden bg-[#FFF7E0] py-0">
         <Reveal>
           <img
+            ref={bannerRef}
             src={gurujisBanner}
             alt="Our Gurujis — Vissavajhula Nagesh Sharma and V S N D Kowndinya Sarma, experienced Vedic scholars"
-            className="w-full"
+            className="w-full will-change-transform"
             loading="lazy"
           />
         </Reveal>
