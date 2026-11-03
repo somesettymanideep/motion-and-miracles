@@ -224,12 +224,13 @@ function Index() {
       </section>
 
       {/* 2 — OUR GURUJIS (supplied full-width banner image) */}
-      <section className="bg-[#FFF7E0] py-0">
+      <section className="overflow-hidden bg-[#FFF7E0] py-0">
         <Reveal>
           <img
+            ref={bannerRef}
             src={gurujisBanner}
             alt="Our Gurujis — Vissavajhula Nagesh Sharma and V S N D Kowndinya Sarma, experienced Vedic scholars"
-            className="w-full"
+            className="w-full will-change-transform"
             loading="lazy"
           />
         </Reveal>
