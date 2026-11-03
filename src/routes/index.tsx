@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
-import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
-import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
-import gurujisSky from "@/assets/about/gurujis-marble-sky.png";
+import gurujisBanner from "@/assets/about/gurujis-vedic-guidance.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -201,89 +199,16 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR GURUJIS (reference layout: temple left, zodiac mandala right, portraits flanking a central Om wheel) */}
-      <section className="relative overflow-hidden py-0">
-        {/* Soft golden marbled sky backdrop */}
-        <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${gurujisSky})` }}
-          aria-hidden="true"
-        />
-
-        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6 md:pt-16 lg:px-12">
-          <Reveal>
-            <h2 className="text-center font-display text-4xl font-bold tracking-tight text-maroon sm:text-5xl">
-              {tr({ en: "Our Gurujis", te: "మా గురూజీలు" })}
-            </h2>
-            <p className="mt-2 text-center font-display text-base italic text-maroon/85 sm:text-lg">
-              {tr({
-                en: "Guidance from Experienced and Vedic Scholars",
-                te: "అనుభవజ్ఞులైన వేద పండితుల మార్గదర్శకత్వం",
-              })}
-            </p>
-            <div className="mt-3 flex items-center justify-center gap-2" aria-hidden="true">
-              <span className="h-px w-12 bg-gold/80" />
-              <SacredLotusIcon className="h-4 w-4 text-gold" />
-              <span className="h-px w-12 bg-gold/80" />
-            </div>
-          </Reveal>
-
-          {/* Portraits flanking the central Om wheel */}
-          <div className="mt-10 grid items-end gap-12 md:grid-cols-2 md:gap-8">
-            {/* Guruji 1 — left */}
-            <Reveal delay={0.08} className="flex flex-col items-center">
-              <div className="relative flex flex-col items-center">
-                <img
-                  src={guruji1Cutout}
-                  alt="Vissavajhula Nagesh Sharma"
-                  className="w-56 drop-shadow-[0_18px_28px_rgba(90,12,24,0.28)] sm:w-64 md:w-72"
-                  loading="lazy"
-                />
-                {/* Maroon name plate overlapping the portrait base */}
-                <div className="relative z-10 -mt-10 w-full max-w-xs rounded-xl border-2 border-gold bg-[#5a0c18] px-4 py-3 text-center shadow-warm">
-                  <h3 className="font-display text-lg font-bold leading-snug text-[#FFFBF0] sm:text-xl">
-                    {tr({ en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" })}
-                  </h3>
-                  <p className="mt-0.5 font-display text-sm italic text-gold-light">
-                    {tr({ en: "Founder Acharya", te: "వ్యవస్థాపక ఆచార్యులు" })}
-                  </p>
-                </div>
-                <div className="mt-3 flex items-center gap-2" aria-hidden="true">
-                  <span className="h-px w-10 bg-gold/80" />
-                  <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                  <span className="h-px w-10 bg-gold/80" />
-                </div>
-              </div>
-            </Reveal>
-
-
-            {/* Guruji 2 — right */}
-            <Reveal delay={0.16} className="flex flex-col items-center">
-              <div className="relative flex flex-col items-center">
-                <img
-                  src={guruji2Cutout}
-                  alt="V S N D Kowndinya Sarma"
-                  className="w-56 drop-shadow-[0_18px_28px_rgba(90,12,24,0.28)] sm:w-64 md:w-72"
-                  loading="lazy"
-                />
-                <div className="relative z-10 -mt-10 w-full max-w-xs rounded-xl border-2 border-gold bg-[#5a0c18] px-4 py-3 text-center shadow-warm">
-                  <h3 className="font-display text-lg font-bold leading-snug text-[#FFFBF0] sm:text-xl">
-                    {tr({ en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" })}
-                  </h3>
-                  <p className="mt-0.5 font-display text-sm italic text-gold-light">
-                    {tr({ en: "Jyotishya Vidwan", te: "జ్యోతిష్య విద్వాన్" })}
-                  </p>
-                </div>
-                <div className="mt-3 flex items-center gap-2" aria-hidden="true">
-                  <span className="h-px w-10 bg-gold/80" />
-                  <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
-                  <span className="h-px w-10 bg-gold/80" />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-
+      {/* 2 — OUR GURUJIS (supplied full-width banner image) */}
+      <section className="bg-[#FFF7E0] py-0">
+        <Reveal>
+          <img
+            src={gurujisBanner}
+            alt="Our Gurujis — Vissavajhula Nagesh Sharma and V S N D Kowndinya Sarma, experienced Vedic scholars"
+            className="w-full"
+            loading="lazy"
+          />
+        </Reveal>
       </section>
 
       {/* 3 — OUR SERVICES */}
