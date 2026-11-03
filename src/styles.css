@@ -195,17 +195,24 @@
   .hero-reference-action { font-size: 15px; padding: 10px 16px; min-height: 48px; }
 }
 
+/* Guruji mini-profiles shown under the mobile hero wheel (hidden on desktop) */
+.hero-guruji-strip { display: none; }
+.hero-guruji-item { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.hero-guruji-photo { width: 84px; height: 84px; object-fit: cover; object-position: top; border-radius: 9999px; border: 2px solid var(--hero-ornament); background: color-mix(in oklab, var(--cream) 60%, transparent); box-shadow: 0 4px 12px color-mix(in oklab, var(--maroon) 18%, transparent); }
+.hero-guruji-name { font-family: "Playfair Display", Georgia, "Noto Sans Telugu", serif; font-size: 13px; font-weight: 700; line-height: 1.25; color: var(--hero-heading); }
+
 /* Mobile/tablet stack: wheel sits where the welcome paragraph was; welcome text hidden */
 @media (max-width: 1023px) {
   .hero-reference-layout { row-gap: 0; }
   .hero-reference-copy { display: contents; }
   .hero-om-image { order: 1; }
   .hero-reference-title { order: 2; }
-  .hero-reference-tagline { order: 3; }
+  .hero-reference-tagline { display: none; }
   .hero-reference-welcome { display: none; }
   [data-hero-emblem] { order: 4; margin-top: 16px; }
-  .hero-service-labels { order: 5; }
-  .hero-reference-actions { order: 6; }
+  .hero-guruji-strip { display: grid; order: 5; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+  .hero-service-labels { order: 6; }
+  .hero-reference-actions { order: 7; }
 }
 
 /* Faint zodiac-dust dot grid, used on the hero */

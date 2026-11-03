@@ -14,6 +14,8 @@ import vedicIcon from "@/assets/vedic.svg";
 import omIcon from "@/assets/om.svg";
 import howItWorksBg from "@/assets/how-it-works-bg.png";
 import { SacredLotusIcon } from "@/components/SacredLotusIcon";
+import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
+import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Reveal } from "@/components/Reveal";
 import { ConsultationForm } from "@/components/forms";
@@ -192,6 +194,20 @@ function Index() {
           </div>
           <div data-hero-emblem>
             <HeroEmblem />
+          </div>
+          <div className="hero-guruji-strip">
+            <figure className="hero-guruji-item">
+              <img src={guruji1Cutout} alt="Vissavajhula Nagesh Sharma garu" loading="lazy" className="hero-guruji-photo" />
+              <figcaption className="hero-guruji-name">
+                {tr({ en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" })}
+              </figcaption>
+            </figure>
+            <figure className="hero-guruji-item">
+              <img src={guruji2Cutout} alt="V S N D Kowndinya Sarma garu" loading="lazy" className="hero-guruji-photo" />
+              <figcaption className="hero-guruji-name">
+                {tr({ en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" })}
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
