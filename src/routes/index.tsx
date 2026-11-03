@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
-import gurujisBanner from "@/assets/about/gurujis-vedic-guidance.png";
 import gurujisMandalaBg from "@/assets/about/gurujis-mandala-bg.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
 import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
@@ -118,7 +117,6 @@ function Index() {
   const tr = useTr();
   const d = dict[lang];
   const heroRef = useRef<HTMLDivElement>(null);
-  const bannerRef = useRef<HTMLImageElement>(null);
 
   // GSAP hero entrance timeline
   useEffect(() => {
@@ -139,29 +137,6 @@ function Index() {
         delay: 0.25,
       });
     }, heroRef);
-    return () => ctx.revert();
-  }, []);
-
-  // Gurujis banner: gentle scroll-driven zoom-out
-  useEffect(() => {
-    const el = bannerRef.current;
-    if (!el) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        { scale: 1.18 },
-        {
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: el,
-            start: "top bottom",
-            end: "top 20%",
-            scrub: true,
-          },
-        }
-      );
-    }, el);
     return () => ctx.revert();
   }, []);
 
@@ -226,22 +201,6 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR GURUJIS (supplied banner image, sized like other sections) */}
-      <section className="bg-[#FFF7E0] py-10 sm:py-12">
-        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="overflow-hidden rounded-2xl border border-gold/40 shadow-md">
-              <img
-                ref={bannerRef}
-                src={gurujisBanner}
-                alt="Our Gurujis — Vissavajhula Nagesh Sharma and V S N D Kowndinya Sarma, experienced Vedic scholars"
-                className="w-full will-change-transform"
-                loading="lazy"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* 2b — OUR GURUJIS: titled section with mandala background + portraits */}
       <section className="relative overflow-hidden py-14 sm:py-16">
@@ -264,7 +223,7 @@ function Index() {
             </h2>
             <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
           </Reveal>
-          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:items-end md:gap-10">
+          <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-end md:gap-40">
             <Reveal delay={0.05} className="w-52 sm:w-72 md:w-80">
               <img
                 src={gurujiNageshPortrait}
