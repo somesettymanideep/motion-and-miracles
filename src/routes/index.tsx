@@ -306,7 +306,7 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR SERVICES */}
+      {/* 3 — OUR SERVICES */}
       <section className="bg-cream py-16">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <SectionTitle title={d.home.servicesTitle} subtitle={d.home.servicesSubtitle} />
