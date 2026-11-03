@@ -2,9 +2,11 @@ import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
-import guruji1Img from "@/assets/about/guruji1.jpg";
-import guruji2Img from "@/assets/about/guruji2.jpg";
+import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
+import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
 import gurujiBg from "@/assets/about/guruji-bg.png";
+import templeGopuram from "@/assets/about/temple-gopuram.jpg";
+import zodiacWheelOm from "@/assets/zodiac-wheel-om.png";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -201,109 +203,148 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — OUR GURUJI */}
-      <section className="bg-cream py-14 md:py-16">
-        <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
+      {/* 2 — OUR GURUJIS (reference layout: temple left, zodiac mandala right, portraits flanking a central Om wheel) */}
+      <section className="relative overflow-hidden py-0">
+        {/* Golden cloud backdrop */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${gurujiBg})` }}
+          aria-hidden="true"
+        />
+        {/* Faded temple silhouette — left */}
+        <img
+          src={templeGopuram}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-10 top-0 h-full w-auto max-w-none object-cover opacity-[0.14] [mask-image:linear-gradient(to_right,black_55%,transparent)]"
+        />
+        {/* Faded zodiac mandala — right */}
+        <img
+          src={zodiacWheelOm}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-[0.13] md:block [mask-image:linear-gradient(to_left,black_55%,transparent)]"
+        />
+
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6 md:pt-16 lg:px-12">
           <Reveal>
-            <div className="relative pt-4">
-              {/* Centered Maroon Pill Badge */}
-              <div className="absolute -top-1 left-1/2 z-20 inline-flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold bg-[#5a0c18] px-6 py-1.5 text-xs font-bold tracking-wide text-gold-light shadow-md sm:text-sm">
-                <span>{tr({ en: "Our Guruji", te: "మా గురూజీ" })}</span>
-              </div>
+            {/* Heading ornament: line — diamond — lotus — diamond — line */}
+            <div className="flex items-center justify-center gap-3" aria-hidden="true">
+              <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold sm:w-28" />
+              <span className="h-2 w-2 rotate-45 bg-gold" />
+              <SacredLotusIcon className="h-8 w-8 text-gold" />
+              <span className="h-2 w-2 rotate-45 bg-gold" />
+              <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold sm:w-28" />
+            </div>
 
-              {/* Card Container with golden mandala background */}
-              <div className="relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-[#FFFBF0] p-6 pt-10 shadow-warm sm:p-10 sm:pt-12">
-                <div
-                  className="pointer-events-none absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${gurujiBg})` }}
-                  aria-hidden="true"
-                />
-
-                <p className="relative z-10 text-center font-display text-lg font-semibold italic text-maroon sm:text-xl">
-                  {tr({
-                    en: "Guidance from the Masters",
-                    te: "గురువుల నుండి దివ్య మార్గదర్శకత్వం",
-                  })}
-                </p>
-
-                {/* Profiles Grid */}
-                <div className="relative z-10 mt-8 grid gap-10 md:grid-cols-2">
-                  {/* Profile 1: Vissavajhula Nagesh Sharma */}
-                  <Reveal delay={0.08}>
-                    <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-start sm:text-left">
-                      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md sm:h-36 sm:w-36">
-                        <img
-                          src={guruji1Img}
-                          alt="Vissavajhula Nagesh Sharma"
-                          className="h-full w-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h2 className="font-display text-lg font-bold text-maroon sm:text-xl">
-                          {tr({
-                            en: "Vissavajhula Nagesh Sharma",
-                            te: "విస్సావఝుల నాగేశ్ శర్మ",
-                          })}
-                        </h2>
-                        <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                          {tr({
-                            en: "A revered Vedic scholar and astrologer, guiding countless individuals with his profound knowledge and divine wisdom.",
-                            te: "తన అపారమైన జ్ఞానం మరియు దైవిక వివేకంతో వేలాది మందికి మార్గనిర్దేశం చేస్తున్న పూజ్య వేద పండితులు మరియు జ్యోతిష్య నిపుణులు.",
-                          })}
-                        </p>
-                        <a
-                          href={waLink("Namaste Nagesh Sharma garu, I would like to seek spiritual guidance.")}
-                          target="_blank"
-                          rel="noopener"
-                          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
-                        >
-                          <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-                        </a>
-                      </div>
-                    </div>
-                  </Reveal>
-
-                  {/* Profile 2: V S N D Kowndinya Sarma */}
-                  <Reveal delay={0.16}>
-                    <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-start sm:text-left">
-                      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md sm:h-36 sm:w-36">
-                        <img
-                          src={guruji2Img}
-                          alt="V S N D Kowndinya Sarma"
-                          className="h-full w-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h2 className="font-display text-lg font-bold text-maroon sm:text-xl">
-                          {tr({
-                            en: "V S N D Kowndinya Sarma",
-                            te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ",
-                          })}
-                        </h2>
-                        <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                          {tr({
-                            en: "An expert in Vedic astrology and spiritual remedies, dedicated to bringing harmony and positive energy into your life.",
-                            te: "మీ జీవితంలో శాంతి, సామరస్యం మరియు సానుకూల శక్తిని నింపడానికి అంకితభావంతో పనిచేస్తున్న వేద జ్యోతిష మరియు పరిహార నిపుణులు.",
-                          })}
-                        </p>
-                        <a
-                          href={waLink("Namaste Kowndinya Sarma garu, I would like to seek astrological guidance.")}
-                          target="_blank"
-                          rel="noopener"
-                          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
-                        >
-                          <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-                        </a>
-                      </div>
-                    </div>
-                  </Reveal>
-                </div>
-              </div>
+            <h2 className="mt-3 text-center font-display text-4xl font-bold tracking-tight text-maroon sm:text-5xl">
+              {tr({ en: "Our Gurujis", te: "మా గురూజీలు" })}
+            </h2>
+            <p className="mt-2 text-center font-display text-base italic text-maroon/85 sm:text-lg">
+              {tr({
+                en: "Guidance from Experienced and Vedic Scholars",
+                te: "అనుభవజ్ఞులైన వేద పండితుల మార్గదర్శకత్వం",
+              })}
+            </p>
+            <div className="mt-3 flex items-center justify-center gap-2" aria-hidden="true">
+              <span className="h-px w-12 bg-gold/80" />
+              <SacredLotusIcon className="h-4 w-4 text-gold" />
+              <span className="h-px w-12 bg-gold/80" />
             </div>
           </Reveal>
+
+          {/* Portraits flanking the central Om wheel */}
+          <div className="mt-10 grid items-end gap-12 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+            {/* Guruji 1 — left */}
+            <Reveal delay={0.08} className="flex flex-col items-center">
+              <div className="relative flex flex-col items-center">
+                <img
+                  src={guruji1Cutout}
+                  alt="Vissavajhula Nagesh Sharma"
+                  className="w-56 drop-shadow-[0_18px_28px_rgba(90,12,24,0.28)] sm:w-64 md:w-72"
+                  loading="lazy"
+                />
+                {/* Maroon name plate overlapping the portrait base */}
+                <div className="relative z-10 -mt-10 w-full max-w-xs rounded-xl border-2 border-gold bg-[#5a0c18] px-4 py-3 text-center shadow-warm">
+                  <h3 className="font-display text-lg font-bold leading-snug text-[#FFFBF0] sm:text-xl">
+                    {tr({ en: "Vissavajhula Nagesh Sharma", te: "విస్సావఝుల నాగేశ్ శర్మ" })}
+                  </h3>
+                  <p className="mt-0.5 font-display text-sm italic text-gold-light">
+                    {tr({ en: "Founder Acharya", te: "వ్యవస్థాపక ఆచార్యులు" })}
+                  </p>
+                </div>
+                <div className="mt-3 flex items-center gap-2" aria-hidden="true">
+                  <span className="h-px w-10 bg-gold/80" />
+                  <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
+                  <span className="h-px w-10 bg-gold/80" />
+                </div>
+                <a
+                  href={waLink("Namaste Nagesh Sharma garu, I would like to seek spiritual guidance.")}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
+                >
+                  <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
+                </a>
+              </div>
+            </Reveal>
+
+            {/* Central Om wheel */}
+            <Reveal delay={0.12} className="hidden justify-center md:flex">
+              <img
+                src={zodiacWheelOm}
+                alt={tr({ en: "Golden zodiac wheel with Om at its centre", te: "మధ్యలో ఓంకారంతో బంగారు రాశి చక్రం" })}
+                className="w-44 drop-shadow-[0_10px_24px_rgba(212,160,23,0.45)] lg:w-52"
+                loading="lazy"
+              />
+            </Reveal>
+
+            {/* Guruji 2 — right */}
+            <Reveal delay={0.16} className="flex flex-col items-center">
+              <div className="relative flex flex-col items-center">
+                <img
+                  src={guruji2Cutout}
+                  alt="V S N D Kowndinya Sarma"
+                  className="w-56 drop-shadow-[0_18px_28px_rgba(90,12,24,0.28)] sm:w-64 md:w-72"
+                  loading="lazy"
+                />
+                <div className="relative z-10 -mt-10 w-full max-w-xs rounded-xl border-2 border-gold bg-[#5a0c18] px-4 py-3 text-center shadow-warm">
+                  <h3 className="font-display text-lg font-bold leading-snug text-[#FFFBF0] sm:text-xl">
+                    {tr({ en: "V S N D Kowndinya Sarma", te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ" })}
+                  </h3>
+                  <p className="mt-0.5 font-display text-sm italic text-gold-light">
+                    {tr({ en: "Jyotishya Vidwan", te: "జ్యోతిష్య విద్వాన్" })}
+                  </p>
+                </div>
+                <div className="mt-3 flex items-center gap-2" aria-hidden="true">
+                  <span className="h-px w-10 bg-gold/80" />
+                  <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
+                  <span className="h-px w-10 bg-gold/80" />
+                </div>
+                <a
+                  href={waLink("Namaste Kowndinya Sarma garu, I would like to seek astrological guidance.")}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
+                >
+                  <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
+                </a>
+              </div>
+            </Reveal>
+          </div>
         </div>
+
+        {/* Golden wave footer strip */}
+        <svg
+          viewBox="0 0 1440 90"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute bottom-0 left-0 h-14 w-full"
+          aria-hidden="true"
+        >
+          <path d="M0,55 C240,15 480,85 720,55 C960,25 1200,85 1440,45 L1440,90 L0,90 Z" fill="#D4A017" opacity="0.55" />
+          <path d="M0,68 C260,30 520,92 760,62 C1000,34 1220,90 1440,58 L1440,90 L0,90 Z" fill="#B8860B" opacity="0.75" />
+          <path d="M0,80 C300,48 560,96 800,72 C1040,50 1240,94 1440,70 L1440,90 L0,90 Z" fill="#5a0c18" />
+        </svg>
       </section>
 
       {/* 3 — OUR SERVICES */}
