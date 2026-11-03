@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
 import guruji1Cutout from "@/assets/about/guruji1-cutout.png";
 import guruji2Cutout from "@/assets/about/guruji2-cutout.png";
-import gurujiBg from "@/assets/about/guruji-bg.png";
+import gurujisBanner from "@/assets/about/gurujis-banner.png";
 import templeGopuram from "@/assets/about/temple-gopuram.jpg";
 import zodiacWheelOm from "@/assets/zodiac-wheel-om.png";
 import { useLanguage, useTr } from "@/lib/i18n";
@@ -205,10 +205,10 @@ function Index() {
 
       {/* 2 — OUR GURUJIS (reference layout: temple left, zodiac mandala right, portraits flanking a central Om wheel) */}
       <section className="relative overflow-hidden py-0">
-        {/* Golden cloud backdrop */}
+        {/* Golden lotus mandala banner backdrop */}
         <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${gurujiBg})` }}
+          className="pointer-events-none absolute inset-0 bg-cover bg-top"
+          style={{ backgroundImage: `url(${gurujisBanner})` }}
           aria-hidden="true"
         />
         {/* Faded temple silhouette — left */}
@@ -254,7 +254,7 @@ function Index() {
           </Reveal>
 
           {/* Portraits flanking the central Om wheel */}
-          <div className="mt-10 grid items-end gap-12 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+          <div className="mt-10 grid items-end gap-12 md:grid-cols-2 md:gap-8">
             {/* Guruji 1 — left */}
             <Reveal delay={0.08} className="flex flex-col items-center">
               <div className="relative flex flex-col items-center">
@@ -289,15 +289,6 @@ function Index() {
               </div>
             </Reveal>
 
-            {/* Central Om wheel */}
-            <Reveal delay={0.12} className="hidden justify-center md:flex">
-              <img
-                src={zodiacWheelOm}
-                alt={tr({ en: "Golden zodiac wheel with Om at its centre", te: "మధ్యలో ఓంకారంతో బంగారు రాశి చక్రం" })}
-                className="w-44 drop-shadow-[0_10px_24px_rgba(212,160,23,0.45)] lg:w-52"
-                loading="lazy"
-              />
-            </Reveal>
 
             {/* Guruji 2 — right */}
             <Reveal delay={0.16} className="flex flex-col items-center">
