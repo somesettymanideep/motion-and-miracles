@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { CheckCircle2, ChevronRight, Clock, Flame, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { CheckCircle2, Clock, Flame, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { useLanguage, useTr, type Bi } from "@/lib/i18n";
 import { ADDRESS, HOURS, dict } from "@/data/site";
 import { SERVICES } from "@/data/services";
