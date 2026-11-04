@@ -71,45 +71,13 @@ function ServiceDetailPage() {
 
   return (
     <div>
-      {/* Hero banner */}
-      <section className="relative isolate overflow-hidden">
-        <img
-          src={service.image}
-          alt={service.imageAlt}
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          aria-hidden="true"
-        />
-        <div className="mx-auto flex max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] flex-col items-center gap-4 px-4 sm:px-6 lg:px-12 xl:px-8 py-16 text-center md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-widest text-saffron-dark">
-            {lang === "te" ? "మా సేవ" : "Our Service"}
-          </p>
-          <h1 className="font-display text-2xl font-bold text-[#5a0c18] md:text-3xl">
-            {tr(detail.heroTitle)}
-          </h1>
-          <nav
-            aria-label="Breadcrumb"
-            className="flex items-center gap-1.5 rounded-full border border-gold/40 bg-cream/90 px-4 py-1 text-sm font-semibold text-[#5a0c18] shadow-xs backdrop-blur-sm"
-          >
-            <Link
-              to="/"
-              className="font-semibold text-[#5a0c18] transition-colors hover:text-saffron-dark"
-            >
-              {d.common.home}
-            </Link>
-            <ChevronRight className="h-4 w-4 text-gold" aria-hidden="true" />
-            <Link
-              to="/services"
-              className="font-semibold text-[#5a0c18] transition-colors hover:text-saffron-dark"
-            >
-              {d.nav.services}
-            </Link>
-            <ChevronRight className="h-4 w-4 text-gold" aria-hidden="true" />
-            <span aria-current="page" className="font-semibold text-[#5a0c18]">
-              {service.name[lang]}
-            </span>
-          </nav>
-        </div>
-      </section>
+      {/* Hero banner — shared sub-page banner (same image as About page) */}
+      <PageBanner
+        title={service.name[lang]}
+        middle={d.nav.services}
+        middleTo="/services"
+        crumb={service.name[lang]}
+      />
 
       {/* Intro + lists */}
       <section className="bg-cream py-14">
