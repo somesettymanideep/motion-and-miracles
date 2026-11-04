@@ -83,6 +83,17 @@ export function PageBanner({
           >
             {d.common.home}
           </Link>
+          {middle && (
+            <>
+              <ChevronRight className="h-4 w-4 text-gold" aria-hidden="true" />
+              <Link
+                to={middleTo}
+                className="font-semibold text-[#5a0c18] transition-colors hover:text-saffron-dark"
+              >
+                {middle}
+              </Link>
+            </>
+          )}
           <ChevronRight className="h-4 w-4 text-gold" aria-hidden="true" />
           <span aria-current="page" className="font-semibold text-[#5a0c18]">
             {crumb}

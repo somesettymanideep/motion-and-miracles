@@ -5,6 +5,7 @@ import { ADDRESS, HOURS, dict } from "@/data/site";
 import { SERVICES } from "@/data/services";
 import { PHONES, waLink } from "@/lib/whatsapp";
 import { Reveal } from "@/components/Reveal";
+import { PageBanner } from "@/components/PageBanner";
 import { ConsultationForm } from "@/components/forms";
 
 export const Route = createFileRoute("/services/$slug")({
