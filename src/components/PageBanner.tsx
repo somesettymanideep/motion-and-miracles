@@ -10,6 +10,8 @@ export type PageBannerProps = {
   align?: "center" | "left";
   noOverlay?: boolean;
   noRibbon?: boolean;
+  middle?: string;
+  middleTo?: string;
 };
 
 /**
@@ -23,6 +25,8 @@ export function PageBanner({
   align = "center",
   noOverlay = true,
   noRibbon = true,
+  middle,
+  middleTo = "/",
 }: PageBannerProps) {
   const { lang } = useLanguage();
   const d = dict[lang];
