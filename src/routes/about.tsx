@@ -19,7 +19,6 @@ import guruji1Img from "@/assets/about/guruji1.jpg";
 import guruji2Img from "@/assets/about/guruji2.jpg";
 import ourStoryImg from "@/assets/about/our-story.jpg";
 import gurujiBg from "@/assets/about/guruji-bg.png";
-import visionBannerBg from "@/assets/about/vision-banner-bg.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
