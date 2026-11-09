@@ -19,7 +19,6 @@ import guruji1Img from "@/assets/about/guruji1.jpg";
 import guruji2Img from "@/assets/about/guruji2.jpg";
 import ourStoryImg from "@/assets/about/our-story.jpg";
 import gurujiBg from "@/assets/about/guruji-bg.png";
-import visionBannerBg from "@/assets/about/vision-banner-bg.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -532,32 +531,6 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 6 — BOTTOM BANNER (A Happier, Healthier and Prosperous Tomorrow) */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#3e0811] via-[#5a0c18] to-[#3e0811] py-14 px-4 sm:px-6 text-center text-cream">
-        {/* Subtle temple background texture */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-20 bg-cover bg-center"
-          style={{ backgroundImage: `url(${visionBannerBg})` }}
-          aria-hidden="true"
-        />
-
-        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-3">
-          <LotusIcon className="h-5 w-5 text-gold-light" />
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-gold-light tracking-wide">
-            {tr({
-              en: "A Happier, Healthier and Prosperous Tomorrow",
-              te: "ఆనందకరమైన, ఆరోగ్యకరమైన మరియు శ్రేయస్కరమైన భవిష్యత్తు",
-            })}
-          </h2>
-          <p className="italic text-xs sm:text-sm md:text-base text-cream/90 leading-relaxed max-w-2xl">
-            {tr({
-              en: "We envision a world where everyone has access to authentic Vedic guidance and lives a life filled with peace, prosperity and spiritual harmony.",
-              te: "ప్రతి ఒక్కరికీ ప్రామాణికమైన వేద మార్గదర్శకత్వం లభించి, శాంతి, శ్రేయస్సు మరియు ఆధ్యాత్మిక సామరస్యంతో జీవించే ప్రపంచాన్ని మేము ఆకాంక్షిస్తున్నాము.",
-            })}
-          </p>
-          <LotusIcon className="h-5 w-5 text-gold-light" />
-        </div>
-      </section>
     </div>
   );
 }
