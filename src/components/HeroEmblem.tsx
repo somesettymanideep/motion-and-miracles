@@ -18,7 +18,7 @@ import zodiacOmCenter from "@/assets/zodiac-om-center.png";
  */
 export function HeroEmblem() {
   return (
-    <div className="mx-auto flex w-full max-w-[430px] flex-col items-center gap-1 lg:max-w-[470px]">
+    <div className="mx-auto flex w-full max-w-[430px] flex-col items-center gap-4 lg:max-w-[470px]">
       {/* Layer 0 — institute emblem, sitting above the wheel */}
       <img
         src={heroGurujiEmblem}
@@ -28,7 +28,7 @@ export function HeroEmblem() {
         fetchPriority="high"
         decoding="async"
         draggable={false}
-        className="relative z-20 w-[58%] max-w-[250px] select-none object-contain drop-shadow-[0_10px_26px_rgba(123,21,48,0.22)]"
+        className="relative z-20 w-[64%] max-w-[270px] select-none object-contain drop-shadow-[0_10px_26px_rgba(123,21,48,0.22)]"
       />
 
       {/* The rotating wheel, below the emblem */}
