@@ -18,7 +18,7 @@ import zodiacOmCenter from "@/assets/zodiac-om-center.png";
  */
 export function HeroEmblem() {
   return (
-    <div className="relative mx-auto flex aspect-square w-full max-w-[520px] items-center justify-center lg:max-w-[620px]">
+    <div className="relative mx-auto flex aspect-square w-full max-w-[600px] items-center justify-center lg:max-w-[780px] xl:max-w-[900px]">
       {/* Subtle warm celestial glow behind the rotating wheel */}
       <div
         className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(245,197,66,0.2)_0%,rgba(212,160,23,0.08)_50%,transparent_70%)] blur-2xl"

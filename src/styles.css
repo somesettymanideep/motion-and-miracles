@@ -183,11 +183,11 @@
   .hero-reference-welcome { font-size: 19px; }
 }
 @media (min-width: 1024px) {
-  .hero-reference-layout { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .hero-reference-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); }
   .hero-reference-title { font-size: 44px; }
   .hero-reference-tagline { font-size: 21px; }
 }
-@media (min-width: 1280px) { .hero-reference-title { font-size: 54px; } }
+@media (min-width: 1280px) { .hero-reference-title { font-size: 54px; } .hero-reference-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr); } }
 @media (max-width: 639px) {
   .hero-reference-title { font-size: 32px; }
   .hero-service-labels { gap: 7px; }
