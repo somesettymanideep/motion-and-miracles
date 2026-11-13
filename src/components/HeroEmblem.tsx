@@ -64,6 +64,21 @@ export function HeroEmblem() {
         <div className="absolute inset-0 bg-gradient-to-t from-cream/55 via-transparent to-cream/25" />
         <div className="zodiac-pattern absolute inset-0 opacity-25" />
       </div>
+
+      {/* Layer 4 — the institute emblem (saint's portrait inside a golden
+          zodiac frame with the Telugu name banner). It sits dead centre on
+          top of the wheel and is deliberately larger than the circle: the
+          wheel keeps its own size, the emblem overflows it. */}
+      <img
+        src={teluguEmblem}
+        alt="Sri Lakshmi Jyotishya Parishodhanalayam emblem — the saint's portrait inside a golden zodiac frame with an orange Telugu name banner"
+        width={900}
+        height={915}
+        fetchPriority="high"
+        decoding="async"
+        draggable={false}
+        className="absolute left-1/2 top-1/2 z-40 w-full max-w-none -translate-x-1/2 -translate-y-1/2 select-none drop-shadow-[0_16px_40px_rgba(123,21,48,0.3)] lg:w-[120%]"
+      />
     </div>
   );
 }
