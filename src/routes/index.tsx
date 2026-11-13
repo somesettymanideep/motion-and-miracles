@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
 import gurujisMandalaBg from "@/assets/about/gurujis-mandala-bg.png";
+import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
 import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
 import deityShankaracharya from "@/assets/deities/shankaracharya.webp";
