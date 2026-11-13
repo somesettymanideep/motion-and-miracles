@@ -336,10 +336,3 @@
   }
 }
 .hero-om-image { display: block; width: 52%; max-width: 320px; height: auto; margin: 8px 0 0; }
-
-/* The rotating zodiac band overlaid on the hero emblem: its lower arc fades
-   out above the orange ribbon so the Telugu name stays fully readable. */
-.hero-ring-overlay {
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 66%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 66%);
-}
