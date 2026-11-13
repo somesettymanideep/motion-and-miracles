@@ -47,4 +47,16 @@ describe("services data", () => {
       expect(s.detail.seo.description.length).toBeGreaterThan(0);
     }
   });
+
+  /**
+   * A service detail page must open with at least five lines of intro copy in
+   * the language being read (the intro column fits ~80 Latin / ~60 Telugu
+   * characters per line), so no service page opens with a stub paragraph.
+   */
+  it("every service intro carries at least five lines of copy in both languages", () => {
+    for (const s of SERVICES) {
+      expect(s.detail.intro.en.length, `${s.slug} intro (en)`).toBeGreaterThanOrEqual(400);
+      expect(s.detail.intro.te.length, `${s.slug} intro (te)`).toBeGreaterThanOrEqual(300);
+    }
+  });
 });
