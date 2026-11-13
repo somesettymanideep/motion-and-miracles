@@ -1,4 +1,3 @@
-import heroGurujiEmblem from "@/assets/hero-guruji-emblem.webp";
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import zodiacOmCenter from "@/assets/zodiac-om-center.png";
 
@@ -11,14 +10,11 @@ import zodiacOmCenter from "@/assets/zodiac-om-center.png";
  *  2. The central maroon Om medallion sits fixed on top — perfectly still,
  *     centred, never rotating. Its feathered edge fully covers the ring's
  *     cut-out seam.
- *  3. The institute emblem (guruji portrait, golden zodiac ring, orange
- *     Telugu name ribbon) sits large and fixed on top of the wheel, centred
- *     on the same axis, so the wheel keeps turning behind it.
  * Transparent background, no added elements or camera moves.
  */
 export function HeroEmblem() {
   return (
-    <div className="relative mx-auto flex aspect-square w-full max-w-[600px] items-center justify-center lg:max-w-[780px] xl:max-w-[900px]">
+    <div className="relative mx-auto flex aspect-square w-full max-w-[480px] items-center justify-center lg:max-w-[520px]">
       {/* Subtle warm celestial glow behind the rotating wheel */}
       <div
         className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(245,197,66,0.2)_0%,rgba(212,160,23,0.08)_50%,transparent_70%)] blur-2xl"
@@ -67,20 +63,6 @@ export function HeroEmblem() {
         <div className="absolute inset-0 bg-gradient-to-t from-cream/55 via-transparent to-cream/25" />
         <div className="zodiac-pattern absolute inset-0 opacity-25" />
       </div>
-
-      {/* Layer 4 — the institute emblem, large and still, centred on the
-          wheel's axis. It rides above the light wash so its own colors stay
-          saturated, and it never blocks a page click. */}
-      <img
-        src={heroGurujiEmblem}
-        alt="Institute emblem: the guruji portrait ringed by twelve golden zodiac medallions above the orange Telugu name banner Sri Lakshmi Jyotishya Parishodhanalayam"
-        width={1000}
-        height={936}
-        fetchPriority="high"
-        decoding="async"
-        draggable={false}
-        className="pointer-events-none absolute left-1/2 top-[48%] z-40 w-[82%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none drop-shadow-[0_18px_38px_rgba(123,21,48,0.28)]"
-      />
     </div>
   );
 }
