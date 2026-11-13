@@ -49,10 +49,15 @@ export function HeroEmblem() {
           (cream gradient left→right, cream lift from the bottom, faint
           zodiac dust), sampled for the wheel's position on the right so the
           wheel sits inside the page light instead of floating on top of it.
-          Clipped to the circle so nothing spills past the wheel's edge. */}
+          A radial mask dissolves the wash before the wheel's rim so it reads
+          as ambient light, never as a circular badge. */}
       <div
-        className="pointer-events-none absolute inset-0 z-30 overflow-hidden rounded-full select-none"
+        className="pointer-events-none absolute inset-0 z-30 select-none"
         aria-hidden="true"
+        style={{
+          maskImage: "radial-gradient(circle at 50% 50%, black 46%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 50%, black 46%, transparent 80%)",
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-cream/70 via-cream/52 to-cream/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-cream/55 via-transparent to-cream/25" />
