@@ -215,6 +215,25 @@ function Index() {
           className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center"
           loading="lazy"
         />
+        {/* Rotating zodiac wheel halves — left half on the left edge, right half on the right edge, spinning like the hero wheel */}
+        <img
+          src={zodiacWheelRot}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+          className="pointer-events-none absolute left-0 top-1/2 w-64 -translate-x-1/2 -translate-y-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
+        />
+        <img
+          src={zodiacWheelRot}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+          className="pointer-events-none absolute right-0 top-1/2 w-64 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
+        />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 flex items-end justify-between gap-3 sm:gap-6">
             <img
