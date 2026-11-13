@@ -183,7 +183,7 @@
   .hero-reference-welcome { font-size: 19px; }
 }
 @media (min-width: 1024px) {
-  .hero-reference-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); }
+  .hero-reference-layout { grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr); gap: 24px; }
   .hero-reference-title { font-size: 44px; }
   .hero-reference-tagline { font-size: 21px; }
 }
