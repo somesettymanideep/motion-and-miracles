@@ -55,13 +55,13 @@ export function HeroEmblem() {
         className="pointer-events-none absolute inset-0 z-30 select-none"
         aria-hidden="true"
         style={{
-          maskImage: "radial-gradient(circle at 50% 50%, black 46%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(circle at 50% 50%, black 46%, transparent 80%)",
+          maskImage: "radial-gradient(circle at 50% 50%, black 58%, transparent 88%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 50%, black 58%, transparent 88%)",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-cream/70 via-cream/52 to-cream/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-cream/55 via-transparent to-cream/25" />
-        <div className="zodiac-pattern absolute inset-0 opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/90 via-cream/75 to-cream/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream/75 via-cream/20 to-cream/40" />
+        <div className="zodiac-pattern absolute inset-0 opacity-35" />
       </div>
     </div>
   );
