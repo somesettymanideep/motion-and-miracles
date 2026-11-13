@@ -1,49 +1,51 @@
-import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
-import zodiacOmCenter from "@/assets/zodiac-om-center.png";
+import gurujiEmblem from "@/assets/hero-guruji-emblem.webp";
+import zodiacRingBand from "@/assets/zodiac-ring-annulus.webp";
 
 /**
- * Hero Zodiac Wheel — the sacred golden zodiac horoscope wheel, split into
- * two layers cut from the same artwork so colors match exactly:
- *  1. The rotating ring (12 zodiac signs, lotus petals, ornamental gold
- *     rings) spins smoothly clockwise around the exact central axis with a
- *     constant-speed, seamless infinite loop. Its centre is cut out.
- *  2. The central maroon Om medallion sits fixed on top — perfectly still,
- *     centred, never rotating. Its feathered edge fully covers the ring's
- *     cut-out seam.
+ * Hero Zodiac Wheel — the guruji emblem sits on the hero's right side with the
+ * golden zodiac wheel overlaid on top of it:
+ *  1. The emblem (saint portrait inside the gold zodiac medallion, orange
+ *     Telugu ribbon below) is the base layer.
+ *  2. The zodiac band — the outer ring of the wheel, whose centre is hollow so
+ *     the portrait shows through — spins clockwise on the same constant-speed
+ *     seamless loop as before. Its lower arc fades out before the ribbon, so
+ *     the Telugu name stays fully readable.
  * Transparent background, no added elements or camera moves.
  */
 export function HeroEmblem() {
   return (
-    <div className="relative mx-auto flex aspect-square w-full max-w-[480px] items-center justify-center lg:max-w-[520px]">
-      {/* Subtle warm celestial glow behind the rotating wheel */}
+    <div className="relative mx-auto w-full max-w-[480px] lg:max-w-[520px]">
+      {/* Subtle warm celestial glow behind the emblem */}
       <div
         className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(245,197,66,0.2)_0%,rgba(212,160,23,0.08)_50%,transparent_70%)] blur-2xl"
         aria-hidden="true"
       />
 
-      {/* Layer 1 — rotating zodiac ring (centre cut out) */}
+      {/* Layer 1 — the guruji emblem */}
       <img
-        src={zodiacWheelRot}
-        alt="Sacred golden zodiac horoscope wheel with twelve zodiac signs and lotus petals, rotating clockwise around a fixed Om centre"
-        width={1024}
-        height={1024}
+        src={gurujiEmblem}
+        alt="Sri Vasishta Jyotishya Parishodhanalayam emblem: the saint inside a golden zodiac medallion with an orange Telugu name ribbon"
+        width={1088}
+        height={1106}
         fetchPriority="high"
         decoding="async"
         draggable={false}
-        className="relative z-10 h-full w-full max-w-none animate-[spin_48s_linear_infinite] select-none object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] motion-reduce:animate-none"
+        className="relative z-10 block w-full select-none drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)]"
       />
 
-      {/* Layer 2 — fixed central Om medallion (never rotates) */}
-      <img
-        src={zodiacOmCenter}
-        alt=""
-        aria-hidden="true"
-        width={228}
-        height={228}
-        decoding="async"
-        draggable={false}
-        className="absolute left-1/2 top-1/2 z-20 w-[22.3%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
-      />
+      {/* Layer 2 — rotating zodiac band overlaid on the emblem */}
+      <div className="hero-ring-overlay pointer-events-none absolute inset-0 z-20 select-none">
+        <img
+          src={zodiacRingBand}
+          alt=""
+          aria-hidden="true"
+          width={1024}
+          height={1024}
+          decoding="async"
+          draggable={false}
+          className="absolute left-1/2 top-1/2 w-[95%] max-w-none -translate-x-1/2 -translate-y-1/2 animate-[spin_48s_linear_infinite] motion-reduce:animate-none"
+        />
+      </div>
     </div>
   );
 }
