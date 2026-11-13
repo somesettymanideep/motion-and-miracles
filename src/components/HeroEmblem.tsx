@@ -11,6 +11,9 @@ import teluguEmblem from "@/assets/hero-telugu-emblem.webp";
  *  2. The central maroon Om medallion sits fixed on top — perfectly still,
  *     centred, never rotating. Its feathered edge fully covers the ring's
  *     cut-out seam.
+ *  3. A warm light wash ties the wheel into the hero background light.
+ *  4. The institute emblem (portrait + golden zodiac frame + Telugu name
+ *     banner) sits centred on top of everything, larger than the wheel.
  * Transparent background, no added elements or camera moves.
  */
 export function HeroEmblem() {
