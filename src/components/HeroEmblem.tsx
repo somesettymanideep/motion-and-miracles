@@ -80,7 +80,7 @@ export function HeroEmblem() {
         fetchPriority="high"
         decoding="async"
         draggable={false}
-        className="absolute left-1/2 top-1/2 z-40 w-full max-w-none -translate-x-1/2 -translate-y-1/2 select-none drop-shadow-[0_16px_40px_rgba(123,21,48,0.3)] lg:w-[120%]"
+        className="absolute left-1/2 top-1/2 z-40 w-full max-w-none -translate-x-1/2 -translate-y-1/2 select-none drop-shadow-[0_16px_40px_rgba(123,21,48,0.3)] lg:w-[113%]"
       />
     </div>
   );
