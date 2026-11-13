@@ -1,5 +1,6 @@
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import zodiacOmCenter from "@/assets/zodiac-om-center.png";
+import teluguEmblem from "@/assets/hero-telugu-emblem.webp";
 
 /**
  * Hero Zodiac Wheel — the sacred golden zodiac horoscope wheel, split into
@@ -10,6 +11,9 @@ import zodiacOmCenter from "@/assets/zodiac-om-center.png";
  *  2. The central maroon Om medallion sits fixed on top — perfectly still,
  *     centred, never rotating. Its feathered edge fully covers the ring's
  *     cut-out seam.
+ *  3. A warm light wash ties the wheel into the hero background light.
+ *  4. The institute emblem (portrait + golden zodiac frame + Telugu name
+ *     banner) sits centred on top of everything, larger than the wheel.
  * Transparent background, no added elements or camera moves.
  */
 export function HeroEmblem() {
@@ -30,7 +34,7 @@ export function HeroEmblem() {
         fetchPriority="high"
         decoding="async"
         draggable={false}
-        className="relative z-10 h-full w-full max-w-none animate-[spin_48s_linear_infinite] select-none object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] motion-reduce:animate-none"
+        className="relative z-10 h-[88%] w-[88%] max-w-none animate-[spin_48s_linear_infinite] select-none object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] motion-reduce:animate-none lg:h-full lg:w-full"
       />
 
       {/* Layer 2 — fixed central Om medallion (never rotates) */}
@@ -63,6 +67,21 @@ export function HeroEmblem() {
         <div className="absolute inset-0 bg-gradient-to-t from-cream/55 via-transparent to-cream/25" />
         <div className="zodiac-pattern absolute inset-0 opacity-25" />
       </div>
+
+      {/* Layer 4 — the institute emblem (saint's portrait inside a golden
+          zodiac frame with the Telugu name banner). It sits dead centre on
+          top of the wheel and is deliberately larger than the circle: the
+          wheel keeps its own size, the emblem overflows it. */}
+      <img
+        src={teluguEmblem}
+        alt="Sri Lakshmi Jyotishya Parishodhanalayam emblem — the saint's portrait inside a golden zodiac frame with an orange Telugu name banner"
+        width={900}
+        height={915}
+        fetchPriority="high"
+        decoding="async"
+        draggable={false}
+        className="absolute left-1/2 top-1/2 z-40 w-full max-w-none -translate-x-1/2 -translate-y-1/2 select-none drop-shadow-[0_16px_40px_rgba(123,21,48,0.3)] lg:w-[113%]"
+      />
     </div>
   );
 }
