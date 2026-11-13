@@ -215,23 +215,23 @@ function Index() {
           loading="lazy"
         />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-8 flex items-end justify-center gap-6 sm:gap-10 md:gap-16">
+          <Reveal className="mb-8 flex items-end justify-between gap-3 sm:gap-6">
             <img
               src={deityShankaracharya}
               alt="Adi Shankaracharya seated in devotional meditation"
-              className="w-24 drop-shadow-xl sm:w-32 md:w-40"
+              className="w-16 drop-shadow-xl sm:w-24 md:w-28"
               loading="lazy"
             />
             <img
               src={deityGanesha}
               alt="Lord Ganesha seated on a golden lotus, giving a blessing"
-              className="w-24 drop-shadow-xl sm:w-32 md:w-40"
+              className="w-16 drop-shadow-xl sm:w-24 md:w-28"
               loading="lazy"
             />
             <img
               src={deityDurga}
               alt="Goddess Durga seated on a tiger"
-              className="w-24 drop-shadow-xl sm:w-32 md:w-40"
+              className="w-16 drop-shadow-xl sm:w-24 md:w-28"
               loading="lazy"
             />
           </Reveal>
