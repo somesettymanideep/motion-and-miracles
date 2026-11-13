@@ -44,6 +44,25 @@ export function HeroEmblem() {
         draggable={false}
         className="absolute left-1/2 top-1/2 z-20 w-[22.3%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
       />
+
+      {/* Layer 3 — the same warm light wash the hero background carries
+          (cream gradient left→right, cream lift from the bottom, faint
+          zodiac dust), sampled for the wheel's position on the right so the
+          wheel sits inside the page light instead of floating on top of it.
+          A radial mask dissolves the wash before the wheel's rim so it reads
+          as ambient light, never as a circular badge. */}
+      <div
+        className="pointer-events-none absolute inset-0 z-30 select-none"
+        aria-hidden="true"
+        style={{
+          maskImage: "radial-gradient(circle at 50% 50%, black 46%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 50%, black 46%, transparent 80%)",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/70 via-cream/52 to-cream/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream/55 via-transparent to-cream/25" />
+        <div className="zodiac-pattern absolute inset-0 opacity-25" />
+      </div>
     </div>
   );
 }
