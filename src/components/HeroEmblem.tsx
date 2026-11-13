@@ -31,7 +31,7 @@ export function HeroEmblem() {
         fetchPriority="high"
         decoding="async"
         draggable={false}
-        className="relative z-10 h-full w-full max-w-none animate-[spin_48s_linear_infinite] select-none object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] motion-reduce:animate-none"
+        className="relative z-10 h-[88%] w-[88%] max-w-none animate-[spin_48s_linear_infinite] select-none object-contain drop-shadow-[0_12px_32px_rgba(123,21,48,0.2)] motion-reduce:animate-none lg:h-full lg:w-full"
       />
 
       {/* Layer 2 — fixed central Om medallion (never rotates) */}
