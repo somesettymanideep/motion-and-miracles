@@ -183,11 +183,29 @@
   .hero-reference-welcome { font-size: 19px; }
 }
 @media (min-width: 1024px) {
-  .hero-reference-layout { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .hero-reference-layout { grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr); gap: 24px; }
   .hero-reference-title { font-size: 44px; }
   .hero-reference-tagline { font-size: 21px; }
 }
 @media (min-width: 1280px) { .hero-reference-title { font-size: 54px; } }
+/* Laptop band (1024–1439): the wheel gets as much room as the screen allows,
+   so the copy column trims its button and tagline size slightly instead of
+   wrapping onto extra rows. */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero-reference-tagline { font-size: 18px; }
+  .hero-reference-action { font-size: 16px; padding: 10px 18px; min-height: 50px; gap: 8px; }
+  .hero-reference-action svg { width: 21px; height: 21px; }
+  .hero-reference-actions { gap: 12px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-reference-layout { grid-template-columns: minmax(0, 0.98fr) minmax(0, 1fr); gap: 16px; }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .hero-reference-layout { grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr); gap: 20px; }
+}
+@media (min-width: 1440px) {
+  .hero-reference-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr); gap: 24px; }
+}
 @media (max-width: 639px) {
   .hero-reference-title { font-size: 32px; }
   .hero-service-labels { gap: 7px; }
