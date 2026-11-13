@@ -198,7 +198,7 @@ function Index() {
               </Link></Button>
             </div>
           </div>
-          <div data-hero-emblem className="order-1 lg:order-2">
+          <div data-hero-emblem className="order-1 lg:order-2 lg:-mr-8 xl:-mr-16">
             <HeroEmblem />
           </div>
 
