@@ -1,5 +1,6 @@
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import zodiacOmCenter from "@/assets/zodiac-om-center.png";
+import teluguEmblem from "@/assets/hero-telugu-emblem.webp";
 
 /**
  * Hero Zodiac Wheel — the sacred golden zodiac horoscope wheel, split into
