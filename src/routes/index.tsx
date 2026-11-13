@@ -5,6 +5,9 @@ import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucid
 import gurujisMandalaBg from "@/assets/about/gurujis-mandala-bg.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
 import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
+import deityShankaracharya from "@/assets/deities/shankaracharya.webp";
+import deityGanesha from "@/assets/deities/ganesha.webp";
+import deityDurga from "@/assets/deities/durga.webp";
 import { useLanguage, useTr } from "@/lib/i18n";
 import { dict, FAQS, STEPS } from "@/data/site";
 import { SERVICES } from "@/data/services";
@@ -212,16 +215,25 @@ function Index() {
           loading="lazy"
         />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mx-auto mb-8 max-w-2xl text-center">
-            <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-gold/60 bg-maroon px-5 py-1.5 shadow-md">
-              <span className="text-xs font-semibold tracking-wide text-[#F3AF2E] sm:text-sm">
-                {d.home.gurujisTitle}
-              </span>
-            </div>
-            <h2 className="mt-4 font-display text-2xl font-bold text-maroon md:text-3xl">
-              {d.home.gurujisSubtitle}
-            </h2>
-            <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
+          <Reveal className="mb-8 flex items-end justify-center gap-6 sm:gap-10 md:gap-16">
+            <img
+              src={deityShankaracharya}
+              alt="Adi Shankaracharya seated in devotional meditation"
+              className="w-24 drop-shadow-xl sm:w-32 md:w-40"
+              loading="lazy"
+            />
+            <img
+              src={deityGanesha}
+              alt="Lord Ganesha seated on a golden lotus, giving a blessing"
+              className="w-24 drop-shadow-xl sm:w-32 md:w-40"
+              loading="lazy"
+            />
+            <img
+              src={deityDurga}
+              alt="Goddess Durga seated on a tiger"
+              className="w-24 drop-shadow-xl sm:w-32 md:w-40"
+              loading="lazy"
+            />
           </Reveal>
           <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:items-end md:gap-56">
             <Reveal delay={0.05} className="w-52 sm:w-72 md:w-80">
