@@ -11,6 +11,9 @@
 
 # Project decisions
 
+- Keep service galleries in bilingual service data and import CDN asset pointers via `.url`; newly uploaded gallery photos use managed assets so repository size stays small.
+- Keep enquiry access enforced by database RLS and assign the initial admin through the existing auth signup trigger; UI role checks alone never grant data access.
+
 - Background music toggles with any click on the page: a click starts it when silent and a click stops it when playing. Links, buttons, form fields and the sound button never trigger that page-click toggle (the sound button has its own toggle). The visitor's manual off choice is remembered; never use muted playback as a substitute for sound, and never let a gesture that starts sound also stop it.
 
 - The three.js zodiac scene (src/scene/ZodiacScene.tsx) is client-only: it is

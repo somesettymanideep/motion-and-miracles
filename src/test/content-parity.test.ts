@@ -67,7 +67,7 @@ describe("services data", () => {
   it("health astrology gallery holds the fifteen ceremony photos, captioned in both languages", () => {
     const health = SERVICES.find((s) => s.slug === "health-astrology");
     expect(health).toBeDefined();
-    const gallery = health!.detail.gallery ?? [];
+    const gallery = health?.detail.gallery ?? [];
     expect(gallery).toHaveLength(15);
     for (const item of gallery) {
       expect(item.image.length, "gallery image").toBeGreaterThan(0);
@@ -77,11 +77,11 @@ describe("services data", () => {
   });
 
   /** Any other service page with a gallery must be captioned the same way. */
-  it("special homas gallery holds the twenty homa photos, captioned in both languages", () => {
+  it("special homas gallery holds the twenty-nine homa photos, captioned in both languages", () => {
     const homas = SERVICES.find((s) => s.slug === "special-homas");
     expect(homas).toBeDefined();
-    const gallery = homas!.detail.gallery ?? [];
-    expect(gallery).toHaveLength(20);
+    const gallery = homas?.detail.gallery ?? [];
+    expect(gallery).toHaveLength(29);
     for (const item of gallery) {
       expect(item.image.length, "gallery image").toBeGreaterThan(0);
       expect(item.alt.en.trim().length).toBeGreaterThan(0);

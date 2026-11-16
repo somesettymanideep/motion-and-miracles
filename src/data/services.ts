@@ -45,6 +45,15 @@ import homaGallery17 from "@/assets/services/homa-gallery/homa-17.webp";
 import homaGallery18 from "@/assets/services/homa-gallery/homa-18.webp";
 import homaGallery19 from "@/assets/services/homa-gallery/homa-19.webp";
 import homaGallery20 from "@/assets/services/homa-gallery/homa-20.webp";
+import homaGallery21 from "@/assets/services/homa-gallery/homa-21.webp.asset.json";
+import homaGallery22 from "@/assets/services/homa-gallery/homa-22.webp.asset.json";
+import homaGallery23 from "@/assets/services/homa-gallery/homa-23.webp.asset.json";
+import homaGallery24 from "@/assets/services/homa-gallery/homa-24.webp.asset.json";
+import homaGallery25 from "@/assets/services/homa-gallery/homa-25.webp.asset.json";
+import homaGallery26 from "@/assets/services/homa-gallery/homa-26.webp.asset.json";
+import homaGallery27 from "@/assets/services/homa-gallery/homa-27.webp.asset.json";
+import homaGallery28 from "@/assets/services/homa-gallery/homa-28.webp.asset.json";
+import homaGallery29 from "@/assets/services/homa-gallery/homa-29.webp.asset.json";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -289,6 +298,15 @@ export const SERVICES: Service[] = [
             te: "సమవేతమైన కుటుంబికులు, అతిథుల ముందు హోమ కలశం అర్పిస్తున్న దృశ్యం",
           },
         },
+        { image: homaGallery21.url, alt: { en: "An elder presenting a ritual vessel to the seated priest", te: "కూర్చున్న ఋత్విక్కునికి పూజా పాత్ర అందిస్తున్న పెద్దలు" } },
+        { image: homaGallery22.url, alt: { en: "A devotee in yellow offering a vessel during the ceremony", te: "కార్యక్రమంలో పసుపు వస్త్రధారి పూజా పాత్ర అర్పిస్తున్నారు" } },
+        { image: homaGallery23.url, alt: { en: "The priest receiving the sacred vessel as family members watch", te: "కుటుంబ సభ్యుల సమక్షంలో పవిత్ర పాత్ర స్వీకరిస్తున్న ఋత్విక్" } },
+        { image: homaGallery24.url, alt: { en: "The decorated altar with flowers, betel leaves and offerings", te: "పూలు, తమలపాకులు, నివేదనలతో అలంకరించిన పూజా వేదిక" } },
+        { image: homaGallery25.url, alt: { en: "A sacred bath being offered to the deity idol in a brass tray", te: "ఇత్తడి పళ్ళెంలో దేవతా విగ్రహానికి అభిషేకం చేస్తున్న దృశ్యం" } },
+        { image: homaGallery26.url, alt: { en: "Two priests seated beside the sacred homa fire", te: "పవిత్ర హోమ అగ్ని పక్కన కూర్చున్న ఇద్దరు ఋత్విక్కులు" } },
+        { image: homaGallery27.url, alt: { en: "Priests offering oblations into the flower-adorned homa kunda", te: "పూలతో అలంకరించిన హోమ కుండంలో ఆహుతులు అర్పిస్తున్న ఋత్విక్కులు" } },
+        { image: homaGallery28.url, alt: { en: "The blazing homa fire before the chanting priests", te: "మంత్రోచ్చారణ చేస్తున్న ఋత్విక్కుల ముందు ప్రజ్వలిస్తున్న హోమ అగ్ని" } },
+        { image: homaGallery29.url, alt: { en: "Priests and family gathered around the homa fire", te: "హోమ అగ్ని చుట్టూ సమావేశమైన ఋత్విక్కులు, కుటుంబ సభ్యులు" } },
       ],
       seo: {
         title: "Special Homas | Chandi & Pratyangira Homam | Vijayawada",
