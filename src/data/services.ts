@@ -186,6 +186,78 @@ export const SERVICES: Service[] = [
         en: "Astrological remedies are spiritual guidance only and not a substitute for medical treatment. Please consult a doctor for any illness.",
         te: "జ్యోతిష్య పరిహారములు ఆధ్యాత్మిక మార్గదర్శనము మాత్రమే; వైద్య చికిత్సకు ప్రత్యామ్నాయము కాదు. ఏదైనా అనారోగ్యము కోసం దయచేసి వైద్యులను సంప్రదించండి.",
       },
+      gallery: [
+        {
+          image: healthCeremony01,
+          alt: {
+            en: "Elders seated on the ornate silver chair receiving the ceremony offering",
+            te: "అలంకృత వెండి పీఠంపై కూర్చుని కార్యక్రమ నివేదన స్వీకరిస్తున్న గృహస్తులు",
+          },
+        },
+        {
+          image: healthCeremony02,
+          alt: {
+            en: "Pada puja — the elders' feet washed and blessed during the ceremony",
+            te: "పాదపూజ — కార్యక్రమంలో గృహస్తుల పాదములు కడగబడుతున్న సమయం",
+          },
+        },
+        {
+          image: healthCeremony03,
+          alt: {
+            en: "A young devotee seated on the silver chair with folded hands",
+            te: "వెండి పీఠంపై కరజోడు చేస్తూ కూర్చున్న యువ భక్తుడు",
+          },
+        },
+        {
+          image: healthCeremony04,
+          alt: {
+            en: "A devotee presenting the wrapped offering topped with bananas and flowers",
+            te: "అరటిపండ్లు, పూలతో అలంకరించిన నివేదనను అర్పిస్తున్న భక్తురాలు",
+          },
+        },
+        {
+          image: healthCeremony05,
+          alt: {
+            en: "Blessings being received by the elders during the family ceremony",
+            te: "కుటుంబ కార్యక్రమంలో గృహస్తులు ఆశీర్వాదాలు స్వీకరిస్తున్న సమయం",
+          },
+        },
+        {
+          image: healthCeremony06,
+          alt: {
+            en: "A couple receiving the ceremony offering on the silver chair",
+            te: "వెండి పీఠంపై దంపతులు కార్యక్రమ నివేదన స్వీకరిస్తున్నారు",
+          },
+        },
+        {
+          image: healthCeremony07,
+          alt: {
+            en: "A turmeric-and-vermilion blessing being applied during the ceremony",
+            te: "కార్యక్రమంలో హల్ది–బెల్లం ఆశీర్వాదం అర్పిస్తున్న సమయం",
+          },
+        },
+        {
+          image: healthCeremony08,
+          alt: {
+            en: "A tray of bananas and flowers offered to the seated elders",
+            te: "కూర్చున్న గృహస్తులకు అరటిపండ్లు, పూలతో నివేదన అర్పిస్తున్న సమయం",
+          },
+        },
+        {
+          image: healthCeremony09,
+          alt: {
+            en: "The golden Anantha Padmanabha idol lit by oil lamps in the temple chamber",
+            te: "గుహా మందిరంలో దీపాల వెలుగులో ఉన్న అనంత పద్మనాభుని బంగారు విగ్రహం",
+          },
+        },
+        {
+          image: healthCeremony10,
+          alt: {
+            en: "The priest holding the ceremonial kalash as the homa is performed",
+            te: "హోమం జరుగుతున్న సమయంలో కలశం ధరించిన ఋత్విక్కుడు",
+          },
+        },
+      ],
       seo: {
         title: "Health Astrology | Mrityunjaya Homam | Vijayawada",
         description:
