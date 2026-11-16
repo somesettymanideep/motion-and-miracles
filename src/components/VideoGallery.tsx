@@ -33,9 +33,9 @@ export function VideoGallery({ items }: { items: VideoItem[] }) {
           {items.map((item, i) => (
             <div
               key={item.video}
-              className="min-w-0 shrink-0 grow-0 basis-full pl-5 sm:basis-1/2 lg:basis-1/3"
+              className="min-w-0 shrink-0 grow-0 basis-[80%] pl-5 sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
             >
-            <figure className="overflow-hidden rounded-2xl border-2 border-gold bg-card shadow-lg">
+            <div className="relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-[2rem] border-[6px] border-maroon bg-maroon shadow-xl ring-2 ring-gold">
               <video
                 ref={(el) => {
                   videos.current[i] = el;
@@ -46,27 +46,24 @@ export function VideoGallery({ items }: { items: VideoItem[] }) {
                 playsInline
                 preload="none"
                 aria-label={tr(item.title)}
-                className="h-[520px] w-full bg-cream object-contain sm:h-[560px]"
+                className="absolute inset-0 block h-full w-full object-cover"
               />
-              <figcaption className="px-4 py-3 text-sm font-semibold text-maroon">
-                {i + 1}. {tr(item.title)}
-              </figcaption>
-            </figure>
+            </div>
             </div>
           ))}
         </div>
       </div>
 
-      <span className="absolute right-4 top-4 rounded-full bg-maroon/85 px-3 py-1 text-xs font-semibold text-cream">
+      <p className="mt-4 text-center text-xs font-semibold text-maroon">
         {selected + 1} / {items.length}
-      </span>
+      </p>
       <Button
         variant="outline"
         size="icon"
         type="button"
         onClick={() => emblaApi?.scrollPrev()}
         aria-label={tr({ en: "Previous video", te: "మునుపటి వీడియో" })}
-        className="absolute -left-3 top-[260px] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold bg-card text-gold shadow-md hover:bg-gold-light/40 sm:-left-5"
+        className="absolute -left-3 top-[45%] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold bg-card text-gold shadow-md hover:bg-gold-light/40 sm:-left-5"
       >
         <ChevronLeft className="h-5 w-5" aria-hidden="true" />
       </Button>
@@ -76,7 +73,7 @@ export function VideoGallery({ items }: { items: VideoItem[] }) {
         type="button"
         onClick={() => emblaApi?.scrollNext()}
         aria-label={tr({ en: "Next video", te: "తదుపరి వీడియో" })}
-        className="absolute -right-3 top-[260px] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold bg-card text-gold shadow-md hover:bg-gold-light/40 sm:-right-5"
+        className="absolute -right-3 top-[45%] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold bg-card text-gold shadow-md hover:bg-gold-light/40 sm:-right-5"
       >
         <ChevronRight className="h-5 w-5" aria-hidden="true" />
       </Button>
