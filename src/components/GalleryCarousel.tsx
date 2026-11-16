@@ -7,8 +7,8 @@ import type { GalleryItem } from "@/data/services";
 
 /**
  * Photo carousel for a service detail page: infinite loop, 4s autoplay that
- * pauses on hover, swipe on touch, gold prev/next arrows, a photo counter,
- * dot indicators and a clickable thumbnail strip.
+ * pauses on hover, swipe on touch, gold prev/next arrows, a photo counter
+ * and a clickable thumbnail strip.
  */
 export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
   const tr = useTr();
@@ -17,7 +17,6 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
     [Autoplay({ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: false })]
   );
   const [selected, setSelected] = useState(0);
-  const [snaps, setSnaps] = useState<number[]>([]);
 
   const onSelect = useCallback(() => {
     if (emblaApi) setSelected(emblaApi.selectedScrollSnap());
@@ -25,12 +24,8 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
 
   useEffect(() => {
     if (!emblaApi) return;
-    const update = () => setSnaps(emblaApi.scrollSnapList());
-    update();
-    emblaApi.on("reInit", update);
     emblaApi.on("select", onSelect);
     return () => {
-      emblaApi.off("reInit", update);
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi, onSelect]);
@@ -77,22 +72,6 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
       >
         <ChevronRight className="h-5 w-5" aria-hidden="true" />
       </button>
-
-      <div className="mt-4 flex justify-center gap-2" role="tablist" aria-label="Gallery photos">
-        {snaps.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            role="tab"
-            aria-selected={selected === i}
-            aria-label={`Go to photo ${i + 1}`}
-            onClick={() => emblaApi?.scrollTo(i)}
-            className={`h-2.5 rounded-full transition-all ${
-              selected === i ? "w-6 bg-saffron" : "w-2.5 bg-gold/50 hover:bg-gold"
-            }`}
-          />
-        ))}
-      </div>
 
       <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
         {items.map((item, i) => (
