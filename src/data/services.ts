@@ -35,6 +35,16 @@ import homaGallery07 from "@/assets/services/homa-gallery/homa-07.webp";
 import homaGallery08 from "@/assets/services/homa-gallery/homa-08.webp";
 import homaGallery09 from "@/assets/services/homa-gallery/homa-09.webp";
 import homaGallery10 from "@/assets/services/homa-gallery/homa-10.webp";
+import homaGallery11 from "@/assets/services/homa-gallery/homa-11.webp";
+import homaGallery12 from "@/assets/services/homa-gallery/homa-12.webp";
+import homaGallery13 from "@/assets/services/homa-gallery/homa-13.webp";
+import homaGallery14 from "@/assets/services/homa-gallery/homa-14.webp";
+import homaGallery15 from "@/assets/services/homa-gallery/homa-15.webp";
+import homaGallery16 from "@/assets/services/homa-gallery/homa-16.webp";
+import homaGallery17 from "@/assets/services/homa-gallery/homa-17.webp";
+import homaGallery18 from "@/assets/services/homa-gallery/homa-18.webp";
+import homaGallery19 from "@/assets/services/homa-gallery/homa-19.webp";
+import homaGallery20 from "@/assets/services/homa-gallery/homa-20.webp";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -207,6 +217,76 @@ export const SERVICES: Service[] = [
           alt: {
             en: "All present bowing in prayer before the sacred homa fire",
             te: "పవిత్ర హోమ అగ్ని ముందు కరజోడు చేస్తూ ప్రణామం చేస్తున్న భక్తులు, ఋత్విక్కులు",
+          },
+        },
+        {
+          image: homaGallery11,
+          alt: {
+            en: "The altar prepared with the reclining Vishnu image and a yantra of rice, turmeric and betel leaves",
+            te: "శ్రీ మహావిష్ణువి శయన ఆకృతి, వరి, పసుపు, తాంబూలాలతో రచించిన యంత్రంతో అలంకరించిన పూజా మండపం",
+          },
+        },
+        {
+          image: homaGallery12,
+          alt: {
+            en: "The ceremonial altar from above, with brass vessels, grain offerings and portraits of the gurus",
+            te: "ఇత్తడి పాత్రలు, ధాన్య నివేదనలు, గురువర్యుల చిత్రాలతో పై నుండి కనిపిస్తున్న హోమ వేదిక",
+          },
+        },
+        {
+          image: homaGallery13,
+          alt: {
+            en: "The ritvik blessing the family with raised hand before the shrine",
+            te: "ఆలయం ముందు చేయి ఎత్తి కుటుంబాన్ని ఆశీర్వదిస్తున్న ఋత్విక్",
+          },
+        },
+        {
+          image: homaGallery14,
+          alt: {
+            en: "The devotee and the ritvik together holding the coconut-crowned brass kalasha",
+            te: "కొబ్బరితో పట్టిన ఇత్తడి కలశాన్ని కలిసి ధరించిన భక్తుడు, ఋత్విక్",
+          },
+        },
+        {
+          image: homaGallery15,
+          alt: {
+            en: "The kalasha being offered to the seated devotee during the rite",
+            te: "హోమ సమయంలో కూర్చున్న భక్తునికి కలశం అందిస్తున్న ఋత్విక్",
+          },
+        },
+        {
+          image: homaGallery16,
+          alt: {
+            en: "The devotee receiving the holy kalasha with both hands as the elders look on",
+            te: "పెద్దలు చూస్తూండ, రెండు చేతులతో పవిత్ర కలశాన్ని స్వీకరిస్తున్న భక్తుడు",
+          },
+        },
+        {
+          image: homaGallery17,
+          alt: {
+            en: "The elder priest placing the consecrated vessel into the devotee's hands",
+            te: "ప్రతిష్ఠించిన పాత్రను భక్తుని చేతులలో పెడుతున్న వయోజన ఋత్విక్",
+          },
+        },
+        {
+          image: homaGallery18,
+          alt: {
+            en: "The kalasha held over the devotee's hand during the sacred rite",
+            te: "పుణ్యకార్యంలో భక్తుని చేతిపై కలశం ధరిస్తున్న ఋత్విక్",
+          },
+        },
+        {
+          image: homaGallery19,
+          alt: {
+            en: "The coconut-crowned kalasha handed to the seated devotee",
+            te: "కొబ్బరి కలశాన్ని కూర్చున్న భక్తునికి అందిస్తున్న ఋత్విక్",
+          },
+        },
+        {
+          image: homaGallery20,
+          alt: {
+            en: "The ceremonial pot presented before the assembled family and guests",
+            te: "సమవేతమైన కుటుంబికులు, అతిథుల ముందు హోమ కలశం అర్పిస్తున్న దృశ్యం",
           },
         },
       ],

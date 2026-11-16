@@ -77,11 +77,11 @@ describe("services data", () => {
   });
 
   /** Any other service page with a gallery must be captioned the same way. */
-  it("special homas gallery holds the ten homa photos, captioned in both languages", () => {
+  it("special homas gallery holds the twenty homa photos, captioned in both languages", () => {
     const homas = SERVICES.find((s) => s.slug === "special-homas");
     expect(homas).toBeDefined();
     const gallery = homas!.detail.gallery ?? [];
-    expect(gallery).toHaveLength(10);
+    expect(gallery).toHaveLength(20);
     for (const item of gallery) {
       expect(item.image.length, "gallery image").toBeGreaterThan(0);
       expect(item.alt.en.trim().length).toBeGreaterThan(0);
