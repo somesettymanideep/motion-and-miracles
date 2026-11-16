@@ -76,6 +76,18 @@ import homaPoster08 from "@/assets/services/homa-videos/homa-video-08.jpg.asset.
 import homaPoster09 from "@/assets/services/homa-videos/homa-video-09.jpg.asset.json";
 import homaPoster10 from "@/assets/services/homa-videos/homa-video-10.jpg.asset.json";
 import homaPoster11 from "@/assets/services/homa-videos/homa-video-11.jpg.asset.json";
+import homaVideo12 from "@/assets/services/homa-videos/homa-video-12.mp4.asset.json";
+import homaVideo13 from "@/assets/services/homa-videos/homa-video-13.mp4.asset.json";
+import homaVideo14 from "@/assets/services/homa-videos/homa-video-14.mp4.asset.json";
+import homaVideo15 from "@/assets/services/homa-videos/homa-video-15.mp4.asset.json";
+import homaVideo16 from "@/assets/services/homa-videos/homa-video-16.mp4.asset.json";
+import homaVideo17 from "@/assets/services/homa-videos/homa-video-17.mp4.asset.json";
+import homaPoster12 from "@/assets/services/homa-videos/homa-video-12.jpg.asset.json";
+import homaPoster13 from "@/assets/services/homa-videos/homa-video-13.jpg.asset.json";
+import homaPoster14 from "@/assets/services/homa-videos/homa-video-14.jpg.asset.json";
+import homaPoster15 from "@/assets/services/homa-videos/homa-video-15.jpg.asset.json";
+import homaPoster16 from "@/assets/services/homa-videos/homa-video-16.jpg.asset.json";
+import homaPoster17 from "@/assets/services/homa-videos/homa-video-17.jpg.asset.json";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -346,6 +358,12 @@ export const SERVICES: Service[] = [
         { video: homaVideo09.url, poster: homaPoster09.url, title: { en: "Family gathered for blessings", te: "ఆశీర్వాదాల కోసం సమావేశమైన కుటుంబం" } },
         { video: homaVideo10.url, poster: homaPoster10.url, title: { en: "Elders blessing the devotee", te: "భక్తుని ఆశీర్వదిస్తున్న పెద్దలు" } },
         { video: homaVideo11.url, poster: homaPoster11.url, title: { en: "Ceremony with family and guests", te: "కుటుంబం, అతిథులతో కార్యక్రమం" } },
+        { video: homaVideo12.url, poster: homaPoster12.url, title: { en: "Sacred fire offerings", te: "పవిత్ర అగ్ని ఆహుతులు" } },
+        { video: homaVideo13.url, poster: homaPoster13.url, title: { en: "Priests chanting mantras", te: "మంత్రాలు పఠిస్తున్న పూజారులు" } },
+        { video: homaVideo14.url, poster: homaPoster14.url, title: { en: "Devotees at the homa", te: "హోమంలో భక్తులు" } },
+        { video: homaVideo15.url, poster: homaPoster15.url, title: { en: "Blessings after the ritual", te: "కార్యక్రమం తర్వాత ఆశీర్వాదాలు" } },
+        { video: homaVideo16.url, poster: homaPoster16.url, title: { en: "Offerings to the deity", te: "దేవునికి నైవేద్యాలు" } },
+        { video: homaVideo17.url, poster: homaPoster17.url, title: { en: "Grand homa ceremony", te: "వైభవంగా హోమ కార్యక్రమం" } },
       ],
       seo: {
         title: "Special Homas | Chandi & Pratyangira Homam | Vijayawada",

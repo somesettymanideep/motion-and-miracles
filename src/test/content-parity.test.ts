@@ -89,9 +89,9 @@ describe("services data", () => {
     }
   });
 
-  it("special homas video gallery holds all eleven videos with bilingual titles", () => {
+  it("special homas video gallery holds all seventeen videos with bilingual titles", () => {
     const videos = SERVICES.find((s) => s.slug === "special-homas")?.detail.videos ?? [];
-    expect(videos).toHaveLength(11);
+    expect(videos).toHaveLength(17);
     for (const item of videos) {
       expect(item.video.length).toBeGreaterThan(0);
       expect(item.poster.length).toBeGreaterThan(0);
