@@ -54,9 +54,23 @@ import homaGallery26 from "@/assets/services/homa-gallery/homa-26.webp.asset.jso
 import homaGallery27 from "@/assets/services/homa-gallery/homa-27.webp.asset.json";
 import homaGallery28 from "@/assets/services/homa-gallery/homa-28.webp.asset.json";
 import homaGallery29 from "@/assets/services/homa-gallery/homa-29.webp.asset.json";
+import homaVideo01 from "@/assets/services/homa-videos/homa-video-01.mp4.asset.json";
+import homaVideo02 from "@/assets/services/homa-videos/homa-video-02.mp4.asset.json";
+import homaVideo03 from "@/assets/services/homa-videos/homa-video-03.mp4.asset.json";
+import homaVideo04 from "@/assets/services/homa-videos/homa-video-04.mp4.asset.json";
+import homaVideo05 from "@/assets/services/homa-videos/homa-video-05.mp4.asset.json";
+import homaVideo06 from "@/assets/services/homa-videos/homa-video-06.mp4.asset.json";
+import homaPoster01 from "@/assets/services/homa-videos/homa-video-01.jpg.asset.json";
+import homaPoster02 from "@/assets/services/homa-videos/homa-video-02.jpg.asset.json";
+import homaPoster03 from "@/assets/services/homa-videos/homa-video-03.jpg.asset.json";
+import homaPoster04 from "@/assets/services/homa-videos/homa-video-04.jpg.asset.json";
+import homaPoster05 from "@/assets/services/homa-videos/homa-video-05.jpg.asset.json";
+import homaPoster06 from "@/assets/services/homa-videos/homa-video-06.jpg.asset.json";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
+/** One ceremony video in a service page video gallery. */
+export type VideoItem = { video: string; poster: string; title: Bi };
 
 export type ServiceDetail = {
   heroTitle: Bi;
@@ -68,6 +82,8 @@ export type ServiceDetail = {
   note?: Bi;
   /** Photos shown as an autoplaying carousel at the foot of the page. */
   gallery?: GalleryItem[];
+  /** Ceremony videos shown after the photo gallery. */
+  videos?: VideoItem[];
   seo: { title: string; description: string };
 };
 
@@ -307,6 +323,14 @@ export const SERVICES: Service[] = [
         { image: homaGallery27.url, alt: { en: "Priests offering oblations into the flower-adorned homa kunda", te: "పూలతో అలంకరించిన హోమ కుండంలో ఆహుతులు అర్పిస్తున్న ఋత్విక్కులు" } },
         { image: homaGallery28.url, alt: { en: "The blazing homa fire before the chanting priests", te: "మంత్రోచ్చారణ చేస్తున్న ఋత్విక్కుల ముందు ప్రజ్వలిస్తున్న హోమ అగ్ని" } },
         { image: homaGallery29.url, alt: { en: "Priests and family gathered around the homa fire", te: "హోమ అగ్ని చుట్టూ సమావేశమైన ఋత్విక్కులు, కుటుంబ సభ్యులు" } },
+      ],
+      videos: [
+        { video: homaVideo01.url, poster: homaPoster01.url, title: { en: "Ritual preparations with family", te: "కుటుంబంతో పూజా ఏర్పాట్లు" } },
+        { video: homaVideo02.url, poster: homaPoster02.url, title: { en: "Prayers before the decorated altar", te: "అలంకృత వేదిక ముందు ప్రార్థనలు" } },
+        { video: homaVideo03.url, poster: homaPoster03.url, title: { en: "Blessings during the ceremony", te: "కార్యక్రమంలో ఆశీర్వాదాలు" } },
+        { video: homaVideo04.url, poster: homaPoster04.url, title: { en: "Priest guiding the ritual", te: "కార్యక్రమాన్ని నిర్వహిస్తున్న ఋత్విక్" } },
+        { video: homaVideo05.url, poster: homaPoster05.url, title: { en: "Elders joining the ceremony", te: "కార్యక్రమంలో పాల్గొంటున్న పెద్దలు" } },
+        { video: homaVideo06.url, poster: homaPoster06.url, title: { en: "Family receiving blessings", te: "ఆశీర్వాదాలు పొందుతున్న కుటుంబం" } },
       ],
       seo: {
         title: "Special Homas | Chandi & Pratyangira Homam | Vijayawada",

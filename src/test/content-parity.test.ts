@@ -89,6 +89,17 @@ describe("services data", () => {
     }
   });
 
+  it("special homas video gallery holds all six videos with bilingual titles", () => {
+    const videos = SERVICES.find((s) => s.slug === "special-homas")?.detail.videos ?? [];
+    expect(videos).toHaveLength(6);
+    for (const item of videos) {
+      expect(item.video.length).toBeGreaterThan(0);
+      expect(item.poster.length).toBeGreaterThan(0);
+      expect(item.title.en.trim().length).toBeGreaterThan(0);
+      expect(item.title.te.trim().length).toBeGreaterThan(0);
+    }
+  });
+
   /** Any other service page with a gallery must be captioned the same way. */
   it("every gallery photo has an English and Telugu caption", () => {
     for (const s of SERVICES) {
