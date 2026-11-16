@@ -89,9 +89,20 @@ describe("services data", () => {
     }
   });
 
-  it("special homas video gallery holds all seventeen videos with bilingual titles", () => {
+  it("special homas video gallery holds all eight videos with bilingual titles", () => {
     const videos = SERVICES.find((s) => s.slug === "special-homas")?.detail.videos ?? [];
-    expect(videos).toHaveLength(17);
+    expect(videos).toHaveLength(8);
+    for (const item of videos) {
+      expect(item.video.length).toBeGreaterThan(0);
+      expect(item.poster.length).toBeGreaterThan(0);
+      expect(item.title.en.trim().length).toBeGreaterThan(0);
+      expect(item.title.te.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it("health astrology video gallery holds all nine videos with bilingual titles", () => {
+    const videos = SERVICES.find((s) => s.slug === "health-astrology")?.detail.videos ?? [];
+    expect(videos).toHaveLength(9);
     for (const item of videos) {
       expect(item.video.length).toBeGreaterThan(0);
       expect(item.poster.length).toBeGreaterThan(0);
