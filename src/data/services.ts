@@ -25,7 +25,6 @@ import healthCeremony12 from "@/assets/services/health-gallery/ceremony-12.webp"
 import healthCeremony13 from "@/assets/services/health-gallery/ceremony-13.webp";
 import healthCeremony14 from "@/assets/services/health-gallery/ceremony-14.webp";
 import healthCeremony15 from "@/assets/services/health-gallery/ceremony-15.webp";
-import healthCeremony16 from "@/assets/services/health-gallery/ceremony-16.webp";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -296,13 +295,6 @@ export const SERVICES: Service[] = [
           alt: {
             en: "The golden Anantha Padmanabha idol lit by oil lamps in the temple chamber",
             te: "గుహా మందిరంలో దీపాల వెలుగులో ఉన్న అనంత పద్మనాభుని బంగారు విగ్రహం",
-          },
-        },
-        {
-          image: healthCeremony16,
-          alt: {
-            en: "The priest holding the ceremonial kalash as the homa is performed",
-            te: "హోమం జరుగుతున్న సమయంలో కలశం ధరించిన ఋత్విక్కుడు",
           },
         },
       ],
