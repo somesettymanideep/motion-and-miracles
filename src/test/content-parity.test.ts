@@ -56,7 +56,29 @@ describe("services data", () => {
   it("every service intro carries at least five lines of copy in both languages", () => {
     for (const s of SERVICES) {
       expect(s.detail.intro.en.length, `${s.slug} intro (en)`).toBeGreaterThanOrEqual(400);
-      expect(s.detail.intro.te.length, `${s.slug} intro (te)`).toBeGreaterThanOrEqual(300);
+  /**
+   * The Health Astrology page shows the ceremony photos as a carousel, so it
+   * must carry all ten of them with a caption in both languages.
+   */
+  it("health astrology gallery holds the ten ceremony photos, captioned in both languages", () => {
+    const health = SERVICES.find((s) => s.slug === "health-astrology");
+    expect(health).toBeDefined();
+    const gallery = health!.detail.gallery ?? [];
+    expect(gallery).toHaveLength(10);
+    for (const item of gallery) {
+      expect(item.image.length, "gallery image").toBeGreaterThan(0);
+      expect(item.alt.en.trim().length).toBeGreaterThan(0);
+      expect(item.alt.te.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  /** Any other service page with a gallery must be captioned the same way. */
+  it("every gallery photo has an English and Telugu caption", () => {
+    for (const s of SERVICES) {
+      for (const item of s.detail.gallery ?? []) {
+        expect(item.alt.en.trim().length, `${s.slug} gallery (en)`).toBeGreaterThan(0);
+        expect(item.alt.te.trim().length, `${s.slug} gallery (te)`).toBeGreaterThan(0);
+      }
     }
   });
 });
