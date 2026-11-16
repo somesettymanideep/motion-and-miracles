@@ -60,12 +60,22 @@ import homaVideo03 from "@/assets/services/homa-videos/homa-video-03.mp4.asset.j
 import homaVideo04 from "@/assets/services/homa-videos/homa-video-04.mp4.asset.json";
 import homaVideo05 from "@/assets/services/homa-videos/homa-video-05.mp4.asset.json";
 import homaVideo06 from "@/assets/services/homa-videos/homa-video-06.mp4.asset.json";
+import homaVideo07 from "@/assets/services/homa-videos/homa-video-07.mp4.asset.json";
+import homaVideo08 from "@/assets/services/homa-videos/homa-video-08.mp4.asset.json";
+import homaVideo09 from "@/assets/services/homa-videos/homa-video-09.mp4.asset.json";
+import homaVideo10 from "@/assets/services/homa-videos/homa-video-10.mp4.asset.json";
+import homaVideo11 from "@/assets/services/homa-videos/homa-video-11.mp4.asset.json";
 import homaPoster01 from "@/assets/services/homa-videos/homa-video-01.jpg.asset.json";
 import homaPoster02 from "@/assets/services/homa-videos/homa-video-02.jpg.asset.json";
 import homaPoster03 from "@/assets/services/homa-videos/homa-video-03.jpg.asset.json";
 import homaPoster04 from "@/assets/services/homa-videos/homa-video-04.jpg.asset.json";
 import homaPoster05 from "@/assets/services/homa-videos/homa-video-05.jpg.asset.json";
 import homaPoster06 from "@/assets/services/homa-videos/homa-video-06.jpg.asset.json";
+import homaPoster07 from "@/assets/services/homa-videos/homa-video-07.jpg.asset.json";
+import homaPoster08 from "@/assets/services/homa-videos/homa-video-08.jpg.asset.json";
+import homaPoster09 from "@/assets/services/homa-videos/homa-video-09.jpg.asset.json";
+import homaPoster10 from "@/assets/services/homa-videos/homa-video-10.jpg.asset.json";
+import homaPoster11 from "@/assets/services/homa-videos/homa-video-11.jpg.asset.json";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -331,6 +341,11 @@ export const SERVICES: Service[] = [
         { video: homaVideo04.url, poster: homaPoster04.url, title: { en: "Priest guiding the ritual", te: "కార్యక్రమాన్ని నిర్వహిస్తున్న ఋత్విక్" } },
         { video: homaVideo05.url, poster: homaPoster05.url, title: { en: "Elders joining the ceremony", te: "కార్యక్రమంలో పాల్గొంటున్న పెద్దలు" } },
         { video: homaVideo06.url, poster: homaPoster06.url, title: { en: "Family receiving blessings", te: "ఆశీర్వాదాలు పొందుతున్న కుటుంబం" } },
+        { video: homaVideo07.url, poster: homaPoster07.url, title: { en: "Devotees offering prayers", te: "ప్రార్థనలు అర్పిస్తున్న భక్తులు" } },
+        { video: homaVideo08.url, poster: homaPoster08.url, title: { en: "Ritual offerings before the elders", te: "పెద్దల ముందు పూజా నివేదనలు" } },
+        { video: homaVideo09.url, poster: homaPoster09.url, title: { en: "Family gathered for blessings", te: "ఆశీర్వాదాల కోసం సమావేశమైన కుటుంబం" } },
+        { video: homaVideo10.url, poster: homaPoster10.url, title: { en: "Elders blessing the devotee", te: "భక్తుని ఆశీర్వదిస్తున్న పెద్దలు" } },
+        { video: homaVideo11.url, poster: homaPoster11.url, title: { en: "Ceremony with family and guests", te: "కుటుంబం, అతిథులతో కార్యక్రమం" } },
       ],
       seo: {
         title: "Special Homas | Chandi & Pratyangira Homam | Vijayawada",

@@ -6,3 +6,4 @@
 - [x] Run tests and record verification results: 25 tests passed; preview build OK; no gallery runtime errors.
 - [x] Add the nine newly uploaded Special Homas photos and verify all 29 photos load on desktop and mobile.
 - [x] Add all six uploaded videos to a separate Special Homas video gallery: all six play on desktop and mobile; eight gallery/content checks passed; build OK.
+- [x] Add five more videos and convert the video gallery to a carousel: all 11 play on desktop and mobile, arrows loop, slide changes pause playback; build OK.
