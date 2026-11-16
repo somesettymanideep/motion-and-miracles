@@ -10,6 +10,19 @@ import marriageImg from "@/assets/services/marriage.jpg";
 import childrenImg from "@/assets/services/children.jpg";
 import educationImg from "@/assets/services/education.jpg";
 import financialImg from "@/assets/services/financial.jpg";
+import healthCeremony01 from "@/assets/services/health-gallery/ceremony-01.webp";
+import healthCeremony02 from "@/assets/services/health-gallery/ceremony-02.webp";
+import healthCeremony03 from "@/assets/services/health-gallery/ceremony-03.webp";
+import healthCeremony04 from "@/assets/services/health-gallery/ceremony-04.webp";
+import healthCeremony05 from "@/assets/services/health-gallery/ceremony-05.webp";
+import healthCeremony06 from "@/assets/services/health-gallery/ceremony-06.webp";
+import healthCeremony07 from "@/assets/services/health-gallery/ceremony-07.webp";
+import healthCeremony08 from "@/assets/services/health-gallery/ceremony-08.webp";
+import healthCeremony09 from "@/assets/services/health-gallery/ceremony-09.webp";
+import healthCeremony10 from "@/assets/services/health-gallery/ceremony-10.webp";
+
+/** One photo in a service page gallery carousel. */
+export type GalleryItem = { image: string; alt: Bi };
 
 export type ServiceDetail = {
   heroTitle: Bi;
@@ -19,6 +32,8 @@ export type ServiceDetail = {
   samskaras?: Bi[];
   extra?: { title: Bi; items: Bi[] };
   note?: Bi;
+  /** Photos shown as an autoplaying carousel at the foot of the page. */
+  gallery?: GalleryItem[];
   seo: { title: string; description: string };
 };
 
