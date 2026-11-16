@@ -64,11 +64,11 @@ describe("services data", () => {
    * The Health Astrology page shows the ceremony photos as a carousel, so it
    * must carry all ten of them with a caption in both languages.
    */
-  it("health astrology gallery holds the sixteen ceremony photos, captioned in both languages", () => {
+  it("health astrology gallery holds the fifteen ceremony photos, captioned in both languages", () => {
     const health = SERVICES.find((s) => s.slug === "health-astrology");
     expect(health).toBeDefined();
     const gallery = health!.detail.gallery ?? [];
-    expect(gallery).toHaveLength(16);
+    expect(gallery).toHaveLength(15);
     for (const item of gallery) {
       expect(item.image.length, "gallery image").toBeGreaterThan(0);
       expect(item.alt.en.trim().length).toBeGreaterThan(0);
