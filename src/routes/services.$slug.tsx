@@ -6,6 +6,7 @@ import { SERVICES } from "@/data/services";
 import { PHONES, waLink } from "@/lib/whatsapp";
 import { Reveal } from "@/components/Reveal";
 import { PageBanner } from "@/components/PageBanner";
+import { GalleryCarousel } from "@/components/GalleryCarousel";
 import { ConsultationForm } from "@/components/forms";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -180,6 +181,23 @@ function ServiceDetailPage() {
           </aside>
         </div>
       </section>
+
+      {/* Photo gallery carousel (services that supply photos) */}
+      {detail.gallery && detail.gallery.length > 0 && (
+        <section className="border-t-2 border-gold/40 bg-peach py-14">
+          <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
+            <Reveal className="mb-8 text-center">
+              <h2 className="font-display text-2xl font-bold text-maroon">
+                {tr({ en: "Gallery", te: "చిత్రమాలిక" })}
+              </h2>
+              <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <GalleryCarousel items={detail.gallery} />
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* Other services */}
       <section className="border-t-2 border-gold/40 bg-peach py-14">
