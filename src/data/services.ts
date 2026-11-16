@@ -20,6 +20,12 @@ import healthCeremony07 from "@/assets/services/health-gallery/ceremony-07.webp"
 import healthCeremony08 from "@/assets/services/health-gallery/ceremony-08.webp";
 import healthCeremony09 from "@/assets/services/health-gallery/ceremony-09.webp";
 import healthCeremony10 from "@/assets/services/health-gallery/ceremony-10.webp";
+import healthCeremony11 from "@/assets/services/health-gallery/ceremony-11.webp";
+import healthCeremony12 from "@/assets/services/health-gallery/ceremony-12.webp";
+import healthCeremony13 from "@/assets/services/health-gallery/ceremony-13.webp";
+import healthCeremony14 from "@/assets/services/health-gallery/ceremony-14.webp";
+import healthCeremony15 from "@/assets/services/health-gallery/ceremony-15.webp";
+import healthCeremony16 from "@/assets/services/health-gallery/ceremony-16.webp";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -246,12 +252,54 @@ export const SERVICES: Service[] = [
         {
           image: healthCeremony09,
           alt: {
+            en: "A woman in a red sari presenting the offering parcel to the couple seated on the silver throne",
+            te: "ఎర్రటి చీర ధరించిన భక్తురాలు వెండి పీఠంపై కూర్చున్న దంపతులకు నివేదన పొట్లం అర్పిస్తున్నారు",
+          },
+        },
+        {
+          image: healthCeremony10,
+          alt: {
+            en: "A woman in a red-and-gold sari presenting the fruit-and-flower wrapped offering to the seated couple",
+            te: "పండ్లు, పూలతో అలంకరించిన నివేదనను కూర్చున్న దంపతులకు అర్పిస్తున్న భక్తురాలు",
+          },
+        },
+        {
+          image: healthCeremony11,
+          alt: {
+            en: "Priests and family members greeting the elders on the throne with folded hands",
+            te: "పీఠంపై కూర్చున్న గృహస్తులకు ఋత్విక్కులు, కుటుంబసభ్యులు కరజోడు చేస్తున్న సమయం",
+          },
+        },
+        {
+          image: healthCeremony12,
+          alt: {
+            en: "A woman in a red silk sari receiving the elders' blessing at the ceremony entrance",
+            te: "కార్యక్రమ ప్రవేశద్వారం వద్ద గృహస్తుల ఆశీర్వాదం పొందుతున్న భక్తురాలు",
+          },
+        },
+        {
+          image: healthCeremony13,
+          alt: {
+            en: "The elders holding the offering tray as family members and the priest bow in prayer",
+            te: "నివేదన పళ్ళు ధరించిన గృహస్తులకు కుటుంబసభ్యులు, ఋత్విక్కుడు ప్రణామం చేస్తున్నారు",
+          },
+        },
+        {
+          image: healthCeremony14,
+          alt: {
+            en: "Elders and guests in traditional white attire gathered before the ceremony begins",
+            te: "కార్యక్రమం ప్రారంభానికి ముందు సంప్రదాయ వస్త్రాలతో సమావేశమైన పెద్దలు, అతిథులు",
+          },
+        },
+        {
+          image: healthCeremony15,
+          alt: {
             en: "The golden Anantha Padmanabha idol lit by oil lamps in the temple chamber",
             te: "గుహా మందిరంలో దీపాల వెలుగులో ఉన్న అనంత పద్మనాభుని బంగారు విగ్రహం",
           },
         },
         {
-          image: healthCeremony10,
+          image: healthCeremony16,
           alt: {
             en: "The priest holding the ceremonial kalash as the homa is performed",
             te: "హోమం జరుగుతున్న సమయంలో కలశం ధరించిన ఋత్విక్కుడు",
