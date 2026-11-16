@@ -77,6 +77,19 @@ describe("services data", () => {
   });
 
   /** Any other service page with a gallery must be captioned the same way. */
+  it("special homas gallery holds the ten homa photos, captioned in both languages", () => {
+    const homas = SERVICES.find((s) => s.slug === "special-homas");
+    expect(homas).toBeDefined();
+    const gallery = homas!.detail.gallery ?? [];
+    expect(gallery).toHaveLength(10);
+    for (const item of gallery) {
+      expect(item.image.length, "gallery image").toBeGreaterThan(0);
+      expect(item.alt.en.trim().length).toBeGreaterThan(0);
+      expect(item.alt.te.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  /** Any other service page with a gallery must be captioned the same way. */
   it("every gallery photo has an English and Telugu caption", () => {
     for (const s of SERVICES) {
       for (const item of s.detail.gallery ?? []) {

@@ -25,6 +25,16 @@ import healthCeremony12 from "@/assets/services/health-gallery/ceremony-12.webp"
 import healthCeremony13 from "@/assets/services/health-gallery/ceremony-13.webp";
 import healthCeremony14 from "@/assets/services/health-gallery/ceremony-14.webp";
 import healthCeremony15 from "@/assets/services/health-gallery/ceremony-15.webp";
+import homaGallery01 from "@/assets/services/homa-gallery/homa-01.webp";
+import homaGallery02 from "@/assets/services/homa-gallery/homa-02.webp";
+import homaGallery03 from "@/assets/services/homa-gallery/homa-03.webp";
+import homaGallery04 from "@/assets/services/homa-gallery/homa-04.webp";
+import homaGallery05 from "@/assets/services/homa-gallery/homa-05.webp";
+import homaGallery06 from "@/assets/services/homa-gallery/homa-06.webp";
+import homaGallery07 from "@/assets/services/homa-gallery/homa-07.webp";
+import homaGallery08 from "@/assets/services/homa-gallery/homa-08.webp";
+import homaGallery09 from "@/assets/services/homa-gallery/homa-09.webp";
+import homaGallery10 from "@/assets/services/homa-gallery/homa-10.webp";
 
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
@@ -127,6 +137,78 @@ export const SERVICES: Service[] = [
         { en: "Ugraratha Shanti", te: "ఉగ్రరథ శాంతి" },
         { en: "Bheemaratha Shanti", te: "భీమరథ శాంతి" },
         { en: "Samputikarana Homas", te: "సంపుటీకరణ హోమములు" },
+      ],
+      gallery: [
+        {
+          image: homaGallery01,
+          alt: {
+            en: "A devotee holding the adorned deity idol among the ritual vessels and offerings",
+            te: "ఋత్విక్ సామగ్రి, నివేదనల మధ్య అలంకృత విగ్రహాన్ని ధరించిన భక్తురాలు",
+          },
+        },
+        {
+          image: homaGallery02,
+          alt: {
+            en: "Devotees and ritviks offering flowers in prayer before the adorned kalash",
+            te: "అలంకృత కలశం ముందు పూలు అర్పిస్తూ ప్రార్థిస్తున్న భక్తులు, ఋత్విక్కులు",
+          },
+        },
+        {
+          image: homaGallery03,
+          alt: {
+            en: "The puja altar with the floral kalash, oil lamps and coconut offerings",
+            te: "పూల కలశం, దీపాలు, కొబ్బరికాయలతో అలంకరించిన పూజా మండపం",
+          },
+        },
+        {
+          image: homaGallery04,
+          alt: {
+            en: "The full ceremony arrangement of fruit offerings, brass vessels and shrines",
+            te: "నివేదన పండ్లు, ఇత్తడి పాత్రలు, అలంకృత ఆలయాలతో కార్యక్రమ స్థలం",
+          },
+        },
+        {
+          image: homaGallery05,
+          alt: {
+            en: "The consecrated kalash draped in yellow cloth and adorned with flowers and offerings",
+            te: "పసుపు వస్త్రంతో కప్పి, పూలు, నివేదనలతో అలంకరించిన కలశం",
+          },
+        },
+        {
+          image: homaGallery06,
+          alt: {
+            en: "The brick homa kunda decorated with yellow flowers, ready for the rite",
+            te: "పసుపు పూలతో అలంకరించి హోమం కోసం ఏర్పాటు చేసిన ఇటుక కుండం",
+          },
+        },
+        {
+          image: homaGallery07,
+          alt: {
+            en: "The couple tending the sacred fire in the homa kunda",
+            te: "హోమ కుండంలో పవిత్ర అగ్నికి ఆహుతులు అర్పిస్తున్న దంపతులు",
+          },
+        },
+        {
+          image: homaGallery08,
+          alt: {
+            en: "The ritvik chanting mantras as oblations are offered into the blazing fire",
+            te: "మంత్రోచ్చారణతో అగ్నికి ఆహుతులు అర్పిస్తున్న ఋత్విక్కుడు",
+          },
+        },
+        {
+          image: homaGallery09,
+          alt: {
+            en: "Ritviks and devotees standing in prayer as the homa chants continue",
+            te: "హోమ మంత్రోచ్ఛారణ సమయంలో కరజోడు చేస్తూ నిలబడిన ఋత్విక్కులు, భక్తులు",
+          },
+        },
+        {
+          image: homaGallery10,
+          alt: {
+            en: "All present bowing in prayer before the sacred homa fire",
+            te: "పవిత్ర హోమ అగ్ని ముందు కరజోడు చేస్తూ ప్రణామం చేస్తున్న భక్తులు, ఋత్విక్కులు",
+          },
+        },
       ],
       seo: {
         title: "Special Homas | Chandi & Pratyangira Homam | Vijayawada",
