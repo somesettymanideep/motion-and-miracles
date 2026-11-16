@@ -56,6 +56,10 @@ describe("services data", () => {
   it("every service intro carries at least five lines of copy in both languages", () => {
     for (const s of SERVICES) {
       expect(s.detail.intro.en.length, `${s.slug} intro (en)`).toBeGreaterThanOrEqual(400);
+      expect(s.detail.intro.te.length, `${s.slug} intro (te)`).toBeGreaterThanOrEqual(300);
+    }
+  });
+
   /**
    * The Health Astrology page shows the ceremony photos as a carousel, so it
    * must carry all ten of them with a caption in both languages.
