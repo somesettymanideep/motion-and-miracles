@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { VideoItem } from "@/data/services";
@@ -13,8 +13,15 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
   const [selected, setSelected] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState(false);
+  const [landscape, setLandscape] = useState(false);
   const player = useRef<HTMLVideoElement>(null);
   const item = items[selected];
+  useEffect(() => {
+    if (!item) return;
+    const img = new Image();
+    img.onload = () => setLandscape(img.naturalWidth > img.naturalHeight);
+    img.src = item.poster;
+  }, [item]);
   if (!item) return null;
   const pageStart = Math.floor(selected / 6) * 6;
 
@@ -37,7 +44,7 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
 
   return (
     <div className="moments-gallery" aria-label={d.label}>
-      <div className="moments-player">
+      <div className={landscape ? "moments-player moments-player-tv" : "moments-player"}>
         <video
           key={item.video}
           ref={player}
@@ -51,7 +58,8 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
           onPause={() => setPlaying(false)}
           onEnded={() => setPlaying(false)}
           onError={() => setError(true)}
-          className="absolute inset-0 h-full w-full object-cover"
+          onLoadedMetadata={(e) => setLandscape(e.currentTarget.videoWidth > e.currentTarget.videoHeight)}
+          className="absolute inset-0 h-full w-full object-contain"
         />
         {!playing && (
           <Button type="button" variant="ghost" size="icon" aria-label={d.play} onClick={play} className="moments-play moments-play-main">
@@ -61,14 +69,8 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
       </div>
       <div className="moments-browser">
         <header className="text-center">
-          <div className="flex items-center justify-center gap-5 text-maroon">
-            <span className="h-px flex-1 bg-gold" aria-hidden="true" />
-            <p className="text-xs font-semibold uppercase sm:text-sm">{d.label}</p>
-            <span className="h-px flex-1 bg-gold" aria-hidden="true" />
-          </div>
-          <h2 className="mt-3 font-display text-3xl font-bold text-maroon sm:text-4xl xl:text-5xl">{d.title}</h2>
-          <p className="mt-3 text-sm text-maroon sm:text-lg">{d.subtitle}</p>
-          <div className="my-6 flex items-center justify-center gap-2 text-gold" aria-hidden="true">
+          <h2 className="font-display text-2xl font-bold text-maroon sm:text-3xl">{d.label}</h2>
+          <div className="my-5 flex items-center justify-center gap-2 text-gold" aria-hidden="true">
             <span className="h-px w-1/3 bg-gold" /><span>◆</span><span className="h-px w-1/3 bg-gold" />
           </div>
         </header>

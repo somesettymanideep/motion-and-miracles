@@ -339,6 +339,8 @@
 
 .moments-gallery { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr); align-items: center; gap: 48px; }
 .moments-player { position: relative; width: 100%; aspect-ratio: 9 / 14.3; overflow: hidden; border: 3px solid var(--maroon); border-radius: 28px; background: var(--cream); }
+.moments-player:not(.moments-player-tv) { max-width: 380px; margin-inline: auto; aspect-ratio: 9 / 16; border-width: 8px; border-radius: 36px; background: var(--maroon); box-shadow: 0 0 0 2px var(--gold); }
+.moments-player-tv { aspect-ratio: 16 / 9; border: 12px solid var(--maroon); border-bottom-width: 22px; border-radius: 16px; background: var(--maroon); box-shadow: 0 0 0 2px var(--gold), 0 26px 0 -14px var(--gold); margin-bottom: 18px; }
 .moments-browser { min-width: 0; }
 .moments-thumbnail { position: relative; height: auto; width: 100%; aspect-ratio: 0.9; padding: 0; overflow: hidden; border: 2px solid var(--maroon); border-radius: 14px; }
 .moments-thumbnail[aria-pressed="true"] { border: 3px solid var(--gold); }

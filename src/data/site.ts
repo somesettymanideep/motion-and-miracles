@@ -102,8 +102,6 @@ const en = {
   },
   videoGallery: {
     label: "Video Gallery",
-    title: "Moments & Memories",
-    subtitle: "Celebrating traditions, together.",
     play: "Play selected video",
     select: "Play video",
     previous: "Previous video",
@@ -239,8 +237,6 @@ const te: typeof en = {
   },
   videoGallery: {
     label: "వీడియో గ్యాలరీ",
-    title: "మధుర క్షణాలు & జ్ఞాపకాలు",
-    subtitle: "సంప్రదాయాలను కలిసి జరుపుకుందాం.",
     play: "ఎంచుకున్న వీడియోను చూడండి",
     select: "వీడియోను చూడండి",
     previous: "మునుపటి వీడియో",
