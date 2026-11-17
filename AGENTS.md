@@ -25,6 +25,7 @@
   data-hero-* attributes; scroll reveals use the Reveal component
   (ScrollTrigger, once). Keep animations token/brand based, no dark frames.
 - SmoothScroll uses Lenis on the GSAP ticker with native touch scrolling, no transformed page wrapper, and reduced-motion opt-out; this keeps fixed controls, page navigation and ScrollTrigger aligned. Refresh triggers after route, language and media layout changes.
+- Pre-optimise Lenis in Vite so adding the scrolling module does not trigger late dependency discovery that mixes React module generations in an active preview.
 - All site copy is bilingual: UI strings live in src/data/site.ts (en is the
   source of truth, te must mirror it — enforced by
   src/test/content-parity.test.ts); service copy lives in
