@@ -167,16 +167,9 @@ function AboutPage() {
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
           <Reveal>
-            <div className="relative pt-4">
-              {/* Centered Maroon Pill Badge */}
-              <div className="absolute -top-1 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 rounded-full border border-gold bg-[#5a0c18] px-6 py-1.5 text-xs sm:text-sm font-bold tracking-wide text-gold-light shadow-md">
-                <LotusIcon className="h-3.5 w-3.5 text-gold-light" />
-                <span>{tr({ en: "Our Guruji", te: "మా గురూజీ" })}</span>
-                <LotusIcon className="h-3.5 w-3.5 text-gold-light" />
-              </div>
-
+            <div className="relative">
               {/* Card Container with custom golden mandala background */}
-              <div className="relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-[#FFFBF0] p-6 pt-10 sm:p-10 sm:pt-12 shadow-warm">
+              <div className="relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-[#FFFBF0] p-6 sm:p-10 shadow-warm">
                 {/* Background image: celestial golden clouds and lotus ornament uploaded by user */}
                 <div
                   className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-100"
@@ -184,16 +177,8 @@ function AboutPage() {
                   aria-hidden="true"
                 />
 
-                {/* Subtitle */}
-                <p className="relative z-10 text-center font-display italic text-lg sm:text-xl font-semibold text-maroon">
-                  {tr({
-                    en: "Guidance from the Masters",
-                    te: "గురువుల నుండి దివ్య మార్గదర్శకత్వం",
-                  })}
-                </p>
-
                 {/* Profiles Grid */}
-                <div className="relative z-10 mt-8 grid gap-10 md:grid-cols-2">
+                <div className="relative z-10 grid gap-10 md:grid-cols-2">
                   {/* Profile 1: Vissavajhula Nagesh Sharma */}
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
                     <div className="relative shrink-0 w-32 h-32 sm:w-36 sm:h-36 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md">
