@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppFab";
 import gurujisMandalaBg from "@/assets/about/gurujis-om-sunburst-bg.png";
+import gurujisMobileBg from "@/assets/about/gurujis-mobile-clouds-bg.webp";
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
 import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
@@ -213,7 +214,14 @@ function Index() {
           src={gurujisMandalaBg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center"
+          className="pointer-events-none absolute inset-0 hidden h-full w-full select-none object-cover object-center sm:block"
+          loading="lazy"
+        />
+        <img
+          src={gurujisMobileBg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center sm:hidden"
           loading="lazy"
         />
         {/* Rotating zodiac wheel halves — left half on the left edge, right half on the right edge, spinning like the hero wheel */}
