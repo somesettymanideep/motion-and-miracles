@@ -244,7 +244,7 @@ function Index() {
           className="pointer-events-none absolute right-0 top-1/2 hidden w-64 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:block sm:w-80 md:w-96 motion-reduce:animate-none"
         />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-8 flex items-end justify-between gap-3 sm:gap-6">
+          <Reveal className="-mt-4 mb-6 flex items-end justify-between gap-3 sm:-mt-6 sm:gap-6">
             <img
               src={deityShankaracharya}
               alt="Adi Shankaracharya seated in devotional meditation"
