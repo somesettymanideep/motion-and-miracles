@@ -100,6 +100,16 @@ const en = {
     ctaTitle: "Consult us today",
     ctaSub: "Call during consultation hours or message us on WhatsApp.",
   },
+  videoGallery: {
+    label: "Video Gallery",
+    title: "Moments & Memories",
+    subtitle: "Celebrating traditions, together.",
+    play: "Play selected video",
+    select: "Play video",
+    previous: "Previous video",
+    next: "Next video",
+    error: "This video could not play. Please try again.",
+  },
   servicesPage: {
     bannerTitle: "Our Services",
     subtitle: "Eleven areas of traditional jyotishyam and karmakanda, each performed in the shastriya manner.",
@@ -226,6 +236,16 @@ const te: typeof en = {
     valuesTitle: "మా విలువలు",
     ctaTitle: "ఈ రోజే సంప్రదించండి",
     ctaSub: "సంప్రదింపు సమయాల్లో కాల్ చేయండి లేదా వాట్సాప్‌లో సందేశం పంపండి.",
+  },
+  videoGallery: {
+    label: "వీడియో గ్యాలరీ",
+    title: "మధుర క్షణాలు & జ్ఞాపకాలు",
+    subtitle: "సంప్రదాయాలను కలిసి జరుపుకుందాం.",
+    play: "ఎంచుకున్న వీడియోను చూడండి",
+    select: "వీడియోను చూడండి",
+    previous: "మునుపటి వీడియో",
+    next: "తదుపరి వీడియో",
+    error: "ఈ వీడియో ప్లే కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.",
   },
   servicesPage: {
     bannerTitle: "మా సేవలు",

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import gsap from "gsap";
-import { ChevronsDown, ChevronsRight, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ChevronsDown, ChevronsRight, MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppFab";
 import gurujisMandalaBg from "@/assets/about/gurujis-om-sunburst-bg.png";
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
@@ -191,7 +192,7 @@ function Index() {
                 target="_blank"
                 rel="noopener"
               >
-                <MessageCircle aria-hidden="true" /> {d.common.whatsappUs}
+                <WhatsAppIcon /> {d.common.whatsappUs}
               </a></Button>
               <Button asChild variant="outline" className="hero-reference-action hero-action-address"><Link to="/contact">
                 <MapPin aria-hidden="true" /> {d.common.addressLabel}

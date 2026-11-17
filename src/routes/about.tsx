@@ -13,7 +13,6 @@ import { useLanguage, useTr } from "@/lib/i18n";
 import { dict } from "@/data/site";
 import { PageBanner } from "@/components/PageBanner";
 import { Reveal } from "@/components/Reveal";
-import { waLink } from "@/lib/whatsapp";
 
 import guruji1Img from "@/assets/about/guruji1.jpg";
 import guruji2Img from "@/assets/about/guruji2.jpg";
@@ -127,13 +126,11 @@ function GurujiProfile({
   alt,
   name,
   description,
-  waHref,
 }: {
   img: string;
   alt: string;
   name: { en: string; te: string };
   description: { en: string; te: string };
-  waHref: string;
 }) {
   const tr = useTr();
   return (
@@ -151,14 +148,6 @@ function GurujiProfile({
       <div className="pb-7 sm:pb-10">
         <h2 className="font-display text-lg font-bold text-maroon sm:text-xl md:text-2xl">{tr(name)}</h2>
         <p className="mt-2 text-xs leading-relaxed text-body sm:text-sm">{tr(description)}</p>
-        <a
-          href={waHref}
-          target="_blank"
-          rel="noopener"
-          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105 hover:bg-maroon"
-        >
-          <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-        </a>
       </div>
     </div>
   );
@@ -228,14 +217,6 @@ function AboutPage() {
                           te: "తన అపారమైన జ్ఞానం మరియు దైవిక వివేకంతో వేలాది మందికి మార్గనిర్దేశం చేస్తున్న పూజ్య వేద పండితులు మరియు జ్యోతిష్య నిపుణులు.",
                         })}
                       </p>
-                      <a
-                        href={waLink("Namaste Nagesh Sharma garu, I would like to seek spiritual guidance.")}
-                        target="_blank"
-                        rel="noopener"
-                        className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] hover:bg-maroon px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105"
-                      >
-                        <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-                      </a>
                     </div>
                   </div>
 
@@ -262,14 +243,6 @@ function AboutPage() {
                           te: "మీ జీవితంలో శాంతి, సామరస్యం మరియు సానుకూల శక్తిని నింపడానికి అంకితభావంతో పనిచేస్తున్న వేద జ్యోతిష మరియు పరిహార నిపుణులు.",
                         })}
                       </p>
-                      <a
-                        href={waLink("Namaste Kowndinya Sarma garu, I would like to seek astrological guidance.")}
-                        target="_blank"
-                        rel="noopener"
-                        className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#5a0c18] hover:bg-maroon px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:scale-105"
-                      >
-                        <span>{tr({ en: "Know More →", te: "మరింత తెలుసుకోండి →" })}</span>
-                      </a>
                     </div>
                   </div>
                 </div>

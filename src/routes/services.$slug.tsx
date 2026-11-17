@@ -8,6 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { PageBanner } from "@/components/PageBanner";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
 import { VideoGallery } from "@/components/VideoGallery";
+import { MomentsVideoGallery } from "@/components/MomentsVideoGallery";
 import { ConsultationForm } from "@/components/forms";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -203,14 +204,14 @@ function ServiceDetailPage() {
       {detail.videos && detail.videos.length > 0 && (
         <section className="border-t-2 border-gold/40 bg-cream py-14">
           <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
-            <Reveal className="mb-8 text-center">
+            {service.slug !== "special-homas" && <Reveal className="mb-8 text-center">
               <h2 className="font-display text-2xl font-bold text-maroon">
                 {tr({ en: "Video Gallery", te: "వీడియో గ్యాలరీ" })}
               </h2>
               <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
-            </Reveal>
+            </Reveal>}
             <Reveal delay={0.1}>
-              <VideoGallery items={detail.videos} />
+              {service.slug === "special-homas" ? <MomentsVideoGallery items={detail.videos} /> : <VideoGallery items={detail.videos} />}
             </Reveal>
           </div>
         </section>
