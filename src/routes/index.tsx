@@ -223,7 +223,7 @@ function Index() {
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="pointer-events-none absolute left-0 top-1/2 w-64 -translate-x-1/2 -translate-y-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
+          className="pointer-events-none absolute left-0 top-1/2 hidden w-64 -translate-x-1/2 -translate-y-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:block sm:w-80 md:w-96 motion-reduce:animate-none"
         />
         <img
           src={zodiacWheelRot}
@@ -232,7 +232,7 @@ function Index() {
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="pointer-events-none absolute right-0 top-1/2 w-64 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
+          className="pointer-events-none absolute right-0 top-1/2 hidden w-64 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:block sm:w-80 md:w-96 motion-reduce:animate-none"
         />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 flex items-end justify-between gap-3 sm:gap-6">
