@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ChevronsDown, ChevronsRight, MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppFab";
 import gurujisMandalaBg from "@/assets/about/gurujis-om-sunburst-bg.png";
-import gurujisMobileBg from "@/assets/about/gurujis-mobile-clouds-bg.webp";
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
 import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
@@ -215,14 +214,7 @@ function Index() {
           src={gurujisMandalaBg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 hidden h-full w-full select-none object-cover object-center sm:block"
-          loading="lazy"
-        />
-        <img
-          src={gurujisMobileBg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center sm:hidden"
+          className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center"
           loading="lazy"
         />
         {/* Rotating zodiac wheel halves — left half on the left edge, right half on the right edge, spinning like the hero wheel */}
@@ -233,7 +225,7 @@ function Index() {
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="pointer-events-none absolute left-0 top-1/2 hidden w-64 -translate-x-1/2 -translate-y-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:block sm:w-80 md:w-96 motion-reduce:animate-none"
+          className="pointer-events-none absolute left-0 top-1/2 w-40 -translate-x-1/2 -translate-y-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
         />
         <img
           src={zodiacWheelRot}
@@ -242,7 +234,7 @@ function Index() {
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="pointer-events-none absolute right-0 top-1/2 hidden w-64 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:block sm:w-80 md:w-96 motion-reduce:animate-none"
+          className="pointer-events-none absolute right-0 top-1/2 w-40 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
         />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal className="-mt-4 mb-6 flex items-end justify-between gap-3 sm:-mt-6 sm:gap-6">
