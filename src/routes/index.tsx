@@ -5,6 +5,7 @@ import { ChevronsDown, ChevronsRight, MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppFab";
 import gurujisMandalaBg from "@/assets/about/gurujis-om-sunburst-bg.png";
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
+import zodiacOmCenter from "@/assets/zodiac-om-center.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
 import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
 import deityShankaracharya from "@/assets/deities/shankaracharya.webp";
@@ -218,24 +219,46 @@ function Index() {
           loading="lazy"
         />
         {/* Rotating zodiac wheel halves — left half on the left edge, right half on the right edge, spinning like the hero wheel */}
-        <img
-          src={zodiacWheelRot}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          draggable={false}
-          className="pointer-events-none absolute left-0 top-1/2 w-40 -translate-x-1/2 -translate-y-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
-        />
-        <img
-          src={zodiacWheelRot}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          draggable={false}
-          className="pointer-events-none absolute right-0 top-1/2 w-40 -translate-y-1/2 translate-x-1/2 select-none animate-[spin_48s_linear_infinite] opacity-40 sm:w-80 md:w-96 motion-reduce:animate-none"
-        />
+        <div className="pointer-events-none absolute left-0 top-1/2 w-40 -translate-x-1/2 -translate-y-1/2 select-none opacity-40 sm:w-80 md:w-96">
+          <img
+            src={zodiacWheelRot}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="w-full select-none animate-[spin_48s_linear_infinite] motion-reduce:animate-none"
+          />
+          <img
+            src={zodiacOmCenter}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="absolute left-1/2 top-1/2 w-[22.3%] -translate-x-1/2 -translate-y-1/2 select-none"
+          />
+        </div>
+        <div className="pointer-events-none absolute right-0 top-1/2 w-40 -translate-y-1/2 translate-x-1/2 select-none opacity-40 sm:w-80 md:w-96">
+          <img
+            src={zodiacWheelRot}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="w-full select-none animate-[spin_48s_linear_infinite] motion-reduce:animate-none"
+          />
+          <img
+            src={zodiacOmCenter}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="absolute left-1/2 top-1/2 w-[22.3%] -translate-x-1/2 -translate-y-1/2 select-none"
+          />
+        </div>
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal className="-mt-4 mb-6 flex items-end justify-between gap-3 sm:-mt-6 sm:gap-6">
             <img
