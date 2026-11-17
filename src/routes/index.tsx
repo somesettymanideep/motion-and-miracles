@@ -268,7 +268,7 @@ function Index() {
             <Reveal delay={0.05} className="w-52 sm:w-72 md:w-80">
               <img
                 src={gurujiNageshPortrait}
-                alt="Vissavajhula Nagesh Sharma — Vedic scholar and astrologer"
+                alt="Vissavajhula Nagesh Sarma — Vedic scholar and astrologer"
                 className="w-full drop-shadow-xl"
                 loading="lazy"
               />

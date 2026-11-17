@@ -693,7 +693,7 @@ export const SERVICES: Service[] = [
     slug: "education-astrology",
     name: { en: "Education Astrology", te: "విద్య జ్యోతిష్యం" },
     image: educationImg,
-    imageAlt: "Aksharabhyasam ritual with rice grains on a brass plate and slate",
+    imageAlt: "Aksharabhyasam: Telugu vowels written in rice grains",
     detail: {
       heroTitle: {
         en: "Astrological Guidance for Education",
