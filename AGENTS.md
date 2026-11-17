@@ -16,11 +16,10 @@
 - Keep service photo and video galleries in bilingual service data and import CDN asset pointers via `.url`; newly uploaded gallery media uses managed assets so repository size stays small.
 - Keep enquiry access enforced by database RLS and assign the initial admin through the existing auth signup trigger; UI role checks alone never grant data access.
 
-- Background music toggles with any click on the page: a click starts it when silent and a click stops it when playing. Links, buttons, form fields and the sound button never trigger that page-click toggle (the sound button has its own toggle). The visitor's manual off choice is remembered; never use muted playback as a substitute for sound, and never let a gesture that starts sound also stop it.
+- Background music: the first click anywhere on the page starts it when it is silent (autoplay blocked); after that only the sound button turns it off or on. Page clicks never stop it, and the sound button never triggers the page-click handler. The visitor's manual off choice is remembered; never use muted playback as a substitute for sound, and never let a gesture that starts sound also stop it.
 
-- The three.js zodiac scene (src/scene/ZodiacScene.tsx) is client-only: it is
-  React.lazy-imported behind a mounted gate in HeroEmblem; SSR renders a CSS
-  fallback ring. Never statically import it from a server-rendered route.
+- The three.js zodiac scene (src/scene/ZodiacScene.tsx) is client-only and is not currently used: HeroEmblem renders layered images (rotating wheel, Om centre, emblem).
+  Never statically import it from a server-rendered route.
 - GSAP is the animation library: page entrances use gsap timelines on
   data-hero-* attributes; scroll reveals use the Reveal component
   (ScrollTrigger, once). Keep animations token/brand based, no dark frames.
@@ -33,7 +32,5 @@
 - Brand palette comes only from the uploaded emblem (saffron, gold, maroon,
   cream, peach) — no black/dark-grey backgrounds; body text is maroon-brown.
 - WhatsApp deep links are built only via src/lib/whatsapp.ts (wa.me/919848256831).
-- All site imagery is bundled locally in src/assets and imported through Vite
-  (e.g. src/assets/logo.png). Never reference /__l5e/ CDN asset URLs in
-  components — they 404 when the project runs outside Lovable (local VS Code
-  run).
+- Site imagery is bundled locally in src/assets and imported through Vite (e.g. src/assets/logo.png), except managed gallery media imported via `.url` in src/data/services.ts.
+  Never hardcode /__l5e/ CDN asset URLs in components — they 404 when the project runs outside Lovable (local VS Code run).
