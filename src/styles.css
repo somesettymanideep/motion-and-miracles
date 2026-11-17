@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "lenis/dist/lenis.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -125,6 +126,15 @@
     scroll-behavior: smooth;
   }
 
+  html.lenis,
+  html:has(body) {
+    scroll-padding-top: 100px;
+  }
+
+  html.lenis {
+    scroll-behavior: auto;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -149,6 +159,12 @@
   ::selection {
     background: var(--color-gold-light);
     color: var(--color-maroon);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 

@@ -1,5 +1,7 @@
 # Remix readiness
 
+- [x] Add GSAP-driven smooth scrolling and section reveals; verified desktop wheel scrolling, scroll-to-top, four public pages, mobile layout and reduced-motion visibility; 12 tests passed, build OK.
+
 - [x] Add the home WhatsApp icon, remove About Guruji Know More buttons, and match Special Homas to the large-player/thumbnail reference; verified playback, selection, phone layout, unchanged Health carousel, 16 tests, and build OK.
 
 - [x] Move Health Astrology photo 15 to Special Homas: verified 14 Health photos, 30 Homas photos, and the moved idol photo displays at the end; 10 content tests passed, build OK.

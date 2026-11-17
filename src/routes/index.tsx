@@ -126,7 +126,8 @@ function Index() {
 
   // GSAP hero entrance timeline
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const motion = gsap.matchMedia();
+    motion.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from("[data-hero-stagger]", {
         opacity: 0,
         y: 36,
@@ -143,7 +144,7 @@ function Index() {
         delay: 0.25,
       });
     }, heroRef);
-    return () => ctx.revert();
+    return () => motion.revert();
   }, []);
 
   return (

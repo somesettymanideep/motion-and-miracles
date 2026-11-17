@@ -17,6 +17,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { supabase } from "@/integrations/supabase/client";
 
 function NotFoundComponent() {
@@ -142,6 +143,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
+        <SmoothScroll />
         <Header />
         <main className="min-h-screen">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
