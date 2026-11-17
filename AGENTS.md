@@ -11,7 +11,7 @@
 
 # Project decisions
 
-- Special Homas uses a single-player, paged-thumbnail video gallery; other services retain the existing carousel to isolate service-specific presentation changes.
+- Special Homas and Education Astrology use a single-player, paged-thumbnail video gallery; other services retain the existing carousel to isolate service-specific presentation changes.
 
 - Keep service photo and video galleries in bilingual service data and import CDN asset pointers via `.url`; newly uploaded gallery media uses managed assets so repository size stays small.
 - Keep enquiry access enforced by database RLS and assign the initial admin through the existing auth signup trigger; UI role checks alone never grant data access.

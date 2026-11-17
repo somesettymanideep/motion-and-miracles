@@ -204,14 +204,14 @@ function ServiceDetailPage() {
       {detail.videos && detail.videos.length > 0 && (
         <section className="border-t-2 border-gold/40 bg-cream py-14">
           <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-8">
-            {service.slug !== "special-homas" && <Reveal className="mb-8 text-center">
+            {!["special-homas", "education-astrology"].includes(service.slug) && <Reveal className="mb-8 text-center">
               <h2 className="font-display text-2xl font-bold text-maroon">
                 {tr({ en: "Video Gallery", te: "వీడియో గ్యాలరీ" })}
               </h2>
               <div className="gold-divider mx-auto mt-4 w-40" aria-hidden="true" />
             </Reveal>}
             <Reveal delay={0.1}>
-              {service.slug === "special-homas" ? <MomentsVideoGallery items={detail.videos} /> : <VideoGallery items={detail.videos} />}
+              {["special-homas", "education-astrology"].includes(service.slug) ? <MomentsVideoGallery items={detail.videos} /> : <VideoGallery items={detail.videos} />}
             </Reveal>
           </div>
         </section>
