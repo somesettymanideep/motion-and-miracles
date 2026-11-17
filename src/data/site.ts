@@ -151,6 +151,7 @@ const en = {
     ourServices: "Our Services",
     contactTitle: "Contact",
     rights: "© 2026 Sri Vasishta Jyotishya Parishodhanalayam, Vijayawada. All rights reserved.",
+    credit: "Designed and developed by",
   },
 };
 
@@ -277,6 +278,7 @@ const te: typeof en = {
     ourServices: "మా సేవలు",
     contactTitle: "సంప్రదింపు",
     rights: "© 2026 శ్రీ వశిష్ఠ జ్యోతిష్య పరిశోధనాలయం, విజయవాడ. అన్ని హక్కులు రిజర్వ్ చేయబడినవి.",
+    credit: "రూపకల్పన మరియు అభివృద్ధి:",
   },
 };
 

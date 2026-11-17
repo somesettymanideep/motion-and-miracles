@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, Facebook, Instagram, MapPin, Phone, Youtube } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { ADDRESS, dict, HOURS, ORG_NAME, ORG_NAME_TE } from "@/data/site";
 import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
@@ -30,22 +30,6 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/85">{d.footer.aboutLine}</p>
-          <div className="mt-4 flex gap-3">
-            {[
-              { Icon: Facebook, label: "Facebook" },
-              { Icon: Instagram, label: "Instagram" },
-              { Icon: Youtube, label: "YouTube" },
-            ].map(({ Icon, label }) => (
-              <a
-                key={label}
-                href="#"
-                aria-label={`${label} (coming soon)`}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold-light transition-colors hover:bg-gold/20"
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* Quick links */}
@@ -140,7 +124,18 @@ export function Footer() {
       </div>
 
       <div className="border-t border-gold/40 px-4 sm:px-6 lg:px-12 xl:px-8 py-4 text-center text-xs text-cream/75">
-        {d.footer.rights}
+        <p>{d.footer.rights}</p>
+        <p className="mt-1.5">
+          {d.footer.credit}{" "}
+          <a
+            href="https://ayrondigitalsolutions.com/"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-gold-light underline decoration-gold/60 underline-offset-2 transition-colors hover:text-gold"
+          >
+            Ayrondigitalsolutions
+          </a>
+        </p>
       </div>
     </footer>
   );
