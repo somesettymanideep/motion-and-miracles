@@ -1,5 +1,8 @@
 # Remix readiness
 
+- [x] Move Health Astrology photo 15 to Special Homas: verified 14 Health photos, 30 Homas photos, and the moved idol photo displays at the end; 10 content tests passed, build OK.
+- [ ] Enable consultation owner email alerts. Blocked: no configured sender domain; awaiting email setup and recipient address.
+
 - [x] Verify all 20 Special Homas gallery photos on desktop and mobile.
 - [ ] Verify consultation/contact storage and admin access end-to-end. Blocked: stale managed client connection; repair requires workspace integration permission, and no auth account exists.
 - [x] Restore missing first-admin trigger and narrow enquiry/role grants without replacing existing tables.

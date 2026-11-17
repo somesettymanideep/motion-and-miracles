@@ -345,6 +345,13 @@ export const SERVICES: Service[] = [
         { image: homaGallery27.url, alt: { en: "Priests offering oblations into the flower-adorned homa kunda", te: "పూలతో అలంకరించిన హోమ కుండంలో ఆహుతులు అర్పిస్తున్న ఋత్విక్కులు" } },
         { image: homaGallery28.url, alt: { en: "The blazing homa fire before the chanting priests", te: "మంత్రోచ్చారణ చేస్తున్న ఋత్విక్కుల ముందు ప్రజ్వలిస్తున్న హోమ అగ్ని" } },
         { image: homaGallery29.url, alt: { en: "Priests and family gathered around the homa fire", te: "హోమ అగ్ని చుట్టూ సమావేశమైన ఋత్విక్కులు, కుటుంబ సభ్యులు" } },
+        {
+          image: healthCeremony15,
+          alt: {
+            en: "The golden Anantha Padmanabha idol lit by oil lamps in the temple chamber",
+            te: "గుహా మందిరంలో దీపాల వెలుగులో ఉన్న అనంత పద్మనాభుని బంగారు విగ్రహం",
+          },
+        },
       ],
       videos: [
         { video: homaVideo01.url, poster: homaPoster01.url, title: { en: "Ritual preparations with family", te: "కుటుంబంతో పూజా ఏర్పాట్లు" } },
@@ -516,13 +523,6 @@ export const SERVICES: Service[] = [
           alt: {
             en: "Elders and guests in traditional white attire gathered before the ceremony begins",
             te: "కార్యక్రమం ప్రారంభానికి ముందు సంప్రదాయ వస్త్రాలతో సమావేశమైన పెద్దలు, అతిథులు",
-          },
-        },
-        {
-          image: healthCeremony15,
-          alt: {
-            en: "The golden Anantha Padmanabha idol lit by oil lamps in the temple chamber",
-            te: "గుహా మందిరంలో దీపాల వెలుగులో ఉన్న అనంత పద్మనాభుని బంగారు విగ్రహం",
           },
         },
       ],

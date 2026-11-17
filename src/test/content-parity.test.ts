@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { dict } from "@/data/site";
 import { SERVICES } from "@/data/services";
+import movedPhoto from "@/assets/services/health-gallery/ceremony-15.webp";
 
 type Nested = Record<string, unknown>;
 
@@ -64,11 +65,11 @@ describe("services data", () => {
    * The Health Astrology page shows the ceremony photos as a carousel, so it
    * must carry all ten of them with a caption in both languages.
    */
-  it("health astrology gallery holds the fifteen ceremony photos, captioned in both languages", () => {
+  it("health astrology gallery holds the fourteen remaining ceremony photos, captioned in both languages", () => {
     const health = SERVICES.find((s) => s.slug === "health-astrology");
     expect(health).toBeDefined();
     const gallery = health?.detail.gallery ?? [];
-    expect(gallery).toHaveLength(15);
+    expect(gallery).toHaveLength(14);
     for (const item of gallery) {
       expect(item.image.length, "gallery image").toBeGreaterThan(0);
       expect(item.alt.en.trim().length).toBeGreaterThan(0);
@@ -77,16 +78,24 @@ describe("services data", () => {
   });
 
   /** Any other service page with a gallery must be captioned the same way. */
-  it("special homas gallery holds the twenty-nine homa photos, captioned in both languages", () => {
+  it("special homas gallery holds thirty photos, captioned in both languages", () => {
     const homas = SERVICES.find((s) => s.slug === "special-homas");
     expect(homas).toBeDefined();
     const gallery = homas?.detail.gallery ?? [];
-    expect(gallery).toHaveLength(29);
+    expect(gallery).toHaveLength(30);
     for (const item of gallery) {
       expect(item.image.length, "gallery image").toBeGreaterThan(0);
       expect(item.alt.en.trim().length).toBeGreaterThan(0);
       expect(item.alt.te.trim().length).toBeGreaterThan(0);
     }
+  });
+
+  it("moves Health Astrology photo 15 exclusively to the end of Special Homas", () => {
+    const health = SERVICES.find((s) => s.slug === "health-astrology")?.detail.gallery ?? [];
+    const homas = SERVICES.find((s) => s.slug === "special-homas")?.detail.gallery ?? [];
+    expect(health.some((item) => item.image === movedPhoto)).toBe(false);
+    expect(homas.filter((item) => item.image === movedPhoto)).toHaveLength(1);
+    expect(homas.at(-1)?.image).toBe(movedPhoto);
   });
 
   it("special homas video gallery holds all eight videos with bilingual titles", () => {
