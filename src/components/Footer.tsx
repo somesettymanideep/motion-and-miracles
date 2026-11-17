@@ -123,19 +123,21 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gold/40 px-4 sm:px-6 lg:px-12 xl:px-8 py-4 text-center text-xs text-cream/75">
-        <p>{d.footer.rights}</p>
-        <p className="mt-1.5">
-          {d.footer.credit}{" "}
-          <a
-            href="https://ayrondigitalsolutions.com/"
-            target="_blank"
-            rel="noopener"
-            className="font-semibold text-gold-light underline decoration-gold/60 underline-offset-2 transition-colors hover:text-gold"
-          >
-            Ayrondigitalsolutions
-          </a>
-        </p>
+      <div className="border-t border-gold/40 px-4 sm:px-6 lg:px-12 xl:px-8 py-4 text-xs text-cream/75">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-1.5 text-center sm:flex-row sm:justify-between sm:text-left xl:max-w-7xl 2xl:max-w-[1400px]">
+          <p>{d.footer.rights}</p>
+          <p>
+            {d.footer.credit}{" "}
+            <a
+              href="https://ayrondigitalsolutions.com/"
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-gold-light underline decoration-gold/60 underline-offset-2 transition-colors hover:text-gold"
+            >
+              Ayrondigitalsolutions
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
