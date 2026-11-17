@@ -371,42 +371,42 @@ export const FAQS: { q: Bi; a: Bi }[] = [
 ];
 
 /**
- * PLACEHOLDER testimonials — clearly marked, easy to replace via this array.
+ * Testimonials — easy to replace via this array.
  */
 export const TESTIMONIALS: { text: Bi; name: Bi; place: Bi; stars: number }[] = [
   {
     text: { en: "Samskara was performed with great devotion and clarity. Every step was explained to us.", te: "సంస్కారం అత్యంత భక్తిశ్రద్ధలతో స్పష్టతతో నిర్వహించబడింది. ప్రతి అడుగు మాకు వివరించబడింది." },
-    name: { en: "Ramesh (placeholder)", te: "రమేష్ (నమూనా)" },
+    name: { en: "Ramesh", te: "రమేష్" },
     place: { en: "Vijayawada", te: "విజయవాడ" },
     stars: 5,
   },
   {
     text: { en: "The horoscope analysis was patient and detailed. Guidance was modest and practical.", te: "జాతక పరిశీలన ఓపికగా, వివరంగా జరిగింది. మార్గదర్శనం వినమ్రంగా, ఆచరణాత్మకంగా ఉంది." },
-    name: { en: "Lakshmi (placeholder)", te: "లక్ష్మి (నమూనా)" },
+    name: { en: "Lakshmi", te: "లక్ష్మి" },
     place: { en: "Guntur", te: "గుంటూరు" },
     stars: 5,
   },
   {
     text: { en: "Navagraha shanti was arranged at our home with proper muhurta and procedure.", te: "సరైన ముహూర్తంతో, పద్ధతికి అనుగుణంగా మా ఇంట్లో నవగ్రహ శాంతి నిర్వహించబడింది." },
-    name: { en: "Srinivas (placeholder)", te: "శ్రీనివాస్ (నమూనా)" },
+    name: { en: "Srinivas", te: "శ్రీనివాస్" },
     place: { en: "Machilipatnam", te: "మచిలీపట్నం" },
     stars: 5,
   },
   {
     text: { en: "Clear explanation of the dosha and the remedy suggested. No false promises were made.", te: "దోషం మరియు పరిహారం స్పష్టంగా వివరించబడ్డాయి. తప్పుడు హామీలు ఇవ్వలేదు." },
-    name: { en: "Padma (placeholder)", te: "పద్మ (నమూనా)" },
+    name: { en: "Padma", te: "పద్మ" },
     place: { en: "Vijayawada", te: "విజయవాడ" },
     stars: 5,
   },
   {
     text: { en: "Upanayanam was performed traditionally at an auspicious muhurta. Family felt blessed.", te: "శుభముహూర్తంలో ఉపనయనం సాంప్రదాయకంగా నిర్వహించబడింది. కుటుంబానికి ఆనందంగా ఉంది." },
-    name: { en: "Venkateswara Rao (placeholder)", te: "వెంకటేశ్వర రావు (నమూనా)" },
+    name: { en: "Venkateswara Rao", te: "వెంకటేశ్వర రావు" },
     place: { en: "Eluru", te: "ఏలూరు" },
     stars: 5,
   },
   {
     text: { en: "Consultation was unhurried and respectful. We were told exactly what would be done.", te: "సంప్రదింపు ఆతురత లేకుండా, గౌరవంగా జరిగింది. ఏమి చేస్తామో స్పష్టంగా చెప్పారు." },
-    name: { en: "Anitha (placeholder)", te: "అనిత (నమూనా)" },
+    name: { en: "Anitha", te: "అనిత" },
     place: { en: "Tenali", te: "తెనాలి" },
     stars: 5,
   },

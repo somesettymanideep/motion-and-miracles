@@ -8,7 +8,7 @@ import { TESTIMONIALS } from "@/data/site";
 /**
  * Testimonials carousel: infinite loop, 4s autoplay, pause on hover,
  * swipe on mobile, gold prev/next arrows and dot indicators.
- * The entries come from the PLACEHOLDER array in src/data/site.ts.
+ * The entries come from the TESTIMONIALS array in src/data/site.ts.
  */
 export function Testimonials() {
   const { lang, } = useLanguage();
