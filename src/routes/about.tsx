@@ -15,7 +15,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { Reveal } from "@/components/Reveal";
 
 import guruji1Img from "@/assets/about/guruji1.jpg";
-import guruji2Img from "@/assets/about/guruji2.jpg";
+import guruji2Img from "@/assets/about/guruji-kowndinya-about.webp";
 import ourStoryImg from "@/assets/about/our-story.jpg";
 import gurujiBg from "@/assets/about/guruji-bg.png";
 
@@ -205,12 +205,12 @@ function AboutPage() {
                     </div>
                   </div>
 
-                  {/* Profile 2: V S N D Kowndinya Sarma */}
+                  {/* Profile 2: V Kowndinya Sarma */}
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
                     <div className="relative shrink-0 w-32 h-32 sm:w-36 sm:h-36 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md">
                       <img
                         src={guruji2Img}
-                        alt="V S N D Kowndinya Sarma"
+                        alt="V Kowndinya Sarma"
                         className="h-full w-full object-cover"
                         loading="lazy"
                       />
@@ -218,8 +218,8 @@ function AboutPage() {
                     <div className="flex-1">
                       <h2 className="font-display text-lg sm:text-xl font-bold text-maroon">
                         {tr({
-                          en: "V S N D Kowndinya Sarma",
-                          te: "వి.ఎస్.ఎన్.డి. కౌండిన్య శర్మ",
+                          en: "V Kowndinya Sarma",
+                          te: "వి. కౌండిన్య శర్మ",
                         })}
                       </h2>
                       <p className="mt-2 text-xs sm:text-sm leading-relaxed text-body">
