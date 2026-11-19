@@ -224,8 +224,8 @@ function AboutPage() {
                       </h2>
                       <p className="mt-2 text-xs sm:text-sm leading-relaxed text-body">
                         {tr({
-                          en: "An expert in Vedic astrology and spiritual remedies, dedicated to bringing harmony and positive energy into your life.",
-                          te: "మీ జీవితంలో శాంతి, సామరస్యం మరియు సానుకూల శక్తిని నింపడానికి అంకితభావంతో పనిచేస్తున్న వేద జ్యోతిష మరియు పరిహార నిపుణులు.",
+                          en: "Experienced in performing weddings, Upanayanam (sacred thread ceremonies), and other traditional Hindu rituals with dedication and in accordance with the Shastras.",
+                          te: "శాస్త్రోక్తంగా మరియు అంకితభావంతో వివాహాలు, ఉపనయనం (యజ్ఞోపవీత ధారణ) మరియు ఇతర సాంప్రదాయ హిందూ వైదిక క్రతువులను నిర్వహించడంలో విశేష అనుభవం కలిగిన పండితులు.",
                         })}
                       </p>
                     </div>
