@@ -275,7 +275,7 @@ function Index() {
             />
             <img
               src={deityDurga}
-              alt="Goddess Durga seated on a tiger"
+              alt="Goddess Durga in an ornate golden sanctum"
               className="w-16 drop-shadow-xl sm:w-24 md:w-28"
               loading="lazy"
             />
