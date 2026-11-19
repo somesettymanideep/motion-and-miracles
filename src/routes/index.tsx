@@ -7,7 +7,7 @@ import gurujisMandalaBg from "@/assets/about/gurujis-om-sunburst-bg.png";
 import zodiacWheelRot from "@/assets/zodiac-wheel-om-rot.png";
 import zodiacOmCenter from "@/assets/zodiac-om-center.png";
 import gurujiNageshPortrait from "@/assets/about/guruji-nagesh-portrait.png";
-import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait.png";
+import gurujiKowndinyaPortrait from "@/assets/about/guruji-kowndinya-portrait-home.webp";
 import deityShankaracharya from "@/assets/deities/shankaracharya.webp";
 import deityGanesha from "@/assets/deities/ganesha.webp";
 import deityDurga from "@/assets/deities/durga.webp";
