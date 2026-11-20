@@ -90,7 +90,7 @@
   --body-text: oklch(0.292 0.073 22.8);
   --wa-green: oklch(0.72 0.17 156);
   --hero-heading: oklch(0.37 0.145 25);
-  --hero-heading-secondary: oklch(0.24 0.075 15);
+  --hero-heading-secondary: #7b0712;
   --hero-ornament: oklch(0.75 0.17 70);
 }
 

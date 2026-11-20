@@ -176,7 +176,7 @@ function Index() {
             <img data-hero-stagger src={omDivider} alt="" aria-hidden="true" width={1902} height={368} className="hero-om-image" />
             <h1 data-hero-stagger className="hero-reference-title">
               <span>{d.home.nameFirst}</span>
-              <span>{d.home.nameSecond}</span>
+              <span className="text-[#7b0712]">{d.home.nameSecond}</span>
             </h1>
             <p data-hero-stagger className="hero-reference-tagline">{d.home.tagline}</p>
             <p data-hero-stagger className="hero-reference-welcome">{d.home.welcome}</p>

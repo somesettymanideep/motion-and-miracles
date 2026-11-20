@@ -224,8 +224,8 @@ function AboutPage() {
                       </h2>
                       <p className="mt-2 text-xs sm:text-sm leading-relaxed text-body">
                         {tr({
-                          en: "Experienced in performing weddings, Upanayanam (sacred thread ceremonies), and other traditional Hindu rituals with dedication and in accordance with the Shastras.",
-                          te: "శాస్త్రోక్తంగా మరియు అంకితభావంతో వివాహాలు, ఉపనయనం (యజ్ఞోపవీత ధారణ) మరియు ఇతర సాంప్రదాయ హిందూ వైదిక క్రతువులను నిర్వహించడంలో విశేష అనుభవం కలిగిన పండితులు.",
+                          en: "Experienced in performing weddings, Upanayanam, and other traditional Hindu rituals with dedication and in accordance with the Shastras.",
+                          te: "శాస్త్రోక్తంగా మరియు అంకితభావంతో వివాహాలు, ఉపనయనం మరియు ఇతర సాంప్రదాయ హిందూ వైదిక క్రతువులను నిర్వహించడంలో విశేష అనుభవం కలిగిన పండితులు.",
                         })}
                       </p>
                     </div>
