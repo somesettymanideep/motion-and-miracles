@@ -44,7 +44,6 @@ export function Footer() {
                 { to: "/about", key: "about" },
                 { to: "/services", key: "services" },
                 { to: "/contact", key: "contact" },
-                { to: "/auth", key: "admin" },
               ] as const
             ).map((l) => (
               <li key={l.to}>
