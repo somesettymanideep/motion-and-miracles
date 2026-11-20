@@ -33,12 +33,11 @@ function AuthPage() {
   const d = dict[lang];
   const navigate = useNavigate();
   const { redirect } = Route.useSearch();
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
-  const [checkEmail, setCheckEmail] = useState(false);
+  const [resendStatus, setResendStatus] = useState<string | undefined>();
   const [error, setError] = useState<string | undefined>();
 
   useEffect(() => {
@@ -52,30 +51,41 @@ function AuthPage() {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(undefined);
+    setResendStatus(undefined);
     setBusy(true);
     try {
-      if (mode === "signin") {
-        const { error } = await supabase.auth.signInWithPassword({
-          email: email.trim().slice(0, 255),
-          password: password.slice(0, 128),
-        });
-        if (error) throw error;
-        go(safeTarget(redirect));
-      } else {
-        const { data, error } = await supabase.auth.signUp({
-          email: email.trim().slice(0, 255),
-          password: password.slice(0, 128),
-          options: { emailRedirectTo: window.location.origin },
-        });
-        if (error) throw error;
-        if (data.session) {
-          go(safeTarget(redirect));
-        } else {
-          setCheckEmail(true);
-        }
-      }
+      const { error } = await supabase.auth.signInWithPassword({
+        email: email.trim().slice(0, 255),
+        password: password.slice(0, 128),
+      });
+      if (error) throw error;
+      go(safeTarget(redirect));
     } catch (err) {
       setError(err instanceof Error && err.message ? err.message : d.common.errRequired);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleResendConfirmation = async () => {
+    if (!email.trim()) return;
+    setBusy(true);
+    try {
+      const { error } = await supabase.auth.resend({
+        type: "signup",
+        email: email.trim(),
+        options: {
+          emailRedirectTo: `${window.location.origin}/admin`,
+        },
+      });
+      if (error) throw error;
+      setResendStatus(
+        lang === "te"
+          ? "ధృవీకరణ ఇమెయిల్ పంపబడింది. దయచేసి మీ ఇన్‌బాక్స్ తనిఖీ చేయండి."
+          : "Confirmation email sent. Please check your inbox.",
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to resend confirmation.");
     } finally {
       setBusy(false);
     }
@@ -91,11 +101,6 @@ function AuthPage() {
             <Link to={safeTarget(redirect) as never} className="btn btn-saffron mt-6 w-full">
               {d.auth.goToDashboard}
             </Link>
-          </div>
-        ) : checkEmail ? (
-          <div className="text-center">
-            <h1 className="font-display text-2xl font-bold text-maroon">{d.auth.title}</h1>
-            <p className="mt-3 text-sm leading-relaxed text-maroon/80">{d.auth.checkEmail}</p>
           </div>
         ) : (
           <>
@@ -121,27 +126,30 @@ function AuthPage() {
                   className="field"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  autoComplete={mode === "signin" ? "current-password" : "new-password"}
+                  autoComplete="current-password"
                   minLength={8}
                   required
                 />
               </label>
-              {error && <p className="text-xs text-destructive">{error}</p>}
+              {error && (
+                <div className="text-xs text-destructive space-y-1">
+                  <p>{error}</p>
+                  {error.toLowerCase().includes("not confirmed") && (
+                    <button
+                      type="button"
+                      onClick={handleResendConfirmation}
+                      className="text-saffron-dark underline hover:text-maroon font-semibold"
+                    >
+                      {lang === "te" ? "ధృవీకరణ ఇమెయిల్ మళ్లీ పంపండి" : "Resend confirmation email"}
+                    </button>
+                  )}
+                </div>
+              )}
+              {resendStatus && <p className="text-xs text-emerald-700 font-medium">{resendStatus}</p>}
               <button type="submit" className="btn btn-saffron" disabled={busy}>
-                {busy ? d.auth.working : mode === "signin" ? d.auth.signIn : d.auth.signUp}
+                {busy ? d.auth.working : d.auth.signIn}
               </button>
             </form>
-
-            <button
-              type="button"
-              onClick={() => {
-                setMode(mode === "signin" ? "signup" : "signin");
-                setError(undefined);
-              }}
-              className="mt-4 w-full text-center text-xs font-semibold text-maroon hover:text-saffron-dark"
-            >
-              {mode === "signin" ? d.auth.noAccount : d.auth.haveAccount}
-            </button>
           </>
         )}
       </div>
