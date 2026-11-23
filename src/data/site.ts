@@ -7,7 +7,7 @@ import type { Bi } from "@/lib/i18n";
 export const ADDRESS = {
   lines: {
     en: ["Door No. 41-20/1-55, Guntur Vari Veedhi,", "Krishnalanka, Vijayawada – 520013"],
-    te: ["ద్వారా నం. 41-20/1-55, గుంటూరు వారి వీధి,", "కృష్ణలంక, విజయవాడ – 520013"],
+    te: ["డోర్ నంబర్ 41-20/1-55, గుంటూరు వారి వీధి,", "కృష్ణలంక, విజయవాడ – 520013"],
   } as { en: string[]; te: string[] },
   mapsQuery: "Krishnalanka, Vijayawada 520013",
 };
@@ -289,7 +289,7 @@ const te: typeof en = {
     errorLoading: "సంప్రదింపులు లోడ్ చేయలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.",
   },
   footer: {
-    aboutLine: "కృష్ణలంక, విజయవాడలో సనాతన జ్యోతిష్యం, వైదిక సంస్కారాలు మరియు శాస్త్రీయ పరిహారాల కేంద్రం.",
+    aboutLine: "విజయవాడ, కృష్ణలంక, సామవేదం వారి వైదిక కేంద్రం",
     quickLinks: "త్వరిత లింకులు",
     ourServices: "మా సేవలు",
     contactTitle: "సంప్రదింపు",
