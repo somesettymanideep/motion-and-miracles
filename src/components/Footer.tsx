@@ -5,6 +5,7 @@ import { ADDRESS, dict, HOURS, ORG_NAME, ORG_NAME_TE } from "@/data/site";
 import { PHONES, waLink, WA_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 import { SERVICES } from "@/data/services";
 import logoUrl from "@/assets/logo.png";
+import locationQrUrl from "@/assets/location-qr.png";
 
 export function Footer() {
   const { lang } = useLanguage();
@@ -30,6 +31,33 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/85">{d.footer.aboutLine}</p>
+
+          <div className="mt-4">
+            <a
+              href="https://maps.app.goo.gl/dGgAextgczAS92AS6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-xl border border-gold/50 bg-[#FFFDF7] p-2.5 shadow-sm transition hover:border-gold hover:shadow-md"
+              title={lang === "te" ? "గూగుల్ మ్యాప్స్ లొకేషన్ కోసం స్కాన్ చేయండి లేదా క్లిక్ చేయండి" : "Scan or click for Google Maps location"}
+            >
+              <img
+                src={locationQrUrl}
+                alt={lang === "te" ? "గూగుల్ మ్యాప్స్ లొకేషన్ క్యూఆర్ కోడ్" : "Google Maps Location QR Code"}
+                width={80}
+                height={80}
+                className="h-20 w-20 rounded-lg object-contain"
+                loading="lazy"
+              />
+              <div className="pr-1 text-left">
+                <span className="block font-display text-xs font-bold text-maroon group-hover:text-gold-dark">
+                  {lang === "te" ? "గూగుల్ మ్యాప్స్" : "Google Maps"}
+                </span>
+                <span className="mt-0.5 block text-[11px] font-medium text-body">
+                  {lang === "te" ? "లొకేషన్ కోసం స్కాన్ చేయండి" : "Scan for Location"}
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
 
         {/* Quick links */}
