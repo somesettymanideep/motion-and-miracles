@@ -383,7 +383,7 @@ export const SERVICES: Service[] = [
       },
       examines: [
         { en: "Kuja Dosha analysis and nivarana", te: "కుజ దోష పరిశీలన మరియు నివారణ" },
-        { en: "Kalasarpa Dosha analysis and nivarana", te: "కాళసర్ప దోష పరిశీలన మరియు నివారణ" },
+        { en: "Kalasarpa Dosha analysis and nivarana", te: "కాలసర్ప దోష పరిశీలన మరియు నివారణ" },
         { en: "Sarpa Dosha analysis and nivarana", te: "సర్ప దోష పరిశీలన మరియు నివారణ" },
         { en: "Vamsha-paramparya Dosha analysis and nivarana", te: "వంశపరంపర్య దోష పరిశీలన మరియు నివారణ" },
       ],
@@ -628,14 +628,14 @@ export const SERVICES: Service[] = [
         items: [
           { en: "Horoscope matching (guna melanam)", te: "జాతక సరిపోలిక (గుణ మేళనం)" },
           { en: "Analysis of reasons for delayed marriage", te: "వివాహ ఆలస్యానికి కారణాల పరిశీలన" },
-          { en: "Kuja Dosha & Kalasarpa Dosha analysis", te: "కుజ దోష & కాళసర్ప దోష పరిశీలన" },
+          { en: "Kuja Dosha & Kalasarpa Dosha analysis", te: "కుజ దోష & కాలసర్ప దోష పరిశీలన" },
           { en: "Muhurta selection for the vivaham", te: "వివాహానికి శుభముహూర్త నిర్ణయం" },
           { en: "Performing the marriage samskara", te: "వివాహ సంస్కార నిర్వహణ" },
         ],
       },
       remedies: [
         { en: "Kuja Dosha Nivarana", te: "కుజ దోష నివారణ" },
-        { en: "Kalasarpa Dosha Nivarana", te: "కాళసర్ప దోష నివారణ" },
+        { en: "Kalasarpa Dosha Nivarana", te: "కాలసర్ప దోష నివారణ" },
         { en: "Related graha shantis", te: "సంబంధిత గ్రహ శాంతులు" },
       ],
       seo: {
