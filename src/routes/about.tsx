@@ -193,7 +193,7 @@ function AboutPage() {
                       <h2 className="font-display text-lg sm:text-xl font-bold text-maroon">
                         {tr({
                           en: "Vissavajhula Nagesh Sarma",
-                          te: "విస్సావఝుల నాగేశ్ శర్మ",
+                          te: "విస్సావఝుల నాగేష్ శర్మ",
                         })}
                       </h2>
                       <p className="mt-2 text-xs sm:text-sm leading-relaxed text-body">
