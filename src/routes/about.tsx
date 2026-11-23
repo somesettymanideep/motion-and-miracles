@@ -274,7 +274,7 @@ function AboutPage() {
                   <p className="mt-3 text-xs sm:text-sm leading-relaxed text-body">
                     {tr({
                       en: "With decades of experience, we provide accurate predictions, personalized remedies and meaningful consultations to guide you towards a better and brighter future.",
-                      te: "దశాబ్దాల సుదీర్ఘ అనుభవంతో, మీ ఉజ్వల భవిష్యత్తు కోసం మేము ఖచ్చితమైన అంచనాలు, వ్యక్తిగతీకరించిన పరిహారాలు మరియు అర్థవంతమైన సంప్రదింపులను అందిస్తున్నాము.",
+                      te: "దశాబ్దాల సుదీర్ఘ అనుభవంతో, మీ ఉజ్వల భవిష్యత్తు కోసం మేము ఖచ్చితమైన అంచనాలు, తగిన పరిహారాలు మరియు అర్థవంతమైన సంప్రదింపులను అందిస్తున్నాము.",
                     })}
                   </p>
                 </div>
