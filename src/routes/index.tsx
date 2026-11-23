@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Horoscope analysis, Navagraha Shanti, Kalasarpa dosha nivarana, marriage muhurta, griha pravesam, homas and Vedic samskaras by Vissavajhula Nagesh Sarma at Krishnalanka, Vijayawada.",
+          "Horoscope analysis, Navagraha Shanti, Kalasarpa dosha nivarana, marriage muhurta, griha pravesam, homas and Vedic samskaras by Vissavajjhala Nagesh Sarma at Krishnalanka, Vijayawada.",
       },
       { property: "og:title", content: "Sri Vasishta Jyotishya Parishodhanalayam | Vijayawada" },
       {
@@ -284,7 +284,7 @@ function Index() {
             <Reveal delay={0.05} className="w-52 sm:w-72 md:w-80">
               <img
                 src={gurujiNageshPortrait}
-                alt="Vissavajhula Nagesh Sarma — Vedic scholar and astrologer"
+                alt="Vissavajjhala Nagesh Sarma — Vedic scholar and astrologer"
                 className="w-full drop-shadow-xl"
                 loading="lazy"
               />

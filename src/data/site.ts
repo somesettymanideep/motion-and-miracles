@@ -20,7 +20,7 @@ export const HOURS: Bi = {
 export const ORG_NAME = "Sri Vasishta Jyotishya Parishodhanalayam";
 export const ORG_NAME_TE = "శ్రీ వశిష్ఠ జ్యోతిష్య పరిశోధనాలయం";
 export const GURU_NAME: Bi = {
-  en: "Vissavajhula Nagesh Sarma",
+  en: "Vissavajjhala Nagesh Sarma",
   te: "విస్సావఝుల నాగేష్ శర్మ",
 };
 
@@ -66,7 +66,7 @@ const en = {
     samskarasLabel: "Vedic Samskaras",
     remediesLabel: "Graha Shantis & Remedies",
     welcomeTitle: "Welcome",
-    welcome: "At the Samavedam Vedic Centre in Krishnalanka, Vijayawada, Vissavajhula Nagesh Sarma garu performs horoscope analysis, Vedic samskaras, graha shantis, homas and remedial rituals in accordance with the shastras.",
+    welcome: "At the Samavedam Vedic Centre in Krishnalanka, Vijayawada, Vissavajjhala Nagesh Sarma garu performs horoscope analysis, Vedic samskaras, graha shantis, homas and remedial rituals in accordance with the shastras.",
     servicesTitle: "Our Services",
     servicesSubtitle: "Traditional jyotishyam and shastric services, performed in the proper manner.",
     howTitle: "How It Works",

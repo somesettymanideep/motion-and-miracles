@@ -179,12 +179,12 @@ function AboutPage() {
 
                 {/* Profiles Grid */}
                 <div className="relative z-10 grid gap-10 md:grid-cols-2">
-                  {/* Profile 1: Vissavajhula Nagesh Sarma */}
+                  {/* Profile 1: Vissavajjhala Nagesh Sarma */}
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
                     <div className="relative shrink-0 w-32 h-32 sm:w-36 sm:h-36 overflow-hidden rounded-2xl border-2 border-gold/60 bg-cream/90 shadow-md">
                       <img
                         src={guruji1Img}
-                        alt="Vissavajhula Nagesh Sarma"
+                        alt="Vissavajjhala Nagesh Sarma"
                         className="h-full w-full object-cover"
                         loading="lazy"
                       />
@@ -192,7 +192,7 @@ function AboutPage() {
                     <div className="flex-1">
                       <h2 className="font-display text-lg sm:text-xl font-bold text-maroon">
                         {tr({
-                          en: "Vissavajhula Nagesh Sarma",
+                          en: "Vissavajjhala Nagesh Sarma",
                           te: "విస్సావఝుల నాగేష్ శర్మ",
                         })}
                       </h2>
