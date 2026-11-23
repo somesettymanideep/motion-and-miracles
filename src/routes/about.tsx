@@ -294,16 +294,16 @@ function AboutPage() {
                 <span className="h-[1px] w-8 bg-gold/50" />
                 <span>{tr({ en: "OUR", te: "మా" })}</span>
                 <LotusIcon className="h-3.5 w-3.5 text-gold" />
-                <span>{tr({ en: "VALUES", te: "విలువలు" })}</span>
+                <span>{tr({ en: "MISSION", te: "ధ్యేయము" })}</span>
                 <span className="h-[1px] w-8 bg-gold/50" />
               </div>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-bold text-maroon">
-                {tr({ en: "What We Stand For", te: "మా విలువలు మరియు ధ్యేయం" })}
+                {tr({ en: "Our Primary Mission", te: "మా ప్రధాన ధ్యేయము" })}
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-body max-w-xl mx-auto">
                 {tr({
-                  en: "Our values are rooted in tradition, guided by compassion, and driven by your well-being.",
-                  te: "మా విలువలు సంప్రదాయంలో వేళ్ళూనుకున్నవి, కరుణతో నడిపించబడేవి మరియు మీ శ్రేయస్సు కోసం ఉద్దేశించినవి.",
+                  en: "Our primary mission is to make the sacred science of astrology, an integral limb of the Vedas (Vedanga), equitably accessible to everyone.",
+                  te: "వేదాంగము అయినటువంటి జ్యోతిష్య భాగమును అందరికీ సమపాళ్లలో అందించుట ప్రధాన ధ్యేయము.",
                 })}
               </p>
             </div>
