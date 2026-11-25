@@ -198,8 +198,8 @@ function AboutPage() {
                       </h2>
                       <p className="mt-2 text-xs sm:text-sm leading-relaxed text-body">
                         {tr({
-                          en: "A revered scholar and astrologer, guiding countless individuals with his profound knowledge and divine wisdom.",
-                          te: "తన అపారమైన జ్ఞానం మరియు దైవిక వివేకంతో వేలాది మందికి మార్గనిర్దేశం చేస్తున్న పూజ్య పండితులు మరియు జ్యోతిష్య నిపుణులు.",
+                          en: "A revered scholar, astrologer and muhurtha expert, guiding countless individuals with his profound knowledge and divine wisdom.",
+                          te: "తన అపారమైన జ్ఞానం మరియు దైవిక వివేకంతో వేలాది మందికి మార్గనిర్దేశం చేస్తున్న పూజ్య పండితులు మరియు జ్యోతిష్య ముహూర్త నిపుణులు.",
                         })}
                       </p>
                     </div>
