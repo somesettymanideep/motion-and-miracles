@@ -159,7 +159,7 @@ export const SERVICES: Service[] = [
       heroTitle: { en: "Navagraha Shanti", te: "నవగ్రహ శాంతి" },
       intro: {
         en: "When graha dashas and gocharas bring obstacles, the proper graha shanti is chosen after studying the horoscope, and japa, daana and homa are performed in the shastriya manner. First the strength, position, aspect and conjunction of each graha are examined, and the running dasha and antardasha are checked against the gochara now operating, so that the remedy is aimed at the graha that is actually giving the trouble. A long list of rites is not prescribed — only the shanti the chart calls for. The count of the japa, the day and time for it, the size and kind of the daana and the samagri for the homa are fixed according to the graha and your capacity.",
-        te: "గ్రహదశలు, గోచారాల వల్ల కలిగే ఆటంకాలకు జాతక పరిశీలన తర్వాత సరైన గ్రహశాంతి నిర్ణయించబడుతుంది; జప – దాన – హోమాలు శాస్త్రోక్తంగా నిర్వహించబడతాయి. ముందుగా ప్రతి గ్రహం బలం, స్థానం, దృష్టి, సంగోచరం పరిశీలించబడతాయి; ప్రవర్తమాన దశ, అంతరదశ మరియు ఇప్పుడు నడుస్తున్న గోచారం కలిపి చూడడం వల్ల, నిజంగా ఇబ్బంది ఇస్తున్న గ్రహానికే పరిహారం చెప్పబడుతుంది. జాతకం అడిగే శాంతి మాత్రమే సూచించబడుతుంది. జపం, అది చేయవలసిన రోజు మరియు సమయం, దానం పరిమాణం మరియు రకం, హోమం సామగ్రి — అన్నీ గ్రహం మరియు మీ సామర్థ్యం ప్రకారం నిశ్చయించబడతాయి.",
+        te: "గ్రహదశలు, గోచారాల వల్ల కలిగే ఆటంకాలకు జాతక పరిశీలన తర్వాత సరైన గ్రహశాంతి నిర్ణయించబడుతుంది; జప – దాన – హోమాలు శాస్త్రోక్తంగా నిర్వహించబడతాయి. ముందుగా ప్రతి గ్రహం బలం, స్థానం, దృష్టి, సంగోచరం పరిశీలించబడతాయి; వర్తమాన దశ, అంతరదశ మరియు ఇప్పుడు నడుస్తున్న గోచారం కలిపి చూడడం వల్ల, నిజంగా ఇబ్బంది ఇస్తున్న గ్రహానికే పరిహారం చెప్పబడుతుంది. జాతకం అడిగే శాంతి మాత్రమే సూచించబడుతుంది. జపం, అది చేయవలసిన రోజు మరియు సమయం, దానం పరిమాణం మరియు రకం, హోమం సామగ్రి — అన్నీ గ్రహం మరియు మీ సామర్థ్యం ప్రకారం నిశ్చయించబడతాయి.",
       },
       remedies: [
         { en: "Navagraha Japas", te: "నవగ్రహ జపములు" },
@@ -379,7 +379,7 @@ export const SERVICES: Service[] = [
       heroTitle: { en: "Astrological Remedies", te: "జ్యోతిష్య పరిహారాలు" },
       intro: {
         en: "For problems relating to health, job, business, marriage, children, education, finances, own-house acquisition and foreign travel, suitable shastric remedies are suggested after a full horoscope analysis. The lagna, the houses concerned, their lords and the grahas seated there are studied together with the running dasha and the gochara now operating, so that the real cause of the difficulty is located and not merely its symptom. Kuja, Kalasarpa, Sarpa and vamsha-paramparya doshas are examined and, where present, their nivarana is suggested. The japa, daana or homa prescribed is one you can actually carry out — the count, the day, the time and the samagri are explained to you clearly.",
-        te: "ఆరోగ్యం, ఉద్యోగం, వ్యాపారం, వివాహం, సంతానం, విద్య, ధనం, సొంత ఇల్లు, విదేశ ప్రయాణం మొదలైన విషయాలకు జాతక పరిశీలన తర్వాత సరైన శాస్త్రీయ పరిహారాలు సూచించబడతాయి. లగ్నం, సంబంధిత స్థానాలు, వాటి అధిపతులు, అక్కడ ఉన్న గ్రహాలు — ప్రవర్తమాన దశ మరియు ఇప్పుడు నడుస్తున్న గోచారంతో కలిపి చూడబడతాయి; అందువల్ల లక్షణం కాకుండా, ఇబ్బందికి నిజమైన కారణం గుర్తింపబడుతుంది. కుజ, కాలసర్ప, సర్ప, వంశపరంపర్య దోషాలు పరిశీలించబడతాయి; ఉంటే వాటి నివారణ సూచించబడుతుంది. చెప్పబడే జపం, దానం, హోమం మీరు నిజంగానే చేయగలిగేవిగా ఉంటాయి; జెపు, రోజు, సమయం, సామగ్రి స్పష్టంగా వివరించబడతాయి.",
+        te: "ఆరోగ్యం, ఉద్యోగం, వ్యాపారం, వివాహం, సంతానం, విద్య, ధనం, సొంత ఇల్లు, విదేశ ప్రయాణం మొదలైన విషయాలకు జాతక పరిశీలన తర్వాత సరైన శాస్త్రీయ పరిహారాలు సూచించబడతాయి. లగ్నం, సంబంధిత స్థానాలు, వాటి అధిపతులు, అక్కడ ఉన్న గ్రహాలు — వర్తమాన దశ మరియు ఇప్పుడు నడుస్తున్న గోచారంతో కలిపి చూడబడతాయి; అందువల్ల లక్షణం కాకుండా, ఇబ్బందికి నిజమైన కారణం గుర్తింపబడుతుంది. కుజ, కాలసర్ప, సర్ప, వంశపరంపర్య దోషాలు పరిశీలించబడతాయి; ఉంటే వాటి నివారణ సూచించబడుతుంది. చెప్పబడే జపం, దానం, హోమం మీరు నిజంగానే చేయగలిగేవిగా ఉంటాయి; జెపు, రోజు, సమయం, సామగ్రి స్పష్టంగా వివరించబడతాయి.",
       },
       examines: [
         { en: "Kuja Dosha analysis and nivarana", te: "కుజ దోష పరిశీలన మరియు నివారణ" },
@@ -406,7 +406,7 @@ export const SERVICES: Service[] = [
       },
       intro: {
         en: "For long-standing health worries, the horoscope is studied for planetary causes and appropriate shantis are suggested alongside proper medical care. The lagna and its strength, the sixth house of roga, the eighth house of ayushya and their lords, the position of the Moon, and the running dasha, antardasha and gochara are all examined, so that the periods in which health tends to dip can be recognised in advance. The graha links behind chronic trouble are pointed out and the corresponding shanti, japa or daana is suggested. These remedies are given along with your doctor's advice, never in place of it.",
-        te: "ఎక్కువ కాలం కొనసాగుతున్న ఆరోగ్య సమస్యలకు జాతకంలో గ్రహస్థితులు పరిశీలించబడతాయి; సరైన వైద్యంతో పాటు సరైన శాంతులు – పరిహారాలు సూచించబడతాయి. లగ్నం మరియు దాని బలం, రోగ స్థానమైన ఆరవ స్థానం, ఆయుర్భావమైన ఎనిమిదవ స్థానం మరియు వాటి అధిపతులు, చంద్రుని స్థానం, ప్రవర్తమాన దశ, అంతరదశ మరియు గోచారాలు అన్నీ పరిశీలించబడతాయి; అందువల్ల ఆరోగ్యం క్షీణించే కాలం ముందే తెలిసికొనబడుతుంది. దీర్ఘకాలిక సమస్యల వెనుక ఉన్న గ్రహ సంబంధం గుర్తింపబడి, దానికి తగిన శాంతి, జపం, దానం సూచించబడుతుంది. ఇవి మీ వైద్యుని సలహాతో పాటు ఇవబడతాయి; వైద్య చికిత్సకు ప్రత్యామ్నాయం కావు.",
+        te: "ఎక్కువ కాలం కొనసాగుతున్న ఆరోగ్య సమస్యలకు జాతకంలో గ్రహస్థితులు పరిశీలించబడతాయి; సరైన వైద్యంతో పాటు సరైన శాంతులు – పరిహారాలు సూచించబడతాయి. లగ్నం మరియు దాని బలం, రోగ స్థానమైన ఆరవ స్థానం, ఆయుర్భావమైన ఎనిమిదవ స్థానం మరియు వాటి అధిపతులు, చంద్రుని స్థానం, వర్తమాన దశ, అంతరదశ మరియు గోచారాలు అన్నీ పరిశీలించబడతాయి; అందువల్ల ఆరోగ్యం క్షీణించే కాలం ముందే తెలిసికొనబడుతుంది. దీర్ఘకాలిక సమస్యల వెనుక ఉన్న గ్రహ సంబంధం గుర్తింపబడి, దానికి తగిన శాంతి, జపం, దానం సూచించబడుతుంది. ఇవి మీ వైద్యుని సలహాతో పాటు ఇవబడతాయి; వైద్య చికిత్సకు ప్రత్యామ్నాయం కావు.",
       },
       examines: [
         { en: "Lagna and its strength", te: "లగ్నము మరియు దాని బలము" },
@@ -414,7 +414,7 @@ export const SERVICES: Service[] = [
           en: "6th house (roga sthana) and 8th house (ayurbhava) and their lords",
           te: "ఆరవ స్థానము (రోగ స్థానము), ఎనిమిదవ స్థానము (ఆయుర్భావము) మరియు వాని అధిపతులు",
         },
-        { en: "Running dasha, antardasha and gochara", te: "ప్రవర్తమాన దశ, అంతర్దశ మరియు గోచారములు" },
+        { en: "Running dasha, antardasha and gochara", te: "వర్తమాన దశ, అంతర్దశ మరియు గోచారములు" },
         { en: "Planetary links to long-term health issues", te: "దీర్ఘకాలిక సమస్యలతో గ్రహాల సంబంధము" },
       ],
       remedies: [
@@ -657,7 +657,7 @@ export const SERVICES: Service[] = [
       },
       intro: {
         en: "For those longing for children, the horoscope is examined and the appropriate shantis and related samskaras are suggested. The fifth house and its lord, the strength of Jupiter, the position of the Moon, and any Sarpa or vamsha-paramparya dosha are studied together with the running dasha, so that the period favourable for progeny can be recognised. Where a dosha is found, its nivarana is prescribed with the japa, daana or homa that suits the chart. The samskaras connected with progeny — Garbhadhanam, Pumsavanam, Seemantham and the rites that follow the birth — are performed at the proper time.",
-        te: "సంతానం కోసం ఆకాంక్షించే వారికి జాతకం పరిశీలించబడి, సరైన శాంతులు మరియు సంబంధిత సంస్కారాలు సూచించబడతాయి. పంచమ స్థానం మరియు దాని అధిపతి, గురువుని బలం, చంద్రుని స్థానం, సర్ప దోషం లేదా వంశపరంపర్య దోషాలు ఉన్నాయో అన్నీ, ప్రవర్తమాన దశతో కలిపి చూడబడతాయి; అందువల్ల సంతానానికి అనుకూలమైన కాలం గుర్తింపబడుతుంది. దోషం కనిపిస్తే, జాతకానికి తగిన జపం, దానం లేదా హోమంతో దాని నివారణ చెప్పబడుతుంది. సంతానానికి సంబంధించిన సంస్కారాలు — గర్భాధానం, పుంసవనం, సీమంతం, పుట్టిన తర్వాత చేయవలసిన రితాలు — సరైన సమయంలో నిర్వహించబడతాయి.",
+        te: "సంతానం కోసం ఆకాంక్షించే వారికి జాతకం పరిశీలించబడి, సరైన శాంతులు మరియు సంబంధిత సంస్కారాలు సూచించబడతాయి. పంచమ స్థానం మరియు దాని అధిపతి, గురువుని బలం, చంద్రుని స్థానం, సర్ప దోషం లేదా వంశపరంపర్య దోషాలు ఉన్నాయో అన్నీ, వర్తమాన దశతో కలిపి చూడబడతాయి; అందువల్ల సంతానానికి అనుకూలమైన కాలం గుర్తింపబడుతుంది. దోషం కనిపిస్తే, జాతకానికి తగిన జపం, దానం లేదా హోమంతో దాని నివారణ చెప్పబడుతుంది. సంతానానికి సంబంధించిన సంస్కారాలు — గర్భాధానం, పుంసవనం, సీమంతం, పుట్టిన తర్వాత చేయవలసిన రితాలు — సరైన సమయంలో నిర్వహించబడతాయి.",
       },
       examines: [
         { en: "5th house and its lord", te: "పంచమ స్థానము మరియు దాని అధిపతి" },
@@ -735,7 +735,7 @@ export const SERVICES: Service[] = [
       },
       intro: {
         en: "For debts, blocked finances and unstable income, the horoscope is studied and remedies suggested for steadier prosperity. The second house of dhana, the eleventh house of labha, their lords, and the strength of Jupiter, Venus and the Moon are examined together with the dasha and gochara now operating. This shows whether the trouble is a period that will pass, a graha that needs propitiation, or a dosha that must be removed. Graha japas, daanas and, where the chart calls for it, Pratyangira or Kushmanda homam are suggested so that income becomes steadier and debts reduce.",
-        te: "అప్పులు, ఆర్థిక ఇబ్బందులు, ఆదాయంలో స్థిరత్వం లేకపోవడం వంటి సమస్యలకు జాతకం పరిశీలించబడి, నిలకడైన అభివృద్ధికి పరిహారాలు సూచించబడతాయి. ధన స్థానమైన రెండవ స్థానం, లాభ స్థానమైన ఏకాదశ స్థానం, వాటి అధిపతులు, గురు, శుక్ర, చంద్రుల బలం — ప్రవర్తమాన దశ మరియు నడుస్తున్న గోచారంతో కలిపి చూడబడతాయి. ఈ ఇబ్బంది ముగిసే కాలమా, సమర్పించవలసిన గ్రహమా, తొలగించవలసిన దోషమా అని దీనివల్ల తెలిసికొనబడుతుంది. ఆదాయం నిలకడగా కావడానికి, అప్పులు తగ్గడానికి గ్రహ జపాలు, దానాలు, జాతకం అడిగితే ప్రత్యంగిరా లేదా కుష్మాండ హోమం సూచించబడుతుంది.",
+        te: "అప్పులు, ఆర్థిక ఇబ్బందులు, ఆదాయంలో స్థిరత్వం లేకపోవడం వంటి సమస్యలకు జాతకం పరిశీలించబడి, నిలకడైన అభివృద్ధికి పరిహారాలు సూచించబడతాయి. ధన స్థానమైన రెండవ స్థానం, లాభ స్థానమైన ఏకాదశ స్థానం, వాటి అధిపతులు, గురు, శుక్ర, చంద్రుల బలం — వర్తమాన దశ మరియు నడుస్తున్న గోచారంతో కలిపి చూడబడతాయి. ఈ ఇబ్బంది ముగిసే కాలమా, సమర్పించవలసిన గ్రహమా, తొలగించవలసిన దోషమా అని దీనివల్ల తెలిసికొనబడుతుంది. ఆదాయం నిలకడగా కావడానికి, అప్పులు తగ్గడానికి గ్రహ జపాలు, దానాలు, జాతకం అడిగితే ప్రత్యంగిరా లేదా కుష్మాండ హోమం సూచించబడుతుంది.",
       },
       examines: [
         {
