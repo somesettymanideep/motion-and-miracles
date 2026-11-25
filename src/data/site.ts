@@ -361,8 +361,8 @@ export const FAQS: { q: Bi; a: Bi }[] = [
   {
     q: { en: "What details are needed for horoscope analysis?", te: "జాతక పరిశీలనకు ఏ వివరాలు కావాలి?" },
     a: {
-      en: "Date, time and place of birth. Bring your horoscope if you have one.",
-      te: "జనన తేదీ, సమయం మరియు స్థలం. మీ వద్ద జాతకం ఉంటే తీసుకురావండి.",
+      en: "Date, time and place of birth. Please bring your horoscope if you have one.",
+      te: "జనన తేదీ, సమయం మరియు స్థలం. మీ వద్ద జాతకం ఉంటే తీసుకొని రావలెను.",
     },
   },
   {
