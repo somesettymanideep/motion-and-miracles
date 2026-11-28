@@ -5,6 +5,13 @@ import type { VideoItem } from "@/data/services";
 import { dict } from "@/data/site";
 import { useLanguage, useTr } from "@/lib/i18n";
 
+function toMediaUrl(url: string): string {
+  if (url.startsWith("/__l5e/")) {
+    return `https://f4532138-3161-43d9-9755-44d32f75e99b.lovableproject.com${url}`;
+  }
+  return url;
+}
+
 /** One active player and paged poster thumbnails; other services keep their carousel. */
 export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
   const { lang } = useLanguage();
@@ -20,7 +27,7 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
     if (!item) return;
     const img = new Image();
     img.onload = () => setLandscape(img.naturalWidth > img.naturalHeight);
-    img.src = item.poster;
+    img.src = toMediaUrl(item.poster);
   }, [item]);
   if (!item) return null;
   const pageStart = Math.floor(selected / 6) * 6;
@@ -42,14 +49,17 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
     }
   }
 
+  const activeVideoUrl = toMediaUrl(item.video);
+  const activePosterUrl = toMediaUrl(item.poster);
+
   return (
     <div className="moments-gallery" aria-label={d.label}>
       <div className={landscape ? "moments-player moments-player-tv" : "moments-player"}>
         <video
-          key={item.video}
+          key={activeVideoUrl}
           ref={player}
-          src={item.video}
-          poster={item.poster}
+          src={activeVideoUrl}
+          poster={activePosterUrl}
           playsInline
           controls={playing}
           preload="none"
@@ -77,9 +87,10 @@ export function MomentsVideoGallery({ items }: { items: VideoItem[] }) {
         <div className="grid grid-cols-3 gap-3 sm:gap-5">
           {items.slice(pageStart, pageStart + 6).map((video, i) => {
             const index = pageStart + i;
+            const thumbPoster = toMediaUrl(video.poster);
             return (
               <Button key={video.video} type="button" variant="ghost" aria-label={`${d.select} ${index + 1}: ${tr(video.title)}`} aria-pressed={selected === index} onClick={() => { if (selected === index) void play(); else select(index); }} className="moments-thumbnail">
-                <img src={video.poster} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                <img src={thumbPoster} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
                 <span className="moments-play" aria-hidden="true"><Play fill="currentColor" /></span>
               </Button>
             );

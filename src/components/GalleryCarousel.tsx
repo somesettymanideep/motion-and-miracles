@@ -5,6 +5,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTr } from "@/lib/i18n";
 import type { GalleryItem } from "@/data/services";
 
+function toMediaUrl(url: string): string {
+  if (url.startsWith("/__l5e/")) {
+    return `https://f4532138-3161-43d9-9755-44d32f75e99b.lovableproject.com${url}`;
+  }
+  return url;
+}
+
 /**
  * Photo carousel for a service detail page: infinite loop, 4s autoplay that
  * pauses on hover, swipe on touch, gold prev/next arrows, a photo counter
@@ -40,7 +47,7 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
           {items.map((item, i) => (
             <div key={i} className="min-w-0 shrink-0 grow-0 basis-full">
               <img
-                src={item.image}
+                src={toMediaUrl(item.image)}
                 alt={tr(item.alt)}
                 width={1280}
                 height={720}
@@ -88,7 +95,7 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
             }`}
           >
             <img
-              src={item.image}
+              src={toMediaUrl(item.image)}
               alt=""
               width={1280}
               height={720}

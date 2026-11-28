@@ -5,6 +5,13 @@ import { useTr } from "@/lib/i18n";
 import type { VideoItem } from "@/data/services";
 import { Button } from "@/components/ui/button";
 
+function toMediaUrl(url: string): string {
+  if (url.startsWith("/__l5e/")) {
+    return `https://f4532138-3161-43d9-9755-44d32f75e99b.lovableproject.com${url}`;
+  }
+  return url;
+}
+
 /** Ceremony video carousel: visitors start videos; moving slides pauses playback. */
 export function VideoGallery({ items }: { items: VideoItem[] }) {
   const tr = useTr();
@@ -40,8 +47,8 @@ export function VideoGallery({ items }: { items: VideoItem[] }) {
                 ref={(el) => {
                   videos.current[i] = el;
                 }}
-                src={item.video}
-                poster={item.poster}
+                src={toMediaUrl(item.video)}
+                poster={toMediaUrl(item.poster)}
                 controls
                 playsInline
                 preload="none"

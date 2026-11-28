@@ -89,6 +89,15 @@ import homaPoster15 from "@/assets/services/homa-videos/homa-video-15.jpg.asset.
 import homaPoster16 from "@/assets/services/homa-videos/homa-video-16.jpg.asset.json";
 import homaPoster17 from "@/assets/services/homa-videos/homa-video-17.jpg.asset.json";
 
+/** Resolves Lovable CDN assets so they load reliably across local, preview and production hosts. */
+export function cdnUrl(asset: { url: string; project_id?: string }): string {
+  if (asset.url.startsWith("http://") || asset.url.startsWith("https://")) {
+    return asset.url;
+  }
+  const pid = asset.project_id || "f4532138-3161-43d9-9755-44d32f75e99b";
+  return `https://${pid}.lovableproject.com${asset.url}`;
+}
+
 /** One photo in a service page gallery carousel. */
 export type GalleryItem = { image: string; alt: Bi };
 /** One ceremony video in a service page video gallery. */
@@ -336,15 +345,15 @@ export const SERVICES: Service[] = [
             te: "సమవేతమైన కుటుంబికులు, అతిథుల ముందు హోమ కలశం అర్పిస్తున్న దృశ్యం",
           },
         },
-        { image: homaGallery21.url, alt: { en: "An elder presenting a ritual vessel to the seated priest", te: "కూర్చున్న ఋత్విక్కునికి పూజా పాత్ర అందిస్తున్న పెద్దలు" } },
-        { image: homaGallery22.url, alt: { en: "A devotee in yellow offering a vessel during the ceremony", te: "కార్యక్రమంలో పసుపు వస్త్రధారి పూజా పాత్ర అర్పిస్తున్నారు" } },
-        { image: homaGallery23.url, alt: { en: "The priest receiving the sacred vessel as family members watch", te: "కుటుంబ సభ్యుల సమక్షంలో పవిత్ర పాత్ర స్వీకరిస్తున్న ఋత్విక్" } },
-        { image: homaGallery24.url, alt: { en: "The decorated altar with flowers, betel leaves and offerings", te: "పూలు, తమలపాకులు, నివేదనలతో అలంకరించిన పూజా వేదిక" } },
-        { image: homaGallery25.url, alt: { en: "A sacred bath being offered to the deity idol in a brass tray", te: "ఇత్తడి పళ్ళెంలో దేవతా విగ్రహానికి అభిషేకం చేస్తున్న దృశ్యం" } },
-        { image: homaGallery26.url, alt: { en: "Two priests seated beside the sacred homa fire", te: "పవిత్ర హోమ అగ్ని పక్కన కూర్చున్న ఇద్దరు ఋత్విక్కులు" } },
-        { image: homaGallery27.url, alt: { en: "Priests offering oblations into the flower-adorned homa kunda", te: "పూలతో అలంకరించిన హోమ కుండంలో ఆహుతులు అర్పిస్తున్న ఋత్విక్కులు" } },
-        { image: homaGallery28.url, alt: { en: "The blazing homa fire before the chanting priests", te: "మంత్రోచ్చారణ చేస్తున్న ఋత్విక్కుల ముందు ప్రజ్వలిస్తున్న హోమ అగ్ని" } },
-        { image: homaGallery29.url, alt: { en: "Priests and family gathered around the homa fire", te: "హోమ అగ్ని చుట్టూ సమావేశమైన ఋత్విక్కులు, కుటుంబ సభ్యులు" } },
+        { image: cdnUrl(homaGallery21), alt: { en: "An elder presenting a ritual vessel to the seated priest", te: "కూర్చున్న ఋత్విక్కునికి పూజా పాత్ర అందిస్తున్న పెద్దలు" } },
+        { image: cdnUrl(homaGallery22), alt: { en: "A devotee in yellow offering a vessel during the ceremony", te: "కార్యక్రమంలో పసుపు వస్త్రధారి పూజా పాత్ర అర్పిస్తున్నారు" } },
+        { image: cdnUrl(homaGallery23), alt: { en: "The priest receiving the sacred vessel as family members watch", te: "కుటుంబ సభ్యుల సమక్షంలో పవిత్ర పాత్ర స్వీకరిస్తున్న ఋత్విక్" } },
+        { image: cdnUrl(homaGallery24), alt: { en: "The decorated altar with flowers, betel leaves and offerings", te: "పూలు, తమలపాకులు, నివేదనలతో అలంకరించిన పూజా వేదిక" } },
+        { image: cdnUrl(homaGallery25), alt: { en: "A sacred bath being offered to the deity idol in a brass tray", te: "ఇత్తడి పళ్ళెంలో దేవతా విగ్రహానికి అభిషేకం చేస్తున్న దృశ్యం" } },
+        { image: cdnUrl(homaGallery26), alt: { en: "Two priests seated beside the sacred homa fire", te: "పవిత్ర హోమ అగ్ని పక్కన కూర్చున్న ఇద్దరు ఋత్విక్కులు" } },
+        { image: cdnUrl(homaGallery27), alt: { en: "Priests offering oblations into the flower-adorned homa kunda", te: "పూలతో అలంకరించిన హోమ కుండంలో ఆహుతులు అర్పిస్తున్న ఋత్విక్కులు" } },
+        { image: cdnUrl(homaGallery28), alt: { en: "The blazing homa fire before the chanting priests", te: "మంత్రోచ్చారణ చేస్తున్న ఋత్విక్కుల ముందు ప్రజ్వలిస్తున్న హోమ అగ్ని" } },
+        { image: cdnUrl(homaGallery29), alt: { en: "Priests and family gathered around the homa fire", te: "హోమ అగ్ని చుట్టూ సమావేశమైన ఋత్విక్కులు, కుటుంబ సభ్యులు" } },
         {
           image: healthCeremony15,
           alt: {
@@ -354,14 +363,14 @@ export const SERVICES: Service[] = [
         },
       ],
       videos: [
-        { video: homaVideo01.url, poster: homaPoster01.url, title: { en: "Ritual preparations with family", te: "కుటుంబంతో పూజా ఏర్పాట్లు" } },
-        { video: homaVideo02.url, poster: homaPoster02.url, title: { en: "Prayers before the decorated altar", te: "అలంకృత వేదిక ముందు ప్రార్థనలు" } },
-        { video: homaVideo12.url, poster: homaPoster12.url, title: { en: "Sacred fire offerings", te: "పవిత్ర అగ్ని ఆహుతులు" } },
-        { video: homaVideo13.url, poster: homaPoster13.url, title: { en: "Priests chanting mantras", te: "మంత్రాలు పఠిస్తున్న పూజారులు" } },
-        { video: homaVideo14.url, poster: homaPoster14.url, title: { en: "Devotees at the homa", te: "హోమంలో భక్తులు" } },
-        { video: homaVideo15.url, poster: homaPoster15.url, title: { en: "Blessings after the ritual", te: "కార్యక్రమం తర్వాత ఆశీర్వాదాలు" } },
-        { video: homaVideo16.url, poster: homaPoster16.url, title: { en: "Offerings to the deity", te: "దేవునికి నైవేద్యాలు" } },
-        { video: homaVideo17.url, poster: homaPoster17.url, title: { en: "Grand homa ceremony", te: "వైభవంగా హోమ కార్యక్రమం" } },
+        { video: cdnUrl(homaVideo01), poster: cdnUrl(homaPoster01), title: { en: "Ritual preparations with family", te: "కుటుంబంతో పూజా ఏర్పాట్లు" } },
+        { video: cdnUrl(homaVideo02), poster: cdnUrl(homaPoster02), title: { en: "Prayers before the decorated altar", te: "అలంకృత వేదిక ముందు ప్రార్థనలు" } },
+        { video: cdnUrl(homaVideo12), poster: cdnUrl(homaPoster12), title: { en: "Sacred fire offerings", te: "పవిత్ర అగ్ని ఆహుతులు" } },
+        { video: cdnUrl(homaVideo13), poster: cdnUrl(homaPoster13), title: { en: "Priests chanting mantras", te: "మంత్రాలు పఠిస్తున్న పూజారులు" } },
+        { video: cdnUrl(homaVideo14), poster: cdnUrl(homaPoster14), title: { en: "Devotees at the homa", te: "హోమంలో భక్తులు" } },
+        { video: cdnUrl(homaVideo15), poster: cdnUrl(homaPoster15), title: { en: "Blessings after the ritual", te: "కార్యక్రమం తర్వాత ఆశీర్వాదాలు" } },
+        { video: cdnUrl(homaVideo16), poster: cdnUrl(homaPoster16), title: { en: "Offerings to the deity", te: "దేవునికి నైవేద్యాలు" } },
+        { video: cdnUrl(homaVideo17), poster: cdnUrl(homaPoster17), title: { en: "Grand homa ceremony", te: "వైభవంగా హోమ కార్యక్రమం" } },
       ],
       seo: {
         title: "Special Homas | Chandi & Pratyangira Homam | Vijayawada",
@@ -527,15 +536,15 @@ export const SERVICES: Service[] = [
         },
       ],
       videos: [
-        { video: homaVideo03.url, poster: homaPoster03.url, title: { en: "Blessings during the ceremony", te: "కార్యక్రమంలో ఆశీర్వాదాలు" } },
-        { video: homaVideo04.url, poster: homaPoster04.url, title: { en: "Priest guiding the ritual", te: "కార్యక్రమాన్ని నిర్వహిస్తున్న ఋత్విక్" } },
-        { video: homaVideo05.url, poster: homaPoster05.url, title: { en: "Elders joining the ceremony", te: "కార్యక్రమంలో పాల్గొంటున్న పెద్దలు" } },
-        { video: homaVideo06.url, poster: homaPoster06.url, title: { en: "Family receiving blessings", te: "ఆశీర్వాదాలు పొందుతున్న కుటుంబం" } },
-        { video: homaVideo07.url, poster: homaPoster07.url, title: { en: "Devotees offering prayers", te: "ప్రార్థనలు అర్పిస్తున్న భక్తులు" } },
-        { video: homaVideo08.url, poster: homaPoster08.url, title: { en: "Ritual offerings before the elders", te: "పెద్దల ముందు పూజా నివేదనలు" } },
-        { video: homaVideo09.url, poster: homaPoster09.url, title: { en: "Family gathered for blessings", te: "ఆశీర్వాదాల కోసం సమావేశమైన కుటుంబం" } },
-        { video: homaVideo10.url, poster: homaPoster10.url, title: { en: "Elders blessing the devotee", te: "భక్తుని ఆశీర్వదిస్తున్న పెద్దలు" } },
-        { video: homaVideo11.url, poster: homaPoster11.url, title: { en: "Ceremony with family and guests", te: "కుటుంబం, అతిథులతో కార్యక్రమం" } },
+        { video: cdnUrl(homaVideo03), poster: cdnUrl(homaPoster03), title: { en: "Blessings during the ceremony", te: "కార్యక్రమంలో ఆశీర్వాదాలు" } },
+        { video: cdnUrl(homaVideo04), poster: cdnUrl(homaPoster04), title: { en: "Priest guiding the ritual", te: "కార్యక్రమాన్ని నిర్వహిస్తున్న ఋత్విక్" } },
+        { video: cdnUrl(homaVideo05), poster: cdnUrl(homaPoster05), title: { en: "Elders joining the ceremony", te: "కార్యక్రమంలో పాల్గొంటున్న పెద్దలు" } },
+        { video: cdnUrl(homaVideo06), poster: cdnUrl(homaPoster06), title: { en: "Family receiving blessings", te: "ఆశీర్వాదాలు పొందుతున్న కుటుంబం" } },
+        { video: cdnUrl(homaVideo07), poster: cdnUrl(homaPoster07), title: { en: "Devotees offering prayers", te: "ప్రార్థనలు అర్పిస్తున్న భక్తులు" } },
+        { video: cdnUrl(homaVideo08), poster: cdnUrl(homaPoster08), title: { en: "Ritual offerings before the elders", te: "పెద్దల ముందు పూజా నివేదనలు" } },
+        { video: cdnUrl(homaVideo09), poster: cdnUrl(homaPoster09), title: { en: "Family gathered for blessings", te: "ఆశీర్వాదాల కోసం సమావేశమైన కుటుంబం" } },
+        { video: cdnUrl(homaVideo10), poster: cdnUrl(homaPoster10), title: { en: "Elders blessing the devotee", te: "భక్తుని ఆశీర్వదిస్తున్న పెద్దలు" } },
+        { video: cdnUrl(homaVideo11), poster: cdnUrl(homaPoster11), title: { en: "Ceremony with family and guests", te: "కుటుంబం, అతిథులతో కార్యక్రమం" } },
       ],
       seo: {
         title: "Health Astrology | Mrityunjaya Homam | Vijayawada",
